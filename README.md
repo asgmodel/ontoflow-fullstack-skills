@@ -1,18 +1,16 @@
-# NEXUS Full-Stack Skills
+# OntoFlow FullStack Skills
 
-NEXUS Full Stack is a personal engineering skill collection for planning, building and verifying complete software projects. The collection connects project setup, visible task coordination, ontology-guided full-stack delivery and specialized Template engineering workflows.
+OntoFlow is an ontology-guided engineering skill collection for planning, building and verifying complete software projects. The collection connects project setup, visible task coordination, ontology-guided full-stack delivery and specialized Template engineering workflows.
 
 **12 skills · English repository documentation · Bundled NEXUS OWL ontology · Template scaffold included**
 
-## Download the complete collection
+The repository name is **ontoflow-fullstack-skills**. See [Skills and dependencies](SKILLS_AND_DEPENDENCIES.md) for package boundaries and loading order.
 
-[Download NEXUS-Full-Stack-Skills.zip](NEXUS-Full-Stack-Skills.zip)
+## Download the complete project
 
-The complete source tree, skill instructions, scripts, references, ontology and scaffold are distributed in this ZIP. Extract it first, then open the `NEXUS-Full-Stack-Skills` folder. All `skills/` paths and commands below refer to that extracted project. The repository root provides the download, catalog, dependency guide and provenance notices.
+[Download OntoFlow-FullStack-Skills.zip](OntoFlow-FullStack-Skills.zip)
 
-To inspect or install a skill, use its `SKILL.md` inside the extracted package. Keep each skill folder and its bundled resources together.
-
-The final project and archive name is **NEXUS-Full-Stack-Skills**. See [Skills and dependencies](SKILLS_AND_DEPENDENCIES.md) for package boundaries and loading order.
+The archive contains the complete extracted source tree: all 12 skill packages, ontology, scripts, references, Template scaffold and documentation. Extract `OntoFlow-FullStack-Skills/` before using the `skills/` paths and commands below. The repository root hosts the archive, catalog, manifest, dependency guide and notices. Older NEXUS archives are retained for history; use the OntoFlow archive for the accepted name.
 
 ## Skill catalog
 
@@ -112,7 +110,7 @@ These skills provide procedures and bundled resources; they do not grant tools, 
 
 ## Repository layout
 
-- `NEXUS-Full-Stack-Skills.zip`: complete source distribution with `skills/<skill-name>/` packages.
+- `skills/<skill-name>/`: independently readable skill packages and their resources.
 - `catalog.json`: machine-readable skill inventory.
 - `THIRD_PARTY_NOTICES.md`: provenance and redistribution notes.
 - `.gitignore`: local build, cache and credential exclusions.
