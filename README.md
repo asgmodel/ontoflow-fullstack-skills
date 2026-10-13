@@ -1,91 +1,88 @@
 # OntoFlow FullStack Skills
 
-OntoFlow is an ontology-guided engineering skill collection for planning, building and verifying complete software projects. The collection connects project setup, visible task coordination, ontology-guided full-stack delivery and specialized Template engineering workflows.
+**An ontology-guided collection for coordinating, building and verifying full-stack software.**
 
-**12 skills · English repository documentation · Bundled NEXUS OWL ontology · Template scaffold included**
+OntoFlow connects engineering tasks to the instructions, dependencies and evidence they require. The NEXUS coordinator reads the bundled OWL model, selects the relevant workflows for the current phase and preserves the contracts between architecture, APIs, data, UI and verification.
 
-The repository name is **ontoflow-fullstack-skills**. See [Skills and dependencies](SKILLS_AND_DEPENDENCIES.md) for package boundaries and loading order.
+## 1. What the collection provides
 
-## Download the complete project
+- **12 installable packages** under [`skills/`](skills/), including one experimental placeholder.
+- **30 entries in the NEXUS routing model:** 25 pinned engineering workflows and 5 personal engineering adapters.
+- **11 task intents and 924 RDF statements** in the shipped ontology.
+- Python routing, ontology maintenance scripts, behavioral tests and the blank Template scaffold.
+- Selective instruction loading and persistent evidence contracts. Token savings are not expressed as a fixed percentage.
 
-[Download OntoFlow-FullStack-Skills.zip](OntoFlow-FullStack-Skills.zip)
+## 2. Choose an entry point
 
-The archive contains the complete extracted source tree: all 12 skill packages, ontology, scripts, references, Template scaffold and documentation. Extract `OntoFlow-FullStack-Skills/` before using the `skills/` paths and commands below. The repository root hosts the archive, catalog, manifest, dependency guide and notices. Older NEXUS archives are retained for history; use the OntoFlow archive for the accepted name.
-
-## Skill catalog
-
-| Area | Skill | Purpose |
+| Need | Start with | Responsibility |
 | --- | --- | --- |
-| Leadership | **AutoTaska** (`skills/autotaska/SKILL.md` in the ZIP) | Coordinate the complete engineering project, departments, dependencies and progress evidence. |
-| Setup | **Project Creator** (`skills/project-creator/SKILL.md` in the ZIP) | Turn an idea into an actual ChatGPT project, GitHub repository and task conversations. |
-| Coordination | **ChatGPT Task Creator** (`skills/chatgpt-task-creator/SKILL.md` in the ZIP) | Create and supervise separate visible ChatGPT conversations for bounded tasks. |
-| Knowledge | **NEXUS Full Stack** (`skills/nexus-full-stack/SKILL.md` in the ZIP) | Read the OWL ontology to select workflows, context and verification obligations. |
-| Engineering | **Full Stack** (`skills/full-stack/SKILL.md` in the ZIP) | Coordinate the four Template engineering skills across a complete feature or application. |
-| Architecture | **Template Architecture** (`skills/template-architecture/SKILL.md` in the ZIP) | Scaffold and maintain the single-host modular ASP.NET Core architecture. |
-| Backend | **Template Backend** (`skills/template-backend/SKILL.md` in the ZIP) | Implement API contracts, domain rules, EF Core persistence, authorization and integrations. |
-| Frontend | **Template Frontend** (`skills/template-frontend/SKILL.md` in the ZIP) | Build React TypeScript/Vite and Blazor interfaces connected to the real backend. |
-| Verification | **Template Verification** (`skills/template-verification/SKILL.md` in the ZIP) | Check architecture, behavior, builds, migrations and deployment evidence. |
-| Interface | **Professional Interface Builder** (`skills/professional-interface-builder/SKILL.md` in the ZIP) | Design and integrate responsive interfaces, themes, RTL/LTR, roles and real API states. |
-| Discovery | **Find Skills** (`skills/find-skills/SKILL.md` in the ZIP) | Discover relevant skills from the agent skill ecosystem. |
-| Experimental | **Mahoer** (`skills/mahoer/SKILL.md` in the ZIP) | Preserve the existing personal placeholder; no defined engineering workflow yet. |
+| Lead a complete project | [AutoTaska](skills/autotaska/SKILL.md) | Coordination, accepted contracts, dependencies and progress |
+| Create project resources | [Project Creator](skills/project-creator/SKILL.md) | Project setup, repository and task dispatch |
+| Manage visible department chats | [ChatGPT Task Creator](skills/chatgpt-task-creator/SKILL.md) | Bounded work in separate ChatGPT conversations |
+| Build, review or migrate an application | [NEXUS](skills/nexus-full-stack/SKILL.md) | Ontology routing, implementation and evidence |
+| Develop a Template application | [Full Stack](skills/full-stack/SKILL.md) | Coordinate architecture, backend, frontend and verification |
+| Generate or inspect architecture | [Template Architecture](skills/template-architecture/SKILL.md) | Single-host architecture and blank scaffold |
+| Implement backend behavior | [Template Backend](skills/template-backend/SKILL.md) | APIs, domain, persistence and authorization |
+| Implement connected interfaces | [Template Frontend](skills/template-frontend/SKILL.md) | React/Vite, Blazor and API integration |
+| Verify delivery | [Template Verification](skills/template-verification/SKILL.md) | Builds, migrations and behavior checks |
+| Design a polished product UI | [Professional Interface Builder](skills/professional-interface-builder/SKILL.md) | Responsive interfaces, themes, RTL/LTR and role separation |
+| Discover additional skills | [Find Skills](skills/find-skills/SKILL.md) | Skill discovery |
+| Inspect the experimental placeholder | [Mahoer](skills/mahoer/SKILL.md) | No defined engineering workflow |
 
-## Start with the right skill
+Choose one coordinator for each task. Read additional skill instructions only when selected by the task and its dependencies. The collection does not require every package to execute every request.
 
-Use **AutoTaska** for end-to-end project leadership. Use **Project Creator** for resource setup and initial task dispatch. Use **NEXUS** for application development or a targeted implementation, review, migration or release task. Use a specialized skill directly when the scope is already narrow.
+## 3. Understand the workflow
+
+The agent first inspects the repository and current contracts. It classifies the task, runs the OWL router and reads the selected instructions. It then implements the requested slice, verifies real behavior and records evidence, blockers and the next task. A contract or schema change invalidates affected verification.
 
 ```mermaid
 flowchart TD
-    P[Project Creator] --> D[ChatGPT Task Creator]
-    A[AutoTaska] --> D
-    A --> N[NEXUS]
-    N --> F[Full Stack]
-    F --> T[Template engineering skills]
-    N --> U[Selected upstream workflows]
+    T[Task and repository] --> R[OWL router]
+    O[Ontology and integrity index] --> R
+    R --> W[Selected instructions]
+    W --> E[Implementation and verification]
+    E --> S[Evidence and project state]
+    S --> T
 ```
 
-Choose one coordinator for a task. Load required dependencies as needed; do not invoke every skill or create duplicate projects, repositories or conversations.
+The router selects obligations; the agent executes them with available tools. It does not implement an application, remove host conversation history or certify deployment by itself.
 
-## Install and use
+## 4. Install and invoke
 
-Copy the required folders from `skills/` into your agent host's supported skill directory. Keep each folder's `SKILL.md`, `references/`, `scripts/`, `assets/` and `agents/` together. Install dependencies by their exact skill names; platform-generated storage IDs are not required.
+Clone the repository, then copy the required folders under `skills/` into your agent host's supported skills directory. Keep each package's `SKILL.md`, `agents/`, `assets/`, `references/` and `scripts/` together. Install personal dependencies by their exact skill names.
 
-Invocation depends on the host. Use `@autotaska`, `@nexus-full-stack` or the host's `$skill-name` convention when supported. Otherwise, instruct the agent to read the relevant `SKILL.md` and apply it.
+```bash
+git clone https://github.com/asgmodel/ontoflow-fullstack-skills.git
+cd ontoflow-fullstack-skills
+```
 
-Example request:
+Invocation is host-dependent. Use `$nexus-full-stack`, `@nexus-full-stack` or the corresponding skill picker when supported. The NEXUS display metadata uses **OntoFlow FullStack Skills** while its technical skill name remains `nexus-full-stack` for compatibility. Otherwise, ask the agent to read `skills/nexus-full-stack/SKILL.md` directly.
 
-> Use NEXUS to implement a complete application feature in the existing repository. Inspect the current stack and contracts, route only the affected phases and layers, implement the real API and UI behavior, and report verification evidence and any blocked external prerequisites.
+## 5. Run a realistic task
 
-Example for coordinated delivery:
+Example user request:
 
-> Use AutoTaska to coordinate this project from its brief through implementation and verification. Reuse existing resources, delegate bounded tasks only through available capabilities, maintain accepted contracts and show actual progress.
+> Use $nexus-full-stack to implement an Arabic RTL design storefront in this repository. Support categories, public design pages, multiple images/videos/audio files per design, customization requests and an authenticated admin area. Inspect the existing stack, define the API and persistence contracts, build one complete slice at a time and verify protected writes, invalid input and persistence after reload. Report external services and unresolved setup separately.
 
-## NEXUS ontology and context routing
-
-The authoritative model is **nexus.owl** (`skills/nexus-full-stack/assets/nexus.owl` in the ZIP). The shipped graph maps **30 skills**, **11 task intents** and **924 RDF statements**. It selects current-phase workflows, follows dependencies and propagates stale artifacts after contract or schema changes.
+Create a task JSON using [`task.schema.json`](skills/nexus-full-stack/assets/task.schema.json). For a routing demonstration, run the included example:
 
 ```bash
 python skills/nexus-full-stack/scripts/route.py --task skills/nexus-full-stack/assets/example-task.json --packet
 ```
 
-Routing requires Python 3.10 or newer and uses a constrained named-node RDF/XML reader. It reads OWL directly and checks the generated integrity projection and workflow hashes. It is not a general-purpose OWL reasoner.
+Routing uses Python 3.10+ and the standard library. Use `existing-stack` for a native application and `template-single-host` for a Template project. The example prompt describes a possible application request; this repository supplies skills and a blank scaffold, not a finished storefront.
 
-Token efficiency comes from selective loading and resumable project state. A budget overflow does not silently drop required security or contract instructions. Static instruction-token measurements do not guarantee a fixed saving in total tokens, cost or task completion.
+## 6. Use the Template scaffold
 
-## Template stack
-
-`template-architecture/assets/blank-project` contains the blank scaffold and its own development instructions. The stack uses one ASP.NET Core server, internal Domain/Application/Infrastructure boundaries, EF Core with SQL Server, React TypeScript/Vite under `ClientApp`, and Blazor in `Components`.
-
-Generate a blank project in a new destination:
+The bundled Template uses a single ASP.NET Core host, Domain/Application/Infrastructure boundaries, EF Core SQL Server, React TypeScript/Vite and Blazor. Read its manifests and instructions for exact toolchain requirements.
 
 ```bash
 python skills/template-architecture/scripts/scaffold.py --output ../MyProduct --name MyProduct
 ```
 
-The scaffold contains no business application, payment integration, identity provider credentials or populated database. Follow its manifests for actual framework requirements. Existing applications on other stacks retain their own technology and commands.
+Generate into a new destination. The scaffold has no business data or external provider credentials. Existing projects retain their own stack. See [Skills and dependencies](docs/SKILLS_AND_DEPENDENCIES.md) for package boundaries and loading order.
 
-## Validation
-
-Install maintenance dependencies and validate the NEXUS graph and router:
+## 7. Validate the ontology and router
 
 ```bash
 python -m pip install -r skills/nexus-full-stack/scripts/requirements-maintenance.txt
@@ -93,30 +90,20 @@ python skills/nexus-full-stack/scripts/validate.py
 python skills/nexus-full-stack/scripts/test_router.py
 ```
 
-The NEXUS suite includes 18 behavioral checks for scope, dependencies, security gates, live OWL reading, stale projections and evidence integrity. Repository packaging checks do not establish that external account creation, applications, deployments or integrations are working.
+The current package passed ontology validation and **18 router tests**. These checks cover routing behavior, integrity, scope and evidence guards; they do not establish application runtime behavior or external deployment readiness.
 
-## Host capabilities
+The authoritative model is [`nexus.owl`](skills/nexus-full-stack/assets/nexus.owl). After changing it, run `scripts/compile_graph.py`, then validate and test. The Turtle model and graph index are generated projections. The router uses a constrained RDF/XML reader rather than a general OWL reasoner.
 
-| Capability | Requirement |
+## 8. Navigate the source and attribution
+
+| Path | Contents |
 | --- | --- |
-| Read skill instructions | Agent access to local skill files |
-| Run router and scaffold | Python and shell execution |
-| Build generated applications | Framework/toolchain versions from the scaffold manifests |
-| Create visible ChatGPT projects and conversations | Authenticated supported browser or project tools |
-| Create and write GitHub repositories | Suitable authenticated GitHub tools or browser/CLI capabilities |
-| Use external providers | Configured credentials and successful provider verification |
+| [`skills/`](skills/) | Installable skill packages and their resources |
+| [`skills/nexus-full-stack/assets/`](skills/nexus-full-stack/assets/) | Ontology, task schema, queries and graph projections |
+| [`skills/nexus-full-stack/scripts/`](skills/nexus-full-stack/scripts/) | Router, validation, compilation, tests and benchmark |
+| [`skills/nexus-full-stack/references/`](skills/nexus-full-stack/references/) | Execution contracts, adapters, provenance and pinned workflows |
+| [`docs/`](docs/) | Collection dependency guide |
+| [`catalog.json`](catalog.json) | Machine-readable package inventory |
+| [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) | Licensing and provenance notices |
 
-These skills provide procedures and bundled resources; they do not grant tools, account access or automatic execution capabilities. Visible ChatGPT conversations are distinct from internal subagents. Monitoring happens during active execution and resume unless a real automation is configured.
-
-## Repository layout
-
-- `skills/<skill-name>/`: independently readable skill packages and their resources.
-- `catalog.json`: machine-readable skill inventory.
-- `THIRD_PARTY_NOTICES.md`: provenance and redistribution notes.
-- `.gitignore`: local build, cache and credential exclusions.
-
-Original skill instructions are preserved, including Arabic instructions where present. Repository documentation is in English. See each skill's entry point for its actual operational contract.
-
-## Attribution
-
-NEXUS includes pinned workflows from [Addy Osmani's agent-skills](https://github.com/addyosmani/agent-skills), with the upstream MIT license retained. See [Third-party notices](THIRD_PARTY_NOTICES.md) and NEXUS source metadata for provenance. No blanket license is assigned to personal skills or other material with no verified license.
+NEXUS preserves 25 workflows from Addy Osmani's agent-skills at the pinned source revision, with their MIT notice retained. Personal packages preserve their original instructions and have no newly assigned blanket license. Tools, account access, provider credentials and authorized deployment scope come from the host environment; installing the collection does not grant them.

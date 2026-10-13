@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:nx="urn:nexus:engineering:"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:constrainedBy">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:ProjectProfile"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Policy"/>
+  </owl:ObjectProperty>
+  <nx:Intent rdf:about="urn:nexus:engineering:intent-migration">
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:code-review-and-quality">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>code-review-and-quality</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-code-review-and-quality"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-verification-engineer"/>
+        <nx:sourceHash>2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e</nx:sourceHash>
+        <nx:summary>Review correctness, clarity, architecture, security and performance.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/code-review-and-quality/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:deprecation-and-migration">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>deprecation-and-migration</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-deprecation-and-migration"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-backend-engineer"/>
+        <nx:sourceHash>6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142</nx:sourceHash>
+        <nx:summary>Migrate consumers safely and use additive expand/backfill/contract data changes.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/deprecation-and-migration/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:template-backend">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+        <nx:consumesArtifact rdf:resource="urn:nexus:engineering:api-contract"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:personal"/>
+        <nx:id>template-backend</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-template-backend"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-backend-engineer"/>
+        <nx:producesArtifact rdf:resource="urn:nexus:engineering:api-contract"/>
+        <nx:producesArtifact rdf:resource="urn:nexus:engineering:backend"/>
+        <nx:producesArtifact rdf:resource="urn:nexus:engineering:data-schema"/>
+        <nx:requiresSkill rdf:resource="urn:nexus:engineering:api-and-interface-design"/>
+        <nx:sourceHash>91466d080de10f9ca252bc25e295e259e22264ca5b6d3d948ea23914b9f448c0</nx:sourceHash>
+        <nx:summary>Implement domain invariants, use cases, real APIs and EF migrations with server-side authorization.</nx:summary>
+        <nx:workflowPath>references/adapters/template-backend.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:template-verification">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+        <nx:consumesArtifact rdf:resource="urn:nexus:engineering:api-contract"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:personal"/>
+        <nx:id>template-verification</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-template-verification"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-verification-engineer"/>
+        <nx:producesArtifact rdf:resource="urn:nexus:engineering:publish-bundle"/>
+        <nx:sourceHash>2e8b10528ed596d14f1d3e98d14f27f2747cf71212d344c4c48d77528986cc94</nx:sourceHash>
+        <nx:summary>Run risk-relevant build, persistence, authorization, routing and publish checks with honest evidence states.</nx:summary>
+        <nx:workflowPath>references/adapters/template-verification.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:id>migration</nx:id>
+  </nx:Intent>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-release-verify-template-verification">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-verification"/>
+    <nx:forPhase>
+      <nx:Phase rdf:about="urn:nexus:engineering:phase-verify">
+        <nx:id>verify</nx:id>
+      </nx:Phase>
+    </nx:forPhase>
+    <nx:id>release</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-migration-verify-template-verification">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-verification"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>migration</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-frontend-build">
+    <nx:activatesSkill>
+      <nx:Skill rdf:about="urn:nexus:engineering:template-frontend">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+        <nx:consumesArtifact rdf:resource="urn:nexus:engineering:api-contract"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:personal"/>
+        <nx:id>template-frontend</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-template-frontend"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-frontend-engineer"/>
+        <nx:producesArtifact rdf:resource="urn:nexus:engineering:ui"/>
+        <nx:requiresSkill rdf:resource="urn:nexus:engineering:frontend-ui-engineering"/>
+        <nx:sourceHash>8c20516abe091ecfe2651ab91c98c426aaf5735154b15c466bd467cb45916b6f</nx:sourceHash>
+        <nx:summary>Connect typed React/Blazor consumers to real server contracts and validate browser states and publish routes.</nx:summary>
+        <nx:workflowPath>references/adapters/template-frontend.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:activatesSkill>
+    <nx:forPhase>
+      <nx:Phase rdf:about="urn:nexus:engineering:phase-build">
+        <nx:id>build</nx:id>
+      </nx:Phase>
+    </nx:forPhase>
+    <nx:id>*</nx:id>
+    <nx:requiredLayer>frontend</nx:requiredLayer>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-review-code-review-and-quality">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:forPhase>
+      <nx:Phase rdf:about="urn:nexus:engineering:phase-review">
+        <nx:id>review</nx:id>
+      </nx:Phase>
+    </nx:forPhase>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-performance-verify">
+    <nx:activatesSkill>
+      <nx:Skill rdf:about="urn:nexus:engineering:performance-optimization">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>performance-optimization</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-performance-optimization"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-verification-engineer"/>
+        <nx:sourceHash>665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c</nx:sourceHash>
+        <nx:summary>Measure the actual bottleneck, optimize and re-measure under matched conditions.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/performance-optimization/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:activatesSkill>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>performance</nx:requiredTag>
+  </nx:RoutingRule>
+  <nx:Intent rdf:about="urn:nexus:engineering:intent-blank-scaffold">
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:template-architecture">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:personal"/>
+        <nx:id>template-architecture</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-template-architecture"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-architect"/>
+        <nx:producesArtifact rdf:resource="urn:nexus:engineering:architecture"/>
+        <nx:sourceHash>63ac3887044c24239841fb1eaf6fc6cc1babbe74c39ec79919aec246f25282f5</nx:sourceHash>
+        <nx:summary>Use the supplied Template assets for a new scaffold; preserve one ASP.NET host and folder-separated layers.</nx:summary>
+        <nx:workflowPath>references/adapters/template-architecture.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:template-verification"/>
+    <nx:id>blank-scaffold</nx:id>
+  </nx:Intent>
+  <nx:Intent rdf:about="urn:nexus:engineering:intent-bug-fix">
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:debugging-and-error-recovery">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>debugging-and-error-recovery</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-debugging-and-error-recovery"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-verification-engineer"/>
+        <nx:sourceHash>21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220</nx:sourceHash>
+        <nx:summary>Reproduce, localize, reduce, repair and guard the root cause.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/debugging-and-error-recovery/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:test-driven-development">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+        <nx:consumesArtifact rdf:resource="urn:nexus:engineering:api-contract"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>test-driven-development</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-test-driven-development"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-verification-engineer"/>
+        <nx:producesArtifact rdf:resource="urn:nexus:engineering:tests"/>
+        <nx:sourceHash>7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca</nx:sourceHash>
+        <nx:summary>Use meaningful behavioral and regression tests; do not repeat unchanged successful runs.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/test-driven-development/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:id>bug-fix</nx:id>
+  </nx:Intent>
+  <nx:Skill rdf:about="urn:nexus:engineering:context-engineering">
+    <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:appliesInPhase>
+      <nx:Phase rdf:about="urn:nexus:engineering:phase-define">
+        <nx:id>define</nx:id>
+      </nx:Phase>
+    </nx:appliesInPhase>
+    <nx:appliesInPhase>
+      <nx:Phase rdf:about="urn:nexus:engineering:phase-plan">
+        <nx:id>plan</nx:id>
+      </nx:Phase>
+    </nx:appliesInPhase>
+    <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:appliesInPhase>
+      <nx:Phase rdf:about="urn:nexus:engineering:phase-ship">
+        <nx:id>ship</nx:id>
+      </nx:Phase>
+    </nx:appliesInPhase>
+    <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:derivedFrom>
+      <nx:Source rdf:about="urn:nexus:engineering:addy">
+        <nx:revision>1be8e34187e34647bb83adc3a1323b26ae6f6abe</nx:revision>
+        <nx:sourcePath>https://github.com/addyosmani/agent-skills</nx:sourcePath>
+      </nx:Source>
+    </nx:derivedFrom>
+    <nx:id>context-engineering</nx:id>
+    <nx:implementsCapability>
+      <nx:Capability rdf:about="urn:nexus:engineering:capability-context-engineering"/>
+    </nx:implementsCapability>
+    <nx:ownedBy>
+      <nx:Role rdf:about="urn:nexus:engineering:role-orchestrator"/>
+    </nx:ownedBy>
+    <nx:sourceHash>8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63</nx:sourceHash>
+    <nx:summary>Select current contracts and source, protect live constraints and persist restartable boundaries.</nx:summary>
+    <nx:workflowPath>references/upstream/skills/context-engineering/workflow.md</nx:workflowPath>
+  </nx:Skill>
+  <nx:Intent rdf:about="urn:nexus:engineering:intent-full-product">
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:api-and-interface-design">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>api-and-interface-design</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-api-and-interface-design"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-architect"/>
+        <nx:producesArtifact rdf:resource="urn:nexus:engineering:api-contract"/>
+        <nx:sourceHash>e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192</nx:sourceHash>
+        <nx:summary>Define typed stable contracts, error semantics, boundaries and retry/idempotency behavior.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/api-and-interface-design/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:browser-testing-with-devtools">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>browser-testing-with-devtools</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-browser-testing-with-devtools"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-verification-engineer"/>
+        <nx:sourceHash>4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9</nx:sourceHash>
+        <nx:summary>Inspect actual browser rendering, requests, console and accessibility.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/browser-testing-with-devtools/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:ci-cd-and-automation">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>ci-cd-and-automation</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-ci-cd-and-automation"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-release-engineer"/>
+        <nx:sourceHash>a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0</nx:sourceHash>
+        <nx:summary>Automate actual quality gates, reproducible builds and rollback mechanisms.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/ci-cd-and-automation/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:constraint-driven-development">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-define"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>constraint-driven-development</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-constraint-driven-development"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-verification-engineer"/>
+        <nx:sourceHash>06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10</nx:sourceHash>
+        <nx:summary>Define measurable project quality constraints and enforceable gates.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/constraint-driven-development/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:documentation-and-adrs">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>documentation-and-adrs</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-documentation-and-adrs"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-architect"/>
+        <nx:sourceHash>b60d503925bbaacee7fd63935db70b9ced5b2514ff5a56a672130e01b9690bc5</nx:sourceHash>
+        <nx:summary>Preserve significant decisions, contracts and operational trade-offs.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/documentation-and-adrs/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:full-stack">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-define"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:personal"/>
+        <nx:id>full-stack</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-full-stack"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-orchestrator"/>
+        <nx:sourceHash>bde270cf1b4ab80de9c1c3922df11c898597796345a626a769d47704053040d4</nx:sourceHash>
+        <nx:summary>Coordinate one complete vertical slice at a time; retain existing stack and contracts; report runtime evidence separately from generated files.</nx:summary>
+        <nx:workflowPath>references/adapters/full-stack.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:incremental-implementation">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>incremental-implementation</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-incremental-implementation"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-orchestrator"/>
+        <nx:sourceHash>df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b</nx:sourceHash>
+        <nx:summary>Deliver one working vertical slice before expanding.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/incremental-implementation/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:observability-and-instrumentation">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>observability-and-instrumentation</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-observability-and-instrumentation"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-backend-engineer"/>
+        <nx:sourceHash>e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87</nx:sourceHash>
+        <nx:summary>Write structured logs, bounded metrics and tracing alongside operational features.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/observability-and-instrumentation/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:planning-and-task-breakdown">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>planning-and-task-breakdown</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-planning-and-task-breakdown"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-orchestrator"/>
+        <nx:producesArtifact rdf:resource="urn:nexus:engineering:plan"/>
+        <nx:sourceHash>ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7</nx:sourceHash>
+        <nx:summary>Order small vertical tasks with dependencies and verification steps.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/planning-and-task-breakdown/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:shipping-and-launch">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>shipping-and-launch</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-shipping-and-launch"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-release-engineer"/>
+        <nx:producesArtifact rdf:resource="urn:nexus:engineering:release-plan"/>
+        <nx:sourceHash>726f3e546369db289160b8d42195590f00b6432887e17bf19070dcc9a347fe39</nx:sourceHash>
+        <nx:summary>Prepare staged rollout, operational evidence, monitoring and rollback.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/shipping-and-launch/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot>
+      <nx:Skill rdf:about="urn:nexus:engineering:spec-driven-development">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-define"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>spec-driven-development</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-spec-driven-development"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-architect"/>
+        <nx:producesArtifact rdf:resource="urn:nexus:engineering:requirements"/>
+        <nx:sourceHash>c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef</nx:sourceHash>
+        <nx:summary>Record requirements, boundaries and testable acceptance criteria.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/spec-driven-development/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:hasRoot>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:template-architecture"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:template-backend"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:template-frontend"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:template-verification"/>
+    <nx:id>full-product</nx:id>
+  </nx:Intent>
+  <nx:Skill rdf:about="urn:nexus:engineering:idea-refine">
+    <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-define"/>
+    <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+    <nx:id>idea-refine</nx:id>
+    <nx:implementsCapability>
+      <nx:Capability rdf:about="urn:nexus:engineering:capability-idea-refine"/>
+    </nx:implementsCapability>
+    <nx:ownedBy>
+      <nx:Role rdf:about="urn:nexus:engineering:role-architect"/>
+    </nx:ownedBy>
+    <nx:sourceHash>79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e</nx:sourceHash>
+    <nx:summary>Explore options and converge on a concrete problem and success criteria.</nx:summary>
+    <nx:workflowPath>references/upstream/skills/idea-refine/workflow.md</nx:workflowPath>
+  </nx:Skill>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-migration-plan-deprecation-and-migration">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:deprecation-and-migration"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+    <nx:id>migration</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-review-only-review-code-review-and-quality">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>review-only</nx:id>
+  </nx:RoutingRule>
+  <nx:Intent rdf:about="urn:nexus:engineering:intent-feature">
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:api-and-interface-design"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:incremental-implementation"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:spec-driven-development"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:test-driven-development"/>
+    <nx:id>feature</nx:id>
+  </nx:Intent>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-release-ship-documentation-and-adrs">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:documentation-and-adrs"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+    <nx:id>release</nx:id>
+  </nx:RoutingRule>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:invalidates">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Artifact"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Artifact"/>
+  </owl:ObjectProperty>
+  <nx:Skill rdf:about="urn:nexus:engineering:git-workflow-and-versioning">
+    <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+    <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+    <nx:id>git-workflow-and-versioning</nx:id>
+    <nx:implementsCapability>
+      <nx:Capability rdf:about="urn:nexus:engineering:capability-git-workflow-and-versioning"/>
+    </nx:implementsCapability>
+    <nx:ownedBy rdf:resource="urn:nexus:engineering:role-orchestrator"/>
+    <nx:sourceHash>b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea</nx:sourceHash>
+    <nx:summary>Keep authorized changes atomic, reviewed and free of secrets.</nx:summary>
+    <nx:workflowPath>references/upstream/skills/git-workflow-and-versioning/workflow.md</nx:workflowPath>
+  </nx:Skill>
+  <owl:Class rdf:about="urn:nexus:engineering:Task">
+    <rdfs:label>Task</rdfs:label>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:derivedFrom">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Skill"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Source"/>
+  </owl:ObjectProperty>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-release-ship-shipping-and-launch">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:shipping-and-launch"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+    <nx:id>release</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-performance-verify-performance-optimization">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:performance-optimization"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>performance</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-build-observability-and-instrumentation">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:observability-and-instrumentation"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-uncertain-review">
+    <nx:activatesSkill>
+      <nx:Skill rdf:about="urn:nexus:engineering:doubt-driven-development">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>doubt-driven-development</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-doubt-driven-development"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-verification-engineer"/>
+        <nx:sourceHash>6fa1fcd8420c28daf7e53c5b08b0f20b907911efd2a6d9bce0b9740da20a4008</nx:sourceHash>
+        <nx:summary>Challenge nontrivial claims using artifact and contract with a bounded stop condition.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/doubt-driven-development/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:activatesSkill>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>uncertain</nx:requiredTag>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-ship-documentation-and-adrs">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:documentation-and-adrs"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:Skill rdf:about="urn:nexus:engineering:interview-me">
+    <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-define"/>
+    <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+    <nx:id>interview-me</nx:id>
+    <nx:implementsCapability>
+      <nx:Capability rdf:about="urn:nexus:engineering:capability-interview-me"/>
+    </nx:implementsCapability>
+    <nx:ownedBy rdf:resource="urn:nexus:engineering:role-orchestrator"/>
+    <nx:sourceHash>ace4b675999bb504593d572e0f73f3d7e803ad6fddf318445598c82c11939db2</nx:sourceHash>
+    <nx:summary>Resolve materially missing requirements with a focused interview.</nx:summary>
+    <nx:workflowPath>references/upstream/skills/interview-me/workflow.md</nx:workflowPath>
+  </nx:Skill>
+  <nx:Intent rdf:about="urn:nexus:engineering:intent-backend-fix">
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:template-backend"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:test-driven-development"/>
+    <nx:id>backend-fix</nx:id>
+  </nx:Intent>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-backend-build">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-backend"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>*</nx:id>
+    <nx:requiredLayer>backend</nx:requiredLayer>
+  </nx:RoutingRule>
+  <nx:Intent rdf:about="urn:nexus:engineering:intent-release">
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:ci-cd-and-automation"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:documentation-and-adrs"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:shipping-and-launch"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:template-verification"/>
+    <nx:id>release</nx:id>
+  </nx:Intent>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-feature-review-code-review-and-quality">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>feature</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-external-build">
+    <nx:activatesSkill>
+      <nx:Skill rdf:about="urn:nexus:engineering:security-and-hardening">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>security-and-hardening</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-security-and-hardening"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-security-engineer"/>
+        <nx:sourceHash>2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858</nx:sourceHash>
+        <nx:summary>Validate trust boundaries, server authorization, secrets, dependencies and sensitive data.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/security-and-hardening/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:activatesSkill>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>external</nx:requiredTag>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-failure-verify">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:debugging-and-error-recovery"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>failure</nx:requiredTag>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-failure-build">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:debugging-and-error-recovery"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>failure</nx:requiredTag>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-backend-fix-review-code-review-and-quality">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>backend-fix</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-verify-browser-testing-with-devtools">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:browser-testing-with-devtools"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-auth-review">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:security-and-hardening"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>auth</nx:requiredTag>
+  </nx:RoutingRule>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:needsEvidence">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Gate"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Evidence"/>
+  </owl:ObjectProperty>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-performance-build-performance-optimization">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:performance-optimization"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>performance</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-backend-fix-verify-test-driven-development">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:test-driven-development"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>backend-fix</nx:id>
+  </nx:RoutingRule>
+  <nx:Intent rdf:about="urn:nexus:engineering:intent-performance">
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:performance-optimization"/>
+    <nx:id>performance</nx:id>
+  </nx:Intent>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:id">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <nx:ProjectProfile rdf:about="urn:nexus:engineering:template-single-host">
+    <nx:constrainedBy>
+      <nx:Policy rdf:about="urn:nexus:engineering:policy-authorization">
+        <nx:summary>Carry session authorization forward; request only missing consequential authorization.</nx:summary>
+      </nx:Policy>
+    </nx:constrainedBy>
+    <nx:constrainedBy>
+      <nx:Policy rdf:about="urn:nexus:engineering:policy-budget-integrity">
+        <nx:summary>Never omit a mandatory workflow or security gate to fit a token target.</nx:summary>
+      </nx:Policy>
+    </nx:constrainedBy>
+    <nx:constrainedBy>
+      <nx:Policy rdf:about="urn:nexus:engineering:policy-evidence-honesty">
+        <nx:summary>Source, build, runtime, database and release are distinct claims.</nx:summary>
+      </nx:Policy>
+    </nx:constrainedBy>
+    <nx:constrainedBy>
+      <nx:Policy rdf:about="urn:nexus:engineering:policy-preserve-stack">
+        <nx:summary>Existing project architecture wins over default profile.</nx:summary>
+      </nx:Policy>
+    </nx:constrainedBy>
+    <nx:constrainedBy>
+      <nx:Policy rdf:about="urn:nexus:engineering:policy-real-integration">
+        <nx:summary>Business data and sessions require real server integration.</nx:summary>
+      </nx:Policy>
+    </nx:constrainedBy>
+    <nx:constrainedBy>
+      <nx:Policy rdf:about="urn:nexus:engineering:policy-selective-context">
+        <nx:summary>Load current phase workflows and boundary contracts only.</nx:summary>
+      </nx:Policy>
+    </nx:constrainedBy>
+    <nx:profileId>template-single-host</nx:profileId>
+  </nx:ProjectProfile>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:verifiedBy">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Artifact"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Gate"/>
+  </owl:ObjectProperty>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-performance-build">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:performance-optimization"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>performance</nx:requiredTag>
+  </nx:RoutingRule>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:requiredLayer"/>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-bug-fix-review-code-review-and-quality">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>bug-fix</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-feature-define-spec-driven-development">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:spec-driven-development"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-define"/>
+    <nx:id>feature</nx:id>
+  </nx:RoutingRule>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:dependsOn">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Artifact"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Artifact"/>
+  </owl:ObjectProperty>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-ui-fix-build-template-frontend">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-frontend"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>ui-fix</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-feature-verify-test-driven-development">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:test-driven-development"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>feature</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-ui-fix-verify-browser-testing-with-devtools">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:browser-testing-with-devtools"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>ui-fix</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-ship-shipping-and-launch">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:shipping-and-launch"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-auth-build">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:security-and-hardening"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>auth</nx:requiredTag>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-external-review">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:security-and-hardening"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>external</nx:requiredTag>
+  </nx:RoutingRule>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:ownedBy">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Skill"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Role"/>
+  </owl:ObjectProperty>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-blank-scaffold-plan-template-architecture">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-architecture"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+    <nx:id>blank-scaffold</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-plan-template-architecture">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-architecture"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:producesArtifact">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Skill"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Artifact"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:result"/>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-migration-build-template-backend">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-backend"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>migration</nx:id>
+  </nx:RoutingRule>
+  <nx:Intent rdf:about="urn:nexus:engineering:intent-review-only">
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:id>review-only</nx:id>
+  </nx:Intent>
+  <nx:Intent rdf:about="urn:nexus:engineering:intent-ui-fix">
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:browser-testing-with-devtools"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:template-frontend"/>
+    <nx:id>ui-fix</nx:id>
+  </nx:Intent>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:budgetTokens"/>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-security-audit-review-security-and-hardening">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:security-and-hardening"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>security-audit</nx:id>
+  </nx:RoutingRule>
+  <nx:ProjectProfile rdf:about="urn:nexus:engineering:existing-stack">
+    <nx:constrainedBy rdf:resource="urn:nexus:engineering:policy-authorization"/>
+    <nx:constrainedBy rdf:resource="urn:nexus:engineering:policy-budget-integrity"/>
+    <nx:constrainedBy rdf:resource="urn:nexus:engineering:policy-evidence-honesty"/>
+    <nx:constrainedBy rdf:resource="urn:nexus:engineering:policy-preserve-stack"/>
+    <nx:constrainedBy rdf:resource="urn:nexus:engineering:policy-real-integration"/>
+    <nx:constrainedBy rdf:resource="urn:nexus:engineering:policy-selective-context"/>
+    <nx:profileId>existing-stack</nx:profileId>
+  </nx:ProjectProfile>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-plan-api-and-interface-design">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:api-and-interface-design"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-schema-build">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:deprecation-and-migration"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>schema</nx:requiredTag>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-security-audit-review-code-review-and-quality">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>security-audit</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-framework-build">
+    <nx:activatesSkill>
+      <nx:Skill rdf:about="urn:nexus:engineering:source-driven-development">
+        <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+        <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+        <nx:id>source-driven-development</nx:id>
+        <nx:implementsCapability rdf:resource="urn:nexus:engineering:capability-source-driven-development"/>
+        <nx:ownedBy rdf:resource="urn:nexus:engineering:role-architect"/>
+        <nx:sourceHash>c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9</nx:sourceHash>
+        <nx:summary>Verify version-specific framework choices against primary documentation.</nx:summary>
+        <nx:workflowPath>references/upstream/skills/source-driven-development/workflow.md</nx:workflowPath>
+      </nx:Skill>
+    </nx:activatesSkill>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>framework</nx:requiredTag>
+  </nx:RoutingRule>
+  <owl:Ontology rdf:about="urn:nexus:engineering:Ontology">
+    <rdfs:comment>NEXUS Full-Stack Engineering Ontology. Routing metadata supports selective workflow loading; it does not execute application development or certify correctness.</rdfs:comment>
+    <owl:versionInfo>1.0.0</owl:versionInfo>
+  </owl:Ontology>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:requiredTag"/>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-plan-planning-and-task-breakdown">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:planning-and-task-breakdown"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:forPhase">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:RoutingRule"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Phase"/>
+  </owl:ObjectProperty>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-data-review">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:security-and-hardening"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>data</nx:requiredTag>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-build-incremental-implementation">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:incremental-implementation"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-contract-plan">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:api-and-interface-design"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>contract</nx:requiredTag>
+  </nx:RoutingRule>
+  <nx:Skill rdf:about="urn:nexus:engineering:code-simplification">
+    <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+    <nx:id>code-simplification</nx:id>
+    <nx:implementsCapability>
+      <nx:Capability rdf:about="urn:nexus:engineering:capability-code-simplification"/>
+    </nx:implementsCapability>
+    <nx:ownedBy rdf:resource="urn:nexus:engineering:role-architect"/>
+    <nx:sourceHash>f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d</nx:sourceHash>
+    <nx:summary>Reduce complexity while preserving proven behavior and error handling.</nx:summary>
+    <nx:workflowPath>references/upstream/skills/code-simplification/workflow.md</nx:workflowPath>
+  </nx:Skill>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-migration-review-code-review-and-quality">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>migration</nx:id>
+  </nx:RoutingRule>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:sourceHash">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-frontend-verify">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:browser-testing-with-devtools"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>*</nx:id>
+    <nx:requiredLayer>frontend</nx:requiredLayer>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-contract-build">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:api-and-interface-design"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>contract</nx:requiredTag>
+  </nx:RoutingRule>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:hasRoot">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Intent"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Skill"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:contextHash">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-feature-plan-api-and-interface-design">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:api-and-interface-design"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+    <nx:id>feature</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-build-template-frontend">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-frontend"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-schema-plan">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:deprecation-and-migration"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-plan"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>schema</nx:requiredTag>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-ui-fix-review-code-review-and-quality">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>ui-fix</nx:id>
+  </nx:RoutingRule>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:activatesSkill">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:RoutingRule"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Skill"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:requiresSkill">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Skill"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Skill"/>
+  </owl:ObjectProperty>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-blank-scaffold-build-template-architecture">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-architecture"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>blank-scaffold</nx:id>
+  </nx:RoutingRule>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:revision"/>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:conditional-data-build">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:security-and-hardening"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>*</nx:id>
+    <nx:requiredTag>data</nx:requiredTag>
+  </nx:RoutingRule>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:implementsCapability">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Skill"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Capability"/>
+  </owl:ObjectProperty>
+  <nx:Skill rdf:about="urn:nexus:engineering:using-agent-skills">
+    <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-define"/>
+    <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+    <nx:id>using-agent-skills</nx:id>
+    <nx:implementsCapability>
+      <nx:Capability rdf:about="urn:nexus:engineering:capability-using-agent-skills"/>
+    </nx:implementsCapability>
+    <nx:ownedBy rdf:resource="urn:nexus:engineering:role-orchestrator"/>
+    <nx:sourceHash>30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3</nx:sourceHash>
+    <nx:summary>Discover applicable workflows; enforce scope, assumptions and verification.</nx:summary>
+    <nx:workflowPath>references/upstream/skills/using-agent-skills/workflow.md</nx:workflowPath>
+  </nx:Skill>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-define-spec-driven-development">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:spec-driven-development"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-define"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-build-template-backend">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-backend"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-ship-ci-cd-and-automation">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:ci-cd-and-automation"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:appliesInPhase">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Skill"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Phase"/>
+  </owl:ObjectProperty>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-performance-review-code-review-and-quality">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>performance</nx:id>
+  </nx:RoutingRule>
+  <owl:ObjectProperty rdf:about="urn:nexus:engineering:consumesArtifact">
+    <rdfs:domain rdf:resource="urn:nexus:engineering:Skill"/>
+    <rdfs:range rdf:resource="urn:nexus:engineering:Artifact"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:testedRevision"/>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-release-ship-ci-cd-and-automation">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:ci-cd-and-automation"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-ship"/>
+    <nx:id>release</nx:id>
+  </nx:RoutingRule>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:workflowPath">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  </owl:DatatypeProperty>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-release-review-code-review-and-quality">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-review"/>
+    <nx:id>release</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-blank-scaffold-verify-template-verification">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-verification"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>blank-scaffold</nx:id>
+  </nx:RoutingRule>
+  <nx:Decision rdf:about="urn:nexus:engineering:decision"/>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-verify-template-verification">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-verification"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-bug-fix-verify-test-driven-development">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:test-driven-development"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-verify"/>
+    <nx:id>bug-fix</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-define-full-stack">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:full-stack"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-define"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-full-product-define-constraint-driven-development">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:constraint-driven-development"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-define"/>
+    <nx:id>full-product</nx:id>
+  </nx:RoutingRule>
+  <nx:Intent rdf:about="urn:nexus:engineering:intent-security-audit">
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:code-review-and-quality"/>
+    <nx:hasRoot rdf:resource="urn:nexus:engineering:security-and-hardening"/>
+    <nx:id>security-audit</nx:id>
+  </nx:Intent>
+  <nx:ContextPacket rdf:about="urn:nexus:engineering:context-packet"/>
+  <owl:Class rdf:about="urn:nexus:engineering:Risk">
+    <rdfs:label>Risk</rdfs:label>
+  </owl:Class>
+  <nx:Gate rdf:about="urn:nexus:engineering:gate-performance">
+    <nx:id>performance</nx:id>
+  </nx:Gate>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-bug-fix-build-debugging-and-error-recovery">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:debugging-and-error-recovery"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>bug-fix</nx:id>
+  </nx:RoutingRule>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-feature-build-incremental-implementation">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:incremental-implementation"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>feature</nx:id>
+  </nx:RoutingRule>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:command"/>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:summary"/>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-backend-fix-build-template-backend">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:template-backend"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>backend-fix</nx:id>
+  </nx:RoutingRule>
+  <nx:Gate rdf:about="urn:nexus:engineering:gate-security">
+    <nx:id>security</nx:id>
+  </nx:Gate>
+  <nx:RoutingRule rdf:about="urn:nexus:engineering:rule-migration-build-deprecation-and-migration">
+    <nx:activatesSkill rdf:resource="urn:nexus:engineering:deprecation-and-migration"/>
+    <nx:forPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:id>migration</nx:id>
+  </nx:RoutingRule>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:sourcePath"/>
+  <owl:DatatypeProperty rdf:about="urn:nexus:engineering:profileId"/>
+  <owl:Class rdf:about="urn:nexus:engineering:UIComponent">
+    <rdfs:label>UIComponent</rdfs:label>
+    <rdfs:subClassOf rdf:resource="urn:nexus:engineering:Artifact"/>
+  </owl:Class>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-incremental-implementation"/>
+  <owl:Class rdf:about="urn:nexus:engineering:Evidence">
+    <rdfs:label>Evidence</rdfs:label>
+  </owl:Class>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-code-review-and-quality"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-spec-driven-development"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-api-and-interface-design"/>
+  <nx:Artifact rdf:about="urn:nexus:engineering:backend">
+    <nx:dependsOn>
+      <nx:APIContract rdf:about="urn:nexus:engineering:api-contract">
+        <nx:invalidates rdf:resource="urn:nexus:engineering:backend"/>
+        <nx:invalidates rdf:resource="urn:nexus:engineering:tests"/>
+        <nx:invalidates rdf:resource="urn:nexus:engineering:ui"/>
+        <nx:verifiedBy rdf:resource="urn:nexus:engineering:gate-contract"/>
+      </nx:APIContract>
+    </nx:dependsOn>
+    <nx:dependsOn>
+      <nx:DataSchema rdf:about="urn:nexus:engineering:data-schema">
+        <nx:invalidates rdf:resource="urn:nexus:engineering:backend"/>
+        <nx:invalidates rdf:resource="urn:nexus:engineering:tests"/>
+        <nx:verifiedBy rdf:resource="urn:nexus:engineering:gate-sql-migration"/>
+      </nx:DataSchema>
+    </nx:dependsOn>
+    <nx:invalidates>
+      <nx:DeploymentBundle rdf:about="urn:nexus:engineering:publish-bundle">
+        <nx:dependsOn rdf:resource="urn:nexus:engineering:backend"/>
+        <nx:dependsOn rdf:resource="urn:nexus:engineering:ui"/>
+        <nx:verifiedBy rdf:resource="urn:nexus:engineering:gate-publish"/>
+      </nx:DeploymentBundle>
+    </nx:invalidates>
+    <nx:verifiedBy>
+      <nx:Gate rdf:about="urn:nexus:engineering:gate-authorization">
+        <nx:id>authorization</nx:id>
+      </nx:Gate>
+    </nx:verifiedBy>
+    <nx:verifiedBy>
+      <nx:Gate rdf:about="urn:nexus:engineering:gate-behavior">
+        <nx:id>behavior</nx:id>
+      </nx:Gate>
+    </nx:verifiedBy>
+    <nx:verifiedBy>
+      <nx:Gate rdf:about="urn:nexus:engineering:gate-build">
+        <nx:id>build</nx:id>
+      </nx:Gate>
+    </nx:verifiedBy>
+  </nx:Artifact>
+  <owl:Class rdf:about="urn:nexus:engineering:Gate">
+    <rdfs:label>Gate</rdfs:label>
+  </owl:Class>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-shipping-and-launch"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-template-architecture"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-doubt-driven-development"/>
+  <owl:Class rdf:about="urn:nexus:engineering:DeploymentBundle">
+    <rdfs:label>DeploymentBundle</rdfs:label>
+    <rdfs:subClassOf rdf:resource="urn:nexus:engineering:Artifact"/>
+  </owl:Class>
+  <owl:Class rdf:about="urn:nexus:engineering:TestSuite">
+    <rdfs:label>TestSuite</rdfs:label>
+    <rdfs:subClassOf rdf:resource="urn:nexus:engineering:Artifact"/>
+  </owl:Class>
+  <owl:Class rdf:about="urn:nexus:engineering:APIContract">
+    <rdfs:label>APIContract</rdfs:label>
+    <rdfs:subClassOf rdf:resource="urn:nexus:engineering:Artifact"/>
+  </owl:Class>
+  <owl:Class rdf:about="urn:nexus:engineering:Skill">
+    <rdfs:label>Skill</rdfs:label>
+  </owl:Class>
+  <nx:Role rdf:about="urn:nexus:engineering:role-frontend-engineer"/>
+  <owl:Class rdf:about="urn:nexus:engineering:Artifact">
+    <rdfs:label>Artifact</rdfs:label>
+  </owl:Class>
+  <nx:Role rdf:about="urn:nexus:engineering:role-backend-engineer"/>
+  <owl:Class rdf:about="urn:nexus:engineering:Source">
+    <rdfs:label>Source</rdfs:label>
+  </owl:Class>
+  <nx:Gate rdf:about="urn:nexus:engineering:gate-sql-migration">
+    <nx:id>sql-migration</nx:id>
+  </nx:Gate>
+  <nx:TestSuite rdf:about="urn:nexus:engineering:tests">
+    <nx:dependsOn rdf:resource="urn:nexus:engineering:api-contract"/>
+    <nx:dependsOn rdf:resource="urn:nexus:engineering:data-schema"/>
+    <nx:verifiedBy rdf:resource="urn:nexus:engineering:gate-behavior"/>
+  </nx:TestSuite>
+  <nx:Skill rdf:about="urn:nexus:engineering:frontend-ui-engineering">
+    <nx:appliesInPhase rdf:resource="urn:nexus:engineering:phase-build"/>
+    <nx:derivedFrom rdf:resource="urn:nexus:engineering:addy"/>
+    <nx:id>frontend-ui-engineering</nx:id>
+    <nx:implementsCapability>
+      <nx:Capability rdf:about="urn:nexus:engineering:capability-frontend-ui-engineering"/>
+    </nx:implementsCapability>
+    <nx:ownedBy rdf:resource="urn:nexus:engineering:role-frontend-engineer"/>
+    <nx:sourceHash>29a3e53d57c0a128831a20730ae874a8c4fda40c001fcdc15f8e9ad4b5f72f1b</nx:sourceHash>
+    <nx:summary>Build accessible, responsive, polished UI with complete interaction states.</nx:summary>
+    <nx:workflowPath>references/upstream/skills/frontend-ui-engineering/workflow.md</nx:workflowPath>
+  </nx:Skill>
+  <nx:UIComponent rdf:about="urn:nexus:engineering:ui">
+    <nx:dependsOn rdf:resource="urn:nexus:engineering:api-contract"/>
+    <nx:invalidates rdf:resource="urn:nexus:engineering:publish-bundle"/>
+    <nx:verifiedBy>
+      <nx:Gate rdf:about="urn:nexus:engineering:gate-browser">
+        <nx:id>browser</nx:id>
+      </nx:Gate>
+    </nx:verifiedBy>
+    <nx:verifiedBy rdf:resource="urn:nexus:engineering:gate-build"/>
+  </nx:UIComponent>
+  <nx:Gate rdf:about="urn:nexus:engineering:gate-contract">
+    <nx:id>contract</nx:id>
+  </nx:Gate>
+  <owl:Class rdf:about="urn:nexus:engineering:Role">
+    <rdfs:label>Role</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="urn:nexus:engineering:ContextPacket">
+    <rdfs:label>ContextPacket</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="urn:nexus:engineering:Decision">
+    <rdfs:label>Decision</rdfs:label>
+  </owl:Class>
+  <nx:Source rdf:about="urn:nexus:engineering:personal">
+    <nx:sourcePath>Active user skill catalog: full-stack and template-*</nx:sourcePath>
+  </nx:Source>
+  <nx:Artifact rdf:about="urn:nexus:engineering:plan"/>
+  <nx:Role rdf:about="urn:nexus:engineering:role-security-engineer"/>
+  <nx:Gate rdf:about="urn:nexus:engineering:gate-publish">
+    <nx:id>publish</nx:id>
+  </nx:Gate>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-debugging-and-error-recovery"/>
+  <owl:Class rdf:about="urn:nexus:engineering:ProjectProfile">
+    <rdfs:label>ProjectProfile</rdfs:label>
+  </owl:Class>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-ci-cd-and-automation"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-source-driven-development"/>
+  <owl:Class rdf:about="urn:nexus:engineering:DataSchema">
+    <rdfs:label>DataSchema</rdfs:label>
+    <rdfs:subClassOf rdf:resource="urn:nexus:engineering:Artifact"/>
+  </owl:Class>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-browser-testing-with-devtools"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-template-verification"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-planning-and-task-breakdown"/>
+  <nx:Role rdf:about="urn:nexus:engineering:role-verification-engineer"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-security-and-hardening"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-performance-optimization"/>
+  <owl:Class rdf:about="urn:nexus:engineering:Intent">
+    <rdfs:label>Intent</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="urn:nexus:engineering:Phase">
+    <rdfs:label>Phase</rdfs:label>
+  </owl:Class>
+  <owl:Class rdf:about="urn:nexus:engineering:Capability">
+    <rdfs:label>Capability</rdfs:label>
+  </owl:Class>
+  <nx:Artifact rdf:about="urn:nexus:engineering:release-plan">
+    <nx:verifiedBy>
+      <nx:Gate rdf:about="urn:nexus:engineering:gate-release">
+        <nx:id>release</nx:id>
+      </nx:Gate>
+    </nx:verifiedBy>
+  </nx:Artifact>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-full-stack"/>
+  <owl:Class rdf:about="urn:nexus:engineering:RoutingRule">
+    <rdfs:label>RoutingRule</rdfs:label>
+  </owl:Class>
+  <nx:Artifact rdf:about="urn:nexus:engineering:architecture"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-deprecation-and-migration"/>
+  <owl:Class rdf:about="urn:nexus:engineering:Policy">
+    <rdfs:label>Policy</rdfs:label>
+  </owl:Class>
+  <nx:Artifact rdf:about="urn:nexus:engineering:requirements"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-constraint-driven-development"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-documentation-and-adrs"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-test-driven-development"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-template-frontend"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-template-backend"/>
+  <nx:Capability rdf:about="urn:nexus:engineering:capability-observability-and-instrumentation"/>
+  <nx:Role rdf:about="urn:nexus:engineering:role-release-engineer"/>
+</rdf:RDF>

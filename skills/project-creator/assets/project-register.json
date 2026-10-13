@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "idea": null,
+  "requested_action": "setup",
+  "brief_revision": null,
+  "chatgpt_project": {"status": "planned", "name": null, "observed_id": null, "observed_url": null, "evidence": null},
+  "github_repository": {"status": "planned", "owner": null, "name": null, "observed_url": null, "visibility": "private", "default_branch": null, "evidence": null},
+  "repository_initialization": {"status": "planned", "observed_commit": null, "evidence": null},
+  "operations": [],
+  "tasks": [],
+  "contracts": [],
+  "decisions": [],
+  "verification": [],
+  "blockers": [],
+  "next_ready_tasks": [],
+  "updated_at": null
+}

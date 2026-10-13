@@ -1,0 +1,3 @@
+# full-stack: English integration adapter
+
+Resolve the installed full-stack skill by exact YAML name in the active catalog. Read it and its skill-map and integration-contract references before coordinating a complete product. Load each specialized skill before its stage. Preserve user scope and existing design. Track acceptance by page/action and finish authorized work. Use one application contract across all layers. Avoid recursive coordinator handoffs. A review request remains a review. A blank scaffold remains blank. Existing non-Template projects retain their technologies. Never equate source generation with a working system.

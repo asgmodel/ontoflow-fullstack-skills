@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+**/node_modules/
+**/wwwroot/assets/
+**/Storage/*
+!**/Storage/README.md
+!**/Storage/PROMPT.md
+!**/Storage/promet.md
+.vs/
+.idea/
+.env
+.env.*
+!.env.example

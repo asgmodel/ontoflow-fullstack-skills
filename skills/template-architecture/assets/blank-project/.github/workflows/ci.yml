@@ -1,0 +1,43 @@
+name: Verify Template
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Build React
+        working-directory: src/App.Server/ClientApp
+        run: |
+          if (Test-Path package-lock.json) { npm ci } else { npm install }
+          npm run lint
+          npm run build
+
+      - name: Restore
+        run: dotnet restore Template.slnx
+
+      - name: Build
+        run: dotnet build Template.slnx -c Release --no-restore
+
+      - name: Test
+        run: dotnet test Template.slnx -c Release --no-build
+
+      - name: Publish
+        run: dotnet publish src/App.Server/App.Server.csproj -c Release -o artifacts/publish

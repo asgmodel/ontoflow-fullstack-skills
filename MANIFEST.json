@@ -1,24 +1,890 @@
 {
   "name": "OntoFlow FullStack Skills",
-  "archive": "OntoFlow-FullStack-Skills.zip",
-  "sha256": "cb1c982a01927c43ee786023d9825b5a9edc4de4160edb8e437fe44a1dfefcc5",
-  "file_count": 220,
-  "skills": [
-    "autotaska",
-    "chatgpt-task-creator",
-    "find-skills",
-    "full-stack",
-    "mahoer",
-    "nexus-full-stack",
-    "professional-interface-builder",
-    "project-creator",
-    "template-architecture",
-    "template-backend",
-    "template-frontend",
-    "template-verification"
-  ],
-  "validation": {
-    "ontology": "PASS",
-    "router_tests": "18/18"
-  }
+  "distribution": "repository-source-tree",
+  "source_file_count": 220,
+  "packages": 12,
+  "ontology_validation": "PASS",
+  "router_tests": "18/18",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "d099331365287179a3171a2ede057c18c7b466da6e2ab7877f998178853da739"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a0b53d1883b1ed85c8e52b56ab914860e0527408ee301f025accd1c376fe685a"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "f5b71c729971640fab7c9460222aea4caea546d7cbfc3a22df10a85688b868f9"
+    },
+    {
+      "path": "catalog.json",
+      "sha256": "a4f3bc2741d034c895f80395d1c337f0a242aab1c213aa99d2bc306d7c103227"
+    },
+    {
+      "path": "docs/SKILLS_AND_DEPENDENCIES.md",
+      "sha256": "1dcd81244a615d6a7aa8370cf6c95fdcfb95de577f5c3811eed08c87c4cfc38f"
+    },
+    {
+      "path": "skills/autotaska/SKILL.md",
+      "sha256": "cc8972c467de8dd809ff088c0be4a968af46c2561c0222bee3f3e3c83b57ff51"
+    },
+    {
+      "path": "skills/autotaska/agents/openai.yaml",
+      "sha256": "2ea3c8939d40ee0d4b453b165893deebe6ae288e27ba881c46cb77bf5e59da8a"
+    },
+    {
+      "path": "skills/autotaska/assets/icon.svg",
+      "sha256": "72343cc4b66256ae7de8474c7cad14e711ad84a94c473732a44f96a56124c42d"
+    },
+    {
+      "path": "skills/autotaska/assets/project-state.json",
+      "sha256": "c05c2275c683599a66fe60865acc27239988fa30aa1f615a2b08fb005947dd24"
+    },
+    {
+      "path": "skills/autotaska/assets/task-assignment.md",
+      "sha256": "ee3f4b40f2d4eb61c46ed6d0d5563eb695fb0e76d18f3f3ea6a6df815af4d3c7"
+    },
+    {
+      "path": "skills/autotaska/references/delegation.md",
+      "sha256": "6e1c45e345d4ac23623d073f55e81c0f0b987dac1c653ec435c2b447b11f9518"
+    },
+    {
+      "path": "skills/autotaska/references/delivery.md",
+      "sha256": "03aa0fe83e83595a0cd76f1b825bd67e93f9d0bb282593147675e5e7ae5f713c"
+    },
+    {
+      "path": "skills/autotaska/references/monitor.md",
+      "sha256": "08aadebbe7c7140769bbd9a9d7648f39423e1a5034d3469cd4859ee5303754e2"
+    },
+    {
+      "path": "skills/autotaska/references/project-workflow.md",
+      "sha256": "478d4dca1cc1ba6d25858f4fe4860d198adcdf840cbc15c0a3aa0930d3bbbd1a"
+    },
+    {
+      "path": "skills/autotaska/references/skill-routing.md",
+      "sha256": "6d7e9d4ce1c697fae46c75bf14d17d7fc094ce689aa3b1e263d33e9b80b3d7a0"
+    },
+    {
+      "path": "skills/autotaska/references/team-names.md",
+      "sha256": "5d1b0c5251e8bae60c00af4a0540ff3ba2a08aef08ea6d0dc5c43d33bc98bd6a"
+    },
+    {
+      "path": "skills/chatgpt-task-creator/SKILL.md",
+      "sha256": "c88732511587e0cf61d1dafca9193d9b6337a5c15800e33c16fcdec9d98350d2"
+    },
+    {
+      "path": "skills/chatgpt-task-creator/agents/openai.yaml",
+      "sha256": "68682328b2e0090d163e8d4ffa358de6d61836ee65df930b29b34a4dc3955e6f"
+    },
+    {
+      "path": "skills/chatgpt-task-creator/assets/icon.svg",
+      "sha256": "51a6923974188748638a424aa59b42b6afad2d910f910a1d43bb13ee10f3ce26"
+    },
+    {
+      "path": "skills/chatgpt-task-creator/assets/project-brief.md",
+      "sha256": "457841c3a69c96957625d9ba6e640c1c39aa45fcd9fffb8d42fb6aa7962a5060"
+    },
+    {
+      "path": "skills/chatgpt-task-creator/assets/project-register.json",
+      "sha256": "45fa8a9e159fd3d9b26622fd07356cff6beaa5b5cdfb915834d57269e6e72d0c"
+    },
+    {
+      "path": "skills/chatgpt-task-creator/assets/task-brief.md",
+      "sha256": "2335c7160d2d583c84876f72d06712c1382f60e7a76a79f47badbbeecbef42ff"
+    },
+    {
+      "path": "skills/chatgpt-task-creator/references/conversation-workflow.md",
+      "sha256": "551ae50e70ad5b00fd8bb1a3fb4650b6b4ae303694fd9c99591962794ba54bc9"
+    },
+    {
+      "path": "skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "skills/find-skills/agents/openai.yaml",
+      "sha256": "631f8d4a70888314f07148e60d7d80fedf3f8a699f15ffcd7712fedc45215780"
+    },
+    {
+      "path": "skills/find-skills/assets/icon.svg",
+      "sha256": "0cdb7990dea3ad89ead04743eeac2dc58c119fb0b8b4a01499a21237f155bc1a"
+    },
+    {
+      "path": "skills/full-stack/SKILL.md",
+      "sha256": "bde270cf1b4ab80de9c1c3922df11c898597796345a626a769d47704053040d4"
+    },
+    {
+      "path": "skills/full-stack/agents/openai.yaml",
+      "sha256": "c73e39d322356f18128b2af28cda35b4df408431f085e8e32008b83eb3e7578e"
+    },
+    {
+      "path": "skills/full-stack/assets/icon.svg",
+      "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d"
+    },
+    {
+      "path": "skills/full-stack/references/integration-contract.md",
+      "sha256": "2abce06a83ca3c0e80b42185b02aa916b41d753369f422c6140935f1696e5fa6"
+    },
+    {
+      "path": "skills/full-stack/references/skill-map.md",
+      "sha256": "c89c67698aca9a0fecdb43bab5502a7a446fa9f76e42797d7c2add2995f62ad1"
+    },
+    {
+      "path": "skills/mahoer/MOHAWER_UI_V2_MERGE.md",
+      "sha256": "b62be1b2c337b365aea8c915a01dc5e9e728196051ae1705fba4b1a48ca418a7"
+    },
+    {
+      "path": "skills/mahoer/SKILL.md",
+      "sha256": "4e078161c899ad7f2042f7ad45aa7953c4d9d9f8489516c2d692848bd008fac9"
+    },
+    {
+      "path": "skills/mahoer/agents/openai.yaml",
+      "sha256": "ae614f80f38b207c6aad41228e8f3d0ccfd57907a027a95ec2280ec814c06b6d"
+    },
+    {
+      "path": "skills/mahoer/assets/icon.svg",
+      "sha256": "d80a4c3e0fd2efa7af88433a53b25a92c78a644175c6669dd78fee50fb53acf6"
+    },
+    {
+      "path": "skills/nexus-full-stack/SKILL.md",
+      "sha256": "86f1a3478c0edde34d27a789d8568d3c4ebc73c081e4c79366e5e416c8a8ce1a"
+    },
+    {
+      "path": "skills/nexus-full-stack/agents/openai.yaml",
+      "sha256": "252b816e79a4a25440bd2a69008a612c2f2fca7fb27028ac344975df971685fc"
+    },
+    {
+      "path": "skills/nexus-full-stack/assets/example-task.json",
+      "sha256": "bface7d44fcdf69b430467d7922da01bb188390a93803829d033048fc82d7122"
+    },
+    {
+      "path": "skills/nexus-full-stack/assets/graph.json",
+      "sha256": "2fb94ce6eb84198f3c27ba771d6a50ff2dbbf0647c1b254aa18815aa877d9f17"
+    },
+    {
+      "path": "skills/nexus-full-stack/assets/icon.svg",
+      "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d"
+    },
+    {
+      "path": "skills/nexus-full-stack/assets/nexus.owl",
+      "sha256": "ccacc6500a8b9af993931dc37f4949b6e7c6a4297344f61af490710064dbd0a6"
+    },
+    {
+      "path": "skills/nexus-full-stack/assets/nexus.ttl",
+      "sha256": "ae0cfb6307e7e28659e422c3b45a0a5bdce31d894ade0c4962dfdafb3b2eeb11"
+    },
+    {
+      "path": "skills/nexus-full-stack/assets/queries.rq",
+      "sha256": "61817776b5fa4d3e3c09f642b18fa29aa4644d740528489d84c7e9ef7e0974e0"
+    },
+    {
+      "path": "skills/nexus-full-stack/assets/shapes.ttl",
+      "sha256": "0a5b6f756ed68c6447f6fecc56b04cbd6559d4c1416ae350f65990902ae22757"
+    },
+    {
+      "path": "skills/nexus-full-stack/assets/task.schema.json",
+      "sha256": "1a4a19970b8ea867faddbfbfcb537955894d6d74d32468ab8568ece026ecd2f4"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/adapters/full-stack.md",
+      "sha256": "13e7c71fd7527e24d9ac1803cf92cba2e8fa9fe601338451ad36ab44d104a0d7"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/adapters/template-architecture.md",
+      "sha256": "b454a95f822ce1fb2f74e957a00337a47e8a1c8f3f1b456c4f844b10fa04c961"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/adapters/template-backend.md",
+      "sha256": "fd9f59c1ab9876f4abfd824ebb687cca468440369d4686d33a8ca76995596ab5"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/adapters/template-frontend.md",
+      "sha256": "451aafea107437491bdd9cabfd1f69366f5a79e643256a84d39181926207ae8f"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/adapters/template-verification.md",
+      "sha256": "0ed42af7a61a2cd7891e74b38a90229dfc45a645a8eff5aabce7a1626306847c"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/execution-contract.md",
+      "sha256": "c9b10e1033733731df1c3c05436adf316ddd3239ce08779af919a125ca259c44"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/ontology-semantics.md",
+      "sha256": "464b61e79437c82283d92880c4910060271c9e396794a117499b02c5b80ee105"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/sources.json",
+      "sha256": "198c5a08dca15ee95c073b7a05a2bd8df52cb51d6f49d6bc5664619fe2a1057f"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/state-and-budget.md",
+      "sha256": "e6a18445ab6f56065ae199fdbc1bece7600584b8270bc15026cde3927a6406a5"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/LICENSE",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/docs/agents.md",
+      "sha256": "fb5cc80f87845a27c9223f99dd418ffdbcd31a272f23d3bf09d66ba1402b61e3"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/personas/code-reviewer.md",
+      "sha256": "2d02acb9db1c37521d676587d2e0afb713c8983de957a78efdfa82d27e5fc3da"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/personas/security-auditor.md",
+      "sha256": "66a3f68f1c691b600ddb44e88afb138e239d0572df37be84e1f9a427c887dd0a"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/personas/test-engineer.md",
+      "sha256": "c4acde91d6307d88515387344a129a2d0679134e587596c3517d73faffcd5aa6"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/personas/web-performance-auditor.md",
+      "sha256": "ba83e342913bdbbca775d9dbb3bc793af67620c12b614dfd0f4dd4d27b58d34b"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/references/accessibility-checklist.md",
+      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/references/definition-of-done.md",
+      "sha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/references/observability-checklist.md",
+      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/references/orchestration-patterns.md",
+      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/references/performance-checklist.md",
+      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/references/security-checklist.md",
+      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/references/testing-patterns.md",
+      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/api-and-interface-design/workflow.md",
+      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/browser-testing-with-devtools/workflow.md",
+      "sha256": "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/ci-cd-and-automation/workflow.md",
+      "sha256": "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/code-review-and-quality/workflow.md",
+      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/code-simplification/workflow.md",
+      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/constraint-driven-development/references/floor-guard.md",
+      "sha256": "59715dc6c3c6c36ec9177f9ced65c379e80a4539b36115456666bfabc43a6a9c"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/constraint-driven-development/workflow.md",
+      "sha256": "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/context-engineering/workflow.md",
+      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/debugging-and-error-recovery/workflow.md",
+      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/deprecation-and-migration/workflow.md",
+      "sha256": "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/documentation-and-adrs/workflow.md",
+      "sha256": "b60d503925bbaacee7fd63935db70b9ced5b2514ff5a56a672130e01b9690bc5"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/doubt-driven-development/workflow.md",
+      "sha256": "6fa1fcd8420c28daf7e53c5b08b0f20b907911efd2a6d9bce0b9740da20a4008"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/frontend-ui-engineering/workflow.md",
+      "sha256": "29a3e53d57c0a128831a20730ae874a8c4fda40c001fcdc15f8e9ad4b5f72f1b"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/git-workflow-and-versioning/workflow.md",
+      "sha256": "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/idea-refine/examples.md",
+      "sha256": "563204bfbf2f80a444151695205af4cb759e722b3d1e5460e08f278a69c89ba1"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/idea-refine/frameworks.md",
+      "sha256": "161ebc18fdf2d996bc62a87a2d747cf1bf53548354f8925de25c732c27f00309"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/idea-refine/refinement-criteria.md",
+      "sha256": "1ca2973a4d01b5cb37ab7ddb2eff77fa4e792634a33d0ce44961c068fc88d51a"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/idea-refine/scripts/idea-refine.sh",
+      "sha256": "f02a52408a4218047c032d221483abfbb48d11f090bb4915965c7419bf2e0e47"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/idea-refine/workflow.md",
+      "sha256": "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/incremental-implementation/workflow.md",
+      "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/interview-me/workflow.md",
+      "sha256": "ace4b675999bb504593d572e0f73f3d7e803ad6fddf318445598c82c11939db2"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/observability-and-instrumentation/workflow.md",
+      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/performance-optimization/references/optimization-patterns.md",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/performance-optimization/workflow.md",
+      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/planning-and-task-breakdown/workflow.md",
+      "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/security-and-hardening/references/hardening-patterns.md",
+      "sha256": "2e1b93a502b4cdb0258404441f3aab029b0cce4003fbbcc61af9a2de18bab9ab"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/security-and-hardening/workflow.md",
+      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/shipping-and-launch/workflow.md",
+      "sha256": "726f3e546369db289160b8d42195590f00b6432887e17bf19070dcc9a347fe39"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/source-driven-development/workflow.md",
+      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/spec-driven-development/workflow.md",
+      "sha256": "44adc475a58a8193d2d41abcbbcdca5522d252114e4faf40ca41b90e2922d2c3"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/test-driven-development/workflow.md",
+      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca"
+    },
+    {
+      "path": "skills/nexus-full-stack/references/upstream/skills/using-agent-skills/workflow.md",
+      "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3"
+    },
+    {
+      "path": "skills/nexus-full-stack/scripts/benchmark.py",
+      "sha256": "902fc0581377317130823d4f452434df08c1596b89e3742760bcff3fed6e3055"
+    },
+    {
+      "path": "skills/nexus-full-stack/scripts/compile_graph.py",
+      "sha256": "f2c755513b2f5f37213beeafd905c15d0729ec0bfb0e819ad1826f431984e33b"
+    },
+    {
+      "path": "skills/nexus-full-stack/scripts/owl_reader.py",
+      "sha256": "4777d42285b98cbce3c18fcebd82003e36707e12584a56765c30dcac63556e1d"
+    },
+    {
+      "path": "skills/nexus-full-stack/scripts/requirements-maintenance.txt",
+      "sha256": "6133fba5d16256a4bed2a543bcb6fb08caf2e0be857b9a67ba33eed7e2ed3b16"
+    },
+    {
+      "path": "skills/nexus-full-stack/scripts/route.py",
+      "sha256": "6c03bc5236b05ff295e76a86806fae6666963fd48374f4532a14be47181db505"
+    },
+    {
+      "path": "skills/nexus-full-stack/scripts/test_router.py",
+      "sha256": "0ef97c910e5ce3da2e101bdf85ade2c1fe5b8def46eab5717b39506e7f0a929e"
+    },
+    {
+      "path": "skills/nexus-full-stack/scripts/validate.py",
+      "sha256": "fd70ba2800956e6701e6acb9b4f6e3c93bbc70579300ab2d67ef8e2d472abefd"
+    },
+    {
+      "path": "skills/professional-interface-builder/SKILL.md",
+      "sha256": "e5a8f4c5294bd8b845b4f7fbd4b77c4cd1ecb6c584ca0a622acb3eca5ed5b1b5"
+    },
+    {
+      "path": "skills/professional-interface-builder/agents/openai.yaml",
+      "sha256": "065987fec65058a819b371b711178002d423d8c6a4ca770c4e6c4a5c07d2618c"
+    },
+    {
+      "path": "skills/professional-interface-builder/references/design-system.md",
+      "sha256": "f33997d92008fc0ad73c32a41e1b67a8bb70d0365dee6fc87a162aac40ae01f1"
+    },
+    {
+      "path": "skills/professional-interface-builder/references/product-integration.md",
+      "sha256": "9b136e31e37498f009a05a665562f8e8fbf89daaf308bbb7a0f94491a1c4a730"
+    },
+    {
+      "path": "skills/professional-interface-builder/references/qa-and-evidence.md",
+      "sha256": "90f564c9a2c24993c4a87bf485e4d6be33e93cf5c38b62cffcc36bbdc67b5b20"
+    },
+    {
+      "path": "skills/professional-interface-builder/scripts/project_audit.py",
+      "sha256": "e5c0fe0d14b7e0027b42b01312241ebbc6f62c682f79a50e38f3833867c9fea1"
+    },
+    {
+      "path": "skills/project-creator/SKILL.md",
+      "sha256": "45f9cfd66d43e4e18c5f20a25e0f58cde3e016f0f1d3395c45d225dcde91bba9"
+    },
+    {
+      "path": "skills/project-creator/agents/openai.yaml",
+      "sha256": "103ea54f44d0e81aec3eafa4153835e3f7a90a7701020e1036276e68e9186fcb"
+    },
+    {
+      "path": "skills/project-creator/assets/icon.svg",
+      "sha256": "e9301497fa98ef56aaca7ede0857b9a18dc06c34040f0679c609a6bf49b1d38b"
+    },
+    {
+      "path": "skills/project-creator/assets/project-brief.md",
+      "sha256": "fe73f2d3cb75a380eef5ce6b26712f00a486eb248b760d6b4b2d305a415a2f09"
+    },
+    {
+      "path": "skills/project-creator/assets/project-register.json",
+      "sha256": "054ad1407ff780279afcfa769f5287c9a0625ad64be832977d436dde5c232737"
+    },
+    {
+      "path": "skills/project-creator/assets/task-assignment.md",
+      "sha256": "0866b6d35475d756677907a5322bd6520ee9e40b447155ce8eee6d443988ac2b"
+    },
+    {
+      "path": "skills/project-creator/references/creation-workflow.md",
+      "sha256": "dd8ccbcee47a4afa7500286c762030e748a94ebee40014ede9b6e48880a4bb49"
+    },
+    {
+      "path": "skills/project-creator/references/repository-workflow.md",
+      "sha256": "d331322e3d164861d40508eb699ba79e51b0fe5e9b7e9d616148cd1ff92ed77c"
+    },
+    {
+      "path": "skills/project-creator/references/task-coordination.md",
+      "sha256": "1846cb997623d3897752b65d1717be155c5574ef136ecd7713f59ad94044b024"
+    },
+    {
+      "path": "skills/project-creator/scripts/validate_register.py",
+      "sha256": "afbc0fc2a456eafdd36d2c4c093cd1bafa49b8d218277014595bc6ff00812442"
+    },
+    {
+      "path": "skills/template-architecture/SKILL.md",
+      "sha256": "63ac3887044c24239841fb1eaf6fc6cc1babbe74c39ec79919aec246f25282f5"
+    },
+    {
+      "path": "skills/template-architecture/agents/openai.yaml",
+      "sha256": "31e60d688af9dd752cf20e58be3cc73ae3df38469d48b4aa33bacdce92d06330"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/.env.example",
+      "sha256": "adb7dc8ee5d657a986732907edaa76550e0df3fe1a369499d65e2b439f4975fb"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/.gitattributes",
+      "sha256": "45a7cbb7d9942ba7ffce0b20bc8dbe2d1196533bc6e4bd245871d77fb1eedfdc"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/.github/workflows/ci.yml",
+      "sha256": "d1ae70de0bb79742321648b79822657c95bec93850e1e5c7d5b0b06be123bcc2"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/.gitignore",
+      "sha256": "1384345ea40d51bad95dcfe96a6987c5a99cba68a4bf04369e8c57ec1f2504ed"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/AGENTS.md",
+      "sha256": "3c74e3fe5795017e7e1f27e9126cebdf21c769903985d307fd35822fca5a33b5"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/Template.slnx",
+      "sha256": "c44b4a4cf9e6c6b9902aec5920875140763350d3bcd68d508055be4ca444c579"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/docs/architecture/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/docs/deployment/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/docs/development/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/docs/security/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/scripts/database-add-migration.ps1",
+      "sha256": "c09be6ceed61743e3def31196778dacffbb86d113458adcf4acdf92ec898536d"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/scripts/database-update.ps1",
+      "sha256": "1429f4faf07033512cc598582c3af812deefbab84bc6c87d07ed3a73da7f3328"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/App.Server.csproj",
+      "sha256": "9594c212e6606f63067fbbd27ee4f77edb9e846b43eba76cc6605f71d9e71d4e"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/AI/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/DTOs/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/Interfaces/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/Mapping/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/Services/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/UseCases/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/Validators/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/BackgroundJobs/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/index.html",
+      "sha256": "1c2c591ff19be30c9e04b84b503bdc79e164d294717ee84f0796461c8b2eb5d9"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/package.json",
+      "sha256": "0237fc9cea1d1ab1003cdc6b5c1e5cd2e9c9f30c526719ec6268aee385f1097f"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/public/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/api/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/app/App.tsx",
+      "sha256": "0390539acb56fb16f318be922c2a673616d35eb3e8303ebb30002d761007eb82"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/app/styles.css",
+      "sha256": "e9971c0359c9dc5606e4813a899bd8bb335b2c43522660f917652c517bda4c0f"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/auth/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/components/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/features/ai/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/hooks/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/layouts/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/main.tsx",
+      "sha256": "1eefd2379195bc6288ccefb83628bb20dfecbfd1bcf7de6e5f61287e918aa37f"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/pages/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/routes/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/services/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/stores/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/types/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/utils/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/tsconfig.json",
+      "sha256": "b53252836a0f9c7c705d1a5f5c3322cbb349e6bd478c677a2b88df98b4733179"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/vite.config.ts",
+      "sha256": "428f301eb4b1fc7e3c0fed27f8d049fc0eaecd670f35abec14e479461042c8a2"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/App.razor",
+      "sha256": "c2e4d1b44a651f998b959e8ae500c52fb3f5c26ecc545dce8aab9d19fd4ebc2c"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/Layout/MainLayout.razor",
+      "sha256": "10a740c4dcf86ba784888e032994db9c3fb7c25fda6d57d2594514a1b6148db1"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/Pages/BlazorHome.razor",
+      "sha256": "8f6bd2bfc5a4819840945ca32e54ee0a46a52789e956b89818c58842d997f276"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/Routes.razor",
+      "sha256": "fdb1aeaadc954fed7ab88908a22a2206cf7e6cbdcc158433d010dddfcca2bf9e"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/Shared/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/_Imports.razor",
+      "sha256": "4d96e10abd29fea668b4b6258e02e9eb91e7deb8b136696c2f8625b0d09b4484"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Controllers/SystemController.cs",
+      "sha256": "91786886d732b81529db32bfe92402e295ac2194b7eba526fce74454162253f0"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Domain/Common/Entity.cs",
+      "sha256": "cf552023e56210289956fe38d99b6184b1a0eaa86a9cb559f3074d71d9e49f60"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Domain/Entities/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Domain/Enums/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Domain/Events/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Domain/Exceptions/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Extensions/ServiceCollectionExtensions.cs",
+      "sha256": "a754fb3dec9e03f12551349647a6c719e22057ac8ce1a71a4d7018ce0e00821f"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Extensions/WebApplicationExtensions.cs",
+      "sha256": "3059ba4ba65ab0308a7872d98c49214ed3780e05a59b615f2d8035c64ae34ed7"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/HealthChecks/SqlServerHealthCheck.cs",
+      "sha256": "8be03cdffd760f60f5563b4e568aa52b421a22cdb5206140d896036960fc6181"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/AI/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Authentication/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Authorization/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Data/AppDbContext.cs",
+      "sha256": "09a609b150c2dd806304b3da9d41fbda835c7297e0911fd1778c7baebcd65522"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Data/AppDbContextFactory.cs",
+      "sha256": "01b4e45eed71a112fba301c23f9d8682de7c782a59622d79a5e815e899bff166"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Data/Configurations/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Data/DatabaseInitializer.cs",
+      "sha256": "f98fbdf30a7ed3cd3f71c84ec4270f8a46c942f6be5d62c51585b8079fa04eca"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Data/Migrations/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/ExternalServices/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Notifications/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Persistence/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Middleware/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Program.cs",
+      "sha256": "c3993ce27c61fc414269d4208038ab5f30b0c611eec7c9393c14eefceb42b33f"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Properties/launchSettings.json",
+      "sha256": "888f2564426ec7a4fd06f5daa36b4d0ace14969b4455084d3b8150b18b6850db"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Security/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/appsettings.Development.json",
+      "sha256": "aa84de725af0353b9cdad346873987b7ad66ec8aa09134ad8a384cb5a0501c73"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/appsettings.Production.json",
+      "sha256": "d141386dc61d25a09fcc6e5f5d41ba25b4bebe500457796c1d6f3c52fbd57ff5"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/appsettings.json",
+      "sha256": "8dd0e2c22ed7df4d24e0af5330b6a9efc9ffa463a96c833a417cad57064dee58"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/src/App.Server/wwwroot/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/tests/App.Server.IntegrationTests/App.Server.IntegrationTests.csproj",
+      "sha256": "0ba82b2da4b44df00299b5f4075a9fa738f265c003f566595ba99b3599db2b29"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/tests/App.Server.IntegrationTests/HostTests.cs",
+      "sha256": "b534a8e5bf33324a1db2444f3612222bacc01df09e1afb81fe3fc763e9bc72bf"
+    },
+    {
+      "path": "skills/template-architecture/assets/blank-project/tests/App.Server.UnitTests/App.Server.UnitTests.csproj",
+      "sha256": "9519e17eae3bf3bb739762506f9cbf8efadab7ae7310f020a682d9fd3979abcd"
+    },
+    {
+      "path": "skills/template-architecture/assets/icon.svg",
+      "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d"
+    },
+    {
+      "path": "skills/template-architecture/references/architecture.md",
+      "sha256": "1b429a8afc6d4cba455ef6adb662929d76ec0c0bfb1c1fcf386cd50bf8dc98f4"
+    },
+    {
+      "path": "skills/template-architecture/references/delivery.md",
+      "sha256": "78758ec4820f0029e928d33d5b24f17f92b339f89b0c8e78a98909586eaf62d0"
+    },
+    {
+      "path": "skills/template-architecture/references/source-audit.md",
+      "sha256": "54c1977386b130f7553abec873173dd1a4f79cf312d645eae066afb4198e7e3f"
+    },
+    {
+      "path": "skills/template-architecture/references/source-manifest.json",
+      "sha256": "c9db8d00cacf63980bf16616f20b1fdaf75e85eead4c882452317d848dc64fc2"
+    },
+    {
+      "path": "skills/template-architecture/scripts/scaffold.py",
+      "sha256": "ab85a07f35b9c4428b02f4857fa003935bb107223b9d3b3f14cb6a2e06abb4e2"
+    },
+    {
+      "path": "skills/template-backend/SKILL.md",
+      "sha256": "91466d080de10f9ca252bc25e295e259e22264ca5b6d3d948ea23914b9f448c0"
+    },
+    {
+      "path": "skills/template-backend/agents/openai.yaml",
+      "sha256": "d2aa40cc1f6c82a43849cfa9ce151f293f7f058dd87b924763e938b7c8096873"
+    },
+    {
+      "path": "skills/template-backend/assets/icon.svg",
+      "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d"
+    },
+    {
+      "path": "skills/template-backend/references/backend-contracts.md",
+      "sha256": "a43aa28d8595ea354e42aac93a04237920bb07f8c47cd7ee800d0213b9a09220"
+    },
+    {
+      "path": "skills/template-frontend/SKILL.md",
+      "sha256": "8c20516abe091ecfe2651ab91c98c426aaf5735154b15c466bd467cb45916b6f"
+    },
+    {
+      "path": "skills/template-frontend/agents/openai.yaml",
+      "sha256": "6ca64c34373125ae5ff348cf1f514d8de64f8af91648e917920a41b08ed15b06"
+    },
+    {
+      "path": "skills/template-frontend/assets/icon.svg",
+      "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d"
+    },
+    {
+      "path": "skills/template-frontend/references/frontend-contracts.md",
+      "sha256": "fcc32afac00364ae490442c8f4cda7cd317a77b86b0427e69e34d73b3910e01f"
+    },
+    {
+      "path": "skills/template-verification/SKILL.md",
+      "sha256": "2e8b10528ed596d14f1d3e98d14f27f2747cf71212d344c4c48d77528986cc94"
+    },
+    {
+      "path": "skills/template-verification/agents/openai.yaml",
+      "sha256": "b52727854bed10de39c62c94fdfe74c4451ccbc93049cba98ac89fd3ddacd030"
+    },
+    {
+      "path": "skills/template-verification/assets/icon.svg",
+      "sha256": "e9301497fa98ef56aaca7ede0857b9a18dc06c34040f0679c609a6bf49b1d38b"
+    },
+    {
+      "path": "skills/template-verification/references/verification.md",
+      "sha256": "b28925fdbbc469a6ed2ae9beb85170d013092a3aa9cf2d9befc39ccf4788124d"
+    }
+  ]
 }

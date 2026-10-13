@@ -1,0 +1,30 @@
+# Run each query separately in an RDF/SPARQL tool. This file is a query collection.
+
+# 1. Resolve the contract prerequisites for a backend workflow.
+PREFIX nx: <urn:nexus:engineering:>
+SELECT ?skill ?summary ?path WHERE {
+ nx:template-backend nx:requiresSkill* ?skill .
+ ?skill nx:summary ?summary ; nx:workflowPath ?path .
+}
+
+# 2. Find all artifacts made stale by an API contract change.
+PREFIX nx: <urn:nexus:engineering:>
+SELECT DISTINCT ?dependent WHERE { nx:api-contract nx:invalidates+ ?dependent }
+
+# 3. Discover workflows that consume an API contract.
+PREFIX nx: <urn:nexus:engineering:>
+SELECT ?skill ?phase WHERE {
+ ?skill nx:consumesArtifact nx:api-contract ; nx:appliesInPhase ?phase .
+}
+
+# 4. Show the source lineage and responsible role for each skill.
+PREFIX nx: <urn:nexus:engineering:>
+SELECT ?skill ?source ?role WHERE {
+ ?skill a nx:Skill ; nx:derivedFrom ?source ; nx:ownedBy ?role .
+}
+
+# 5. Find verification obligations for published artifacts.
+PREFIX nx: <urn:nexus:engineering:>
+SELECT ?artifact ?gate WHERE {
+ ?artifact nx:verifiedBy ?gate .
+}

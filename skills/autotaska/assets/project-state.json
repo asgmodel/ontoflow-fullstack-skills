@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "project": {
+    "name": null,
+    "requested_action": null,
+    "platforms": [],
+    "stack": [],
+    "root": null,
+    "repository": null,
+    "source_revision": null,
+    "observed_chatgpt_project_id": null,
+    "observed_chatgpt_project_url": null,
+    "grouping_verified": false
+  },
+  "capabilities": [],
+  "skill_routes": [],
+  "decisions": [],
+  "contracts": [],
+  "file_owners": [],
+  "departments": [],
+  "tasks": [],
+  "dispatches": [],
+  "acceptance_paths": [],
+  "verification": [],
+  "invalidated_checks": [],
+  "blockers": [],
+  "next_ready_tasks": [],
+  "updated_at": null
+}

@@ -1,0 +1,15 @@
+interface:
+  display_name: منشئ المشروع
+  short_description: يحول الفكرة إلى مشروع ومستودع ومحادثات مهام مترابطة
+  default_prompt: استخدم $project-creator لاستقبال فكرتي، وإنشاء مشروع داخل ChatGPT
+    ومستودع GitHub خاص لها، ثم استخدام منشئ المهام لإنشاء محادثة مستقلة لكل مهمة وتوزيع
+    العمل وربط النتائج.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

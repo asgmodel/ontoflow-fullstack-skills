@@ -1,0 +1,14 @@
+interface:
+  display_name: Full Stack
+  short_description: Coordinate architecture, backend, frontend and verification
+  default_prompt: Use $full-stack to deliver this project through the Template architecture,
+    backend, frontend and verification skills.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

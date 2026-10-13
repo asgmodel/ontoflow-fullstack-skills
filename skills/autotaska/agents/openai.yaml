@@ -1,0 +1,14 @@
+interface:
+  display_name: AutoTaska
+  short_description: Lead full-stack projects with delegated chats and monitoring
+  default_prompt: 'استخدم $autotaska كمهندس فول ستاك خبير لمشروعي: حلل المتطلبات باستخدام
+    NEXUS، وأنشئ محادثة لكل قسم، ووزع المهام وراقبها ونفذ التكامل والتحقق حتى التسليم.'
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "intent",
+    "profile",
+    "phase",
+    "layers",
+    "tags"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "intent": {
+      "enum": [
+        "full-product",
+        "blank-scaffold",
+        "feature",
+        "ui-fix",
+        "backend-fix",
+        "bug-fix",
+        "review-only",
+        "migration",
+        "release",
+        "performance",
+        "security-audit"
+      ]
+    },
+    "profile": {
+      "enum": [
+        "template-single-host",
+        "existing-stack"
+      ]
+    },
+    "phase": {
+      "enum": [
+        "define",
+        "plan",
+        "build",
+        "verify",
+        "review",
+        "ship"
+      ]
+    },
+    "layers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "frontend",
+          "backend",
+          "data",
+          "infrastructure"
+        ]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "auth",
+          "data",
+          "external",
+          "contract",
+          "schema",
+          "performance",
+          "failure",
+          "framework",
+          "uncertain"
+        ]
+      }
+    },
+    "changed_artifacts": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "requirements",
+          "plan",
+          "architecture",
+          "api-contract",
+          "data-schema",
+          "backend",
+          "ui",
+          "tests",
+          "publish-bundle",
+          "release-plan",
+          "context-packet",
+          "decision"
+        ]
+      }
+    },
+    "budget_tokens": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "project_reserve_tokens": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

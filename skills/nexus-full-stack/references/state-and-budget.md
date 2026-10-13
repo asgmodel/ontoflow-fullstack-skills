@@ -1,0 +1,13 @@
+# State, freshness and token accounting
+
+Keep task state in the project's existing state mechanism; otherwise use a small `.nexus/state.json` only when needed. Do not create a second documentation framework for small work.
+
+Minimum fields: `task_id`, `intent`, `phase`, `profile`, `acceptance`, `decisions`, `contracts`, `changed_files`, `loaded_context`, `evidence`, `blockers`, `next_task`, `authorization_record`. Each loaded item records canonical path, SHA-256 and dependency hashes. Each evidence item records gate, exact command/tool action, exit code or observed result, tested revision/content fingerprint, environment and status. Never store credentials, tokens or sensitive request payloads.
+
+Reuse a source snapshot only if its content and dependencies still match. A source/contract/schema change invalidates dependent consumer/test/build evidence through graph edges. Revalidate original personal-skill hashes at runtime: bundled English adapters are integration summaries, not pinned copies of the user's evolving skills. Missing state is unknown, never evidence of completion or authorization.
+
+Keep core instructions and relevant constraints once, active workflows next, exact live contracts/source and errors closest to execution. Preserve current acceptance and security rules during compaction. Old failures become a short conclusion with a pointer to reproducible evidence. A hash ledger helps avoid repeated retrieval; it cannot erase old context or provide provider-side prompt caching by itself.
+
+Budget is a soft target. `route.py` counts entry instructions, selected workflow files and routing packet, plus an explicit project-context reserve. Linked references, original personal skills, conversation, tools and generated output are additional costs. Missing tokenizer uses a labelled heuristic; no exact measurement is claimed. `benchmark.py` measures static instruction payload only against loading all catalog workflows with the same tokenizer. Report input/output/cached tokens, tool costs, retries, cost, elapsed time and task pass rate separately from actual runtime usage. Do not describe static payload savings as end-to-end savings.
+
+Evaluate paired real tasks on matching models, stack, repository revision and acceptance criteria. Compare a real current workflow baseline and an all-skills baseline separately. Prefer multiple runs/seeds; report medians and variability. Reduced prompt tokens count as useful only if completion, security and verification quality stay at least equal. No savings target authorizes weaker testing, hidden overflow or discarded mandatory knowledge.
