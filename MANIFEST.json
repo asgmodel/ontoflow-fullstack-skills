@@ -1,0 +1,14 @@
+{
+  "name": "NEXUS-Full-Stack-Skills",
+  "archive": "NEXUS-Full-Stack-Skills.zip",
+  "archive_sha256": "847b49d091c7a59feeba253ad5e2c306fb8f6b894a3f6793cd1a84a43d1ce441",
+  "archive_files": 220,
+  "personal_skills": 12,
+  "ontology": {
+    "path": "skills/nexus-full-stack/assets/nexus.owl",
+    "mapped_skills": 30,
+    "task_intents": 11,
+    "rdf_statements": 924
+  },
+  "distribution": "Complete source archive; extract before running or installing."
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {
+      "name": "professional-interface-builder",
+      "entry": "skills/professional-interface-builder/SKILL.md",
+      "description": "Design, rebuild, and production-integrate polished product interfaces across web projects. Use for complete UI work, frontend migrations, or API-connected portals—especially Mohawer, Mihani, Mohassel, or similar systems requiring responsive mobile/desktop layouts, light/dark themes, Arabic/English RTL/LTR, separated roles and portals, real backend data, and evidence-based validation.",
+      "status": "available"
+    },
+    {
+      "name": "mahoer",
+      "entry": "skills/mahoer/SKILL.md",
+      "description": "aggg",
+      "status": "experimental"
+    },
+    {
+      "name": "template-architecture",
+      "entry": "skills/template-architecture/SKILL.md",
+      "description": "Create, scaffold, rename or extend projects using the uploaded Template architecture. Use for Template templates, blank single-host ASP.NET Core projects, modular monolith structure, or coordinating backend, React, Blazor and verification work.",
+      "status": "available"
+    },
+    {
+      "name": "template-backend",
+      "entry": "skills/template-backend/SKILL.md",
+      "description": "Implement or review Template ASP.NET Core APIs, Domain and Application layers, EF Core SQL Server migrations, authentication, authorization, AI integrations, notifications and background jobs. Use for backend features in Template-derived projects.",
+      "status": "available"
+    },
+    {
+      "name": "template-frontend",
+      "entry": "skills/template-frontend/SKILL.md",
+      "description": "Build or integrate React TypeScript Vite and Blazor interfaces in Template single-host ASP.NET Core projects. Use for ClientApp pages, browser routing, real API wiring, shared Blazor services and frontend publishing.",
+      "status": "available"
+    },
+    {
+      "name": "template-verification",
+      "entry": "skills/template-verification/SKILL.md",
+      "description": "Verify and prepare Template projects for handoff, CI and single-host deployment. Use for architecture audits, meaningful tests, SQL migration verification, React build/publish checks and honest readiness reports.",
+      "status": "available"
+    },
+    {
+      "name": "full-stack",
+      "entry": "skills/full-stack/SKILL.md",
+      "description": "Coordinate the complete Template full-stack workflow by using template-architecture, template-backend, template-frontend and template-verification together. Use when the user requests Full Stack, a complete Template project, real frontend/backend/database integration, an end-to-end feature, or a coordinated review and delivery across these layers.",
+      "status": "available"
+    },
+    {
+      "name": "find-skills",
+      "entry": "skills/find-skills/SKILL.md",
+      "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill.",
+      "status": "available"
+    },
+    {
+      "name": "nexus-full-stack",
+      "entry": "skills/nexus-full-stack/SKILL.md",
+      "description": "Deliver complete applications or targeted frontend, backend, migration, review and release work by reading the bundled OWL engineering ontology. Use for NEXUS, ontology-guided full-stack development, coordination of full-stack/template skills, or selective context routing to reduce unnecessary token use while preserving contracts and verification.",
+      "status": "available"
+    },
+    {
+      "name": "chatgpt-task-creator",
+      "entry": "skills/chatgpt-task-creator/SKILL.md",
+      "description": "Create and coordinate a visible ChatGPT project with separate named conversations for each application department or major task, dispatch bounded work, read results, transfer accepted contracts between chats, and maintain a user-visible task register. Use when the user wants you to open and manage linked ChatGPT conversations directly, organize app development into department chats, or supervise a project they can inspect section by section. Use authenticated browser UI or current page tools; distinguish visible chats from internal subagents.",
+      "status": "available"
+    },
+    {
+      "name": "autotaska",
+      "entry": "skills/autotaska/SKILL.md",
+      "description": "Lead complete software projects as a senior full-stack engineer by coordinating the user's NEXUS ontology, Delegator visible ChatGPT department conversations, integrated project monitoring, architecture, backend/data, frontend/mobile, integration, testing and authorized delivery. Use when the user invokes AutoTaska or requests one master skill to manage an expert software team, build a complete app, coordinate department chats, resume project work or inspect progress. Reuse existing engineering skills and actual project tools; keep one coordinator and verify real outcomes.",
+      "status": "available"
+    },
+    {
+      "name": "project-creator",
+      "entry": "skills/project-creator/SKILL.md",
+      "description": "Turn a user idea into a verified ChatGPT project, a GitHub repository and separate linked task conversations using the installed chatgpt-task-creator skill. Use when the user invokes منشئ المشروع or Project Creator, requests project setup from an idea, wants ChatGPT and GitHub created together, or asks to organize and dispatch application work across visible department chats. Resolve scope, create or reuse real resources, initialize appropriate source/briefs, coordinate dependencies and checkpoint identities without duplicates; hand ongoing engineering to AutoTaska/NEXUS when in scope.",
+      "status": "available"
+    }
+  ]
+}
