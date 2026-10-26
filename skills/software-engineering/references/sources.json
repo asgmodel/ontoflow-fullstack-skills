@@ -1,0 +1,121 @@
+{
+  "version": "1.0.0",
+  "upstream": {
+    "repository": "https://github.com/addyosmani/agent-skills",
+    "commit": "1be8e34187e34647bb83adc3a1323b26ae6f6abe",
+    "license": "MIT",
+    "license_file": "references/upstream/LICENSE",
+    "adaptation": "SKILL.md renamed to workflow.md; internal filename references and persona paths rewritten; no automatic upstream AGENTS.md or plugin hooks imported.",
+    "files": {
+      "using-agent-skills": {
+        "original_sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+        "original_path": "skills/using-agent-skills/SKILL.md"
+      },
+      "interview-me": {
+        "original_sha256": "ace4b675999bb504593d572e0f73f3d7e803ad6fddf318445598c82c11939db2",
+        "original_path": "skills/interview-me/SKILL.md"
+      },
+      "idea-refine": {
+        "original_sha256": "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e",
+        "original_path": "skills/idea-refine/SKILL.md"
+      },
+      "spec-driven-development": {
+        "original_sha256": "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef",
+        "original_path": "skills/spec-driven-development/SKILL.md"
+      },
+      "constraint-driven-development": {
+        "original_sha256": "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10",
+        "original_path": "skills/constraint-driven-development/SKILL.md"
+      },
+      "planning-and-task-breakdown": {
+        "original_sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+        "original_path": "skills/planning-and-task-breakdown/SKILL.md"
+      },
+      "incremental-implementation": {
+        "original_sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+        "original_path": "skills/incremental-implementation/SKILL.md"
+      },
+      "test-driven-development": {
+        "original_sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+        "original_path": "skills/test-driven-development/SKILL.md"
+      },
+      "context-engineering": {
+        "original_sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63",
+        "original_path": "skills/context-engineering/SKILL.md"
+      },
+      "source-driven-development": {
+        "original_sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+        "original_path": "skills/source-driven-development/SKILL.md"
+      },
+      "doubt-driven-development": {
+        "original_sha256": "6fa1fcd8420c28daf7e53c5b08b0f20b907911efd2a6d9bce0b9740da20a4008",
+        "original_path": "skills/doubt-driven-development/SKILL.md"
+      },
+      "frontend-ui-engineering": {
+        "original_sha256": "29a3e53d57c0a128831a20730ae874a8c4fda40c001fcdc15f8e9ad4b5f72f1b",
+        "original_path": "skills/frontend-ui-engineering/SKILL.md"
+      },
+      "api-and-interface-design": {
+        "original_sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192",
+        "original_path": "skills/api-and-interface-design/SKILL.md"
+      },
+      "browser-testing-with-devtools": {
+        "original_sha256": "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9",
+        "original_path": "skills/browser-testing-with-devtools/SKILL.md"
+      },
+      "debugging-and-error-recovery": {
+        "original_sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+        "original_path": "skills/debugging-and-error-recovery/SKILL.md"
+      },
+      "code-review-and-quality": {
+        "original_sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e",
+        "original_path": "skills/code-review-and-quality/SKILL.md"
+      },
+      "code-simplification": {
+        "original_sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+        "original_path": "skills/code-simplification/SKILL.md"
+      },
+      "security-and-hardening": {
+        "original_sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858",
+        "original_path": "skills/security-and-hardening/SKILL.md"
+      },
+      "performance-optimization": {
+        "original_sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c",
+        "original_path": "skills/performance-optimization/SKILL.md"
+      },
+      "git-workflow-and-versioning": {
+        "original_sha256": "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea",
+        "original_path": "skills/git-workflow-and-versioning/SKILL.md"
+      },
+      "ci-cd-and-automation": {
+        "original_sha256": "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0",
+        "original_path": "skills/ci-cd-and-automation/SKILL.md"
+      },
+      "deprecation-and-migration": {
+        "original_sha256": "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142",
+        "original_path": "skills/deprecation-and-migration/SKILL.md"
+      },
+      "documentation-and-adrs": {
+        "original_sha256": "b60d503925bbaacee7fd63935db70b9ced5b2514ff5a56a672130e01b9690bc5",
+        "original_path": "skills/documentation-and-adrs/SKILL.md"
+      },
+      "observability-and-instrumentation": {
+        "original_sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+        "original_path": "skills/observability-and-instrumentation/SKILL.md"
+      },
+      "shipping-and-launch": {
+        "original_sha256": "726f3e546369db289160b8d42195590f00b6432887e17bf19070dcc9a347fe39",
+        "original_path": "skills/shipping-and-launch/SKILL.md"
+      }
+    }
+  },
+  "integration": {
+    "source_repository": "https://github.com/asgmodel/ontoflow-fullstack-skills",
+    "source_commit": "ba155ab7f528a5043e8fe43556ab3e4787c72424",
+    "changes": [
+      "Renamed package and engineering namespace",
+      "Mapped five original personal adapters to bundled engineering references",
+      "Consolidated Template and interface knowledge; retained upstream workflows unchanged"
+    ]
+  }
+}

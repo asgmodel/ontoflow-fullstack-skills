@@ -1,890 +1,899 @@
 {
-  "name": "OntoFlow FullStack Skills",
-  "distribution": "repository-source-tree",
-  "source_file_count": 220,
-  "packages": 12,
-  "ontology_validation": "PASS",
-  "router_tests": "18/18",
+  "schema_version": 2,
+  "distribution": "ontology-mediated-software-engineering",
+  "installable_packages": [
+    "ontolink-skills",
+    "software-engineering"
+  ],
+  "source_file_count": 222,
   "files": [
     {
+      "path": ".github/workflows/validate.yml",
+      "sha256": "473a1604753359d618fd6509c783d29d584609ca1df8b5f515f4b1be4c085782"
+    },
+    {
       "path": ".gitignore",
-      "sha256": "d099331365287179a3171a2ede057c18c7b466da6e2ab7877f998178853da739"
+      "sha256": "3a604bbbf7ba5655d4387c8a0fe653cfb7c7457251953aab17e3ba8ac069b219"
     },
     {
       "path": "README.md",
-      "sha256": "a0b53d1883b1ed85c8e52b56ab914860e0527408ee301f025accd1c376fe685a"
+      "sha256": "c22df03965369a575778182c4408a445a8bc327c0cf31c1afca1560c6523a0b8"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "sha256": "f5b71c729971640fab7c9460222aea4caea546d7cbfc3a22df10a85688b868f9"
+      "sha256": "fe16917f4e5e94ee217a8c954a6c2f3568120e47c45488bbba6f7caf2b70be4e"
     },
     {
       "path": "catalog.json",
-      "sha256": "a4f3bc2741d034c895f80395d1c337f0a242aab1c213aa99d2bc306d7c103227"
+      "sha256": "549423886f4532dfcd6f125c614fbcd010e8f9be78b29329e2594ae490057a18"
     },
     {
-      "path": "docs/SKILLS_AND_DEPENDENCIES.md",
-      "sha256": "1dcd81244a615d6a7aa8370cf6c95fdcfb95de577f5c3811eed08c87c4cfc38f"
+      "path": "docs/architecture.md",
+      "sha256": "6dd2f6bb0d9bea3cc8204a99c2db993f3e654d2f5d66bc2ccbeb8319f451b9bd"
     },
     {
-      "path": "skills/autotaska/SKILL.md",
-      "sha256": "cc8972c467de8dd809ff088c0be4a968af46c2561c0222bee3f3e3c83b57ff51"
+      "path": "docs/file-inventory.md",
+      "sha256": "d40964773a641554e2026acbda72252f5d5be7578a5543d242ac4e7df5b38546"
     },
     {
-      "path": "skills/autotaska/agents/openai.yaml",
-      "sha256": "2ea3c8939d40ee0d4b453b165893deebe6ae288e27ba881c46cb77bf5e59da8a"
+      "path": "scripts/check.py",
+      "sha256": "af2dfa349f3a3e44fb185d84a5fb7352e08c63c2c039d88bad8804098e5b183b"
     },
     {
-      "path": "skills/autotaska/assets/icon.svg",
-      "sha256": "72343cc4b66256ae7de8474c7cad14e711ad84a94c473732a44f96a56124c42d"
+      "path": "scripts/compile_lifecycle.py",
+      "sha256": "cf5842490e6ad2052c5fbd21515e89f02924b7f14b8fad4f66ca4d72b0cabeba"
     },
     {
-      "path": "skills/autotaska/assets/project-state.json",
-      "sha256": "c05c2275c683599a66fe60865acc27239988fa30aa1f615a2b08fb005947dd24"
+      "path": "scripts/manifest.py",
+      "sha256": "c0a5574216d22681525f4d0fa35eeaba5b4c21052bd3ba783e0ca481715ecc0e"
     },
     {
-      "path": "skills/autotaska/assets/task-assignment.md",
-      "sha256": "ee3f4b40f2d4eb61c46ed6d0d5563eb695fb0e76d18f3f3ea6a6df815af4d3c7"
+      "path": "scripts/run_tests.py",
+      "sha256": "b4b71efd8aa2a2069810804ea61b1cea5cfe926541d25a6567159fa5415d323b"
     },
     {
-      "path": "skills/autotaska/references/delegation.md",
-      "sha256": "6e1c45e345d4ac23623d073f55e81c0f0b987dac1c653ec435c2b447b11f9518"
+      "path": "skills/ontolink-skills/.rule/ONTOLOGY-FIRST.md",
+      "sha256": "69225a60856a5f2f98c5cf663c2fabd458f5693cc5c70280f0a3803608049692"
     },
     {
-      "path": "skills/autotaska/references/delivery.md",
-      "sha256": "03aa0fe83e83595a0cd76f1b825bd67e93f9d0bb282593147675e5e7ae5f713c"
+      "path": "skills/ontolink-skills/.rule/ontolink.py",
+      "sha256": "603e0d108a12c081646eed226aae7736acd8202a8680f62d9c2b9b9f11565180"
     },
     {
-      "path": "skills/autotaska/references/monitor.md",
-      "sha256": "08aadebbe7c7140769bbd9a9d7648f39423e1a5034d3469cd4859ee5303754e2"
+      "path": "skills/ontolink-skills/SKILL.md",
+      "sha256": "294ab4df82a6ec705042b650f05f5df14bd104535192971abee24d6ba720fab5"
     },
     {
-      "path": "skills/autotaska/references/project-workflow.md",
-      "sha256": "478d4dca1cc1ba6d25858f4fe4860d198adcdf840cbc15c0a3aa0930d3bbbd1a"
+      "path": "skills/ontolink-skills/agents/openai.yaml",
+      "sha256": "af11dd0ef3b3fd5b849eeaac19603ab954838d2fc5e338b8f70f8caeafeb6667"
     },
     {
-      "path": "skills/autotaska/references/skill-routing.md",
-      "sha256": "6d7e9d4ce1c697fae46c75bf14d17d7fc094ce689aa3b1e263d33e9b80b3d7a0"
+      "path": "skills/ontolink-skills/assets/catalog.json",
+      "sha256": "554c85133529f56bb8723098bd36a7f8f6cf4634cfe892e7cdbd2f9b3f86dc98"
     },
     {
-      "path": "skills/autotaska/references/team-names.md",
-      "sha256": "5d1b0c5251e8bae60c00af4a0540ff3ba2a08aef08ea6d0dc5c43d33bc98bd6a"
+      "path": "skills/ontolink-skills/assets/ontolink.owl",
+      "sha256": "6a1dce3b854b5f12c63b31b1657745f7662cc85d8506798db12db47406664fd4"
     },
     {
-      "path": "skills/chatgpt-task-creator/SKILL.md",
-      "sha256": "c88732511587e0cf61d1dafca9193d9b6337a5c15800e33c16fcdec9d98350d2"
+      "path": "skills/ontolink-skills/assets/ontolink.ttl",
+      "sha256": "319741616352596fcad1ae229defd5461199465a39edc29fcff22e5e1f5e5ba0"
     },
     {
-      "path": "skills/chatgpt-task-creator/agents/openai.yaml",
-      "sha256": "68682328b2e0090d163e8d4ffa358de6d61836ee65df930b29b34a4dc3955e6f"
+      "path": "skills/ontolink-skills/assets/package-source.json",
+      "sha256": "f5c0429467ce5f42ecab0140f7eb77c07d6f4c4821a3bd0de944a11cf8f51c24"
     },
     {
-      "path": "skills/chatgpt-task-creator/assets/icon.svg",
-      "sha256": "51a6923974188748638a424aa59b42b6afad2d910f910a1d43bb13ee10f3ce26"
+      "path": "skills/ontolink-skills/assets/shapes.ttl",
+      "sha256": "e8d66001902929a0ac45cf9eb4b6453cb89d7ca7913f9f3b5442488b5b3cc820"
     },
     {
-      "path": "skills/chatgpt-task-creator/assets/project-brief.md",
-      "sha256": "457841c3a69c96957625d9ba6e640c1c39aa45fcd9fffb8d42fb6aa7962a5060"
+      "path": "skills/ontolink-skills/references/execution-contract.md",
+      "sha256": "6b3c184bad73fd24d181db9fc24ed7b4459674ac61bf14c76288e54540305ce5"
     },
     {
-      "path": "skills/chatgpt-task-creator/assets/project-register.json",
-      "sha256": "45fa8a9e159fd3d9b26622fd07356cff6beaa5b5cdfb915834d57269e6e72d0c"
+      "path": "skills/ontolink-skills/references/knowledge-model.md",
+      "sha256": "d5e9c27ef1af84884279f7f4b2ddecb6d7082cc1e21325ec49044fd243b4fb29"
     },
     {
-      "path": "skills/chatgpt-task-creator/assets/task-brief.md",
-      "sha256": "2335c7160d2d583c84876f72d06712c1382f60e7a76a79f47badbbeecbef42ff"
+      "path": "skills/ontolink-skills/references/lifecycle.md",
+      "sha256": "c92480de5563e08907a5c4cbfba9ae66b98b09571e7a45d66b991a153587e478"
     },
     {
-      "path": "skills/chatgpt-task-creator/references/conversation-workflow.md",
-      "sha256": "551ae50e70ad5b00fd8bb1a3fb4650b6b4ae303694fd9c99591962794ba54bc9"
+      "path": "skills/ontolink-skills/references/project-intelligence.md",
+      "sha256": "dfadcce8632a8694800ed4257b888465a8d73fa1b70acce099bf98145c260a31"
     },
     {
-      "path": "skills/find-skills/SKILL.md",
-      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+      "path": "skills/ontolink-skills/references/quickstart.md",
+      "sha256": "ff7d05be1bad1efe26190cb0ede08abed1825662badc946bc0ae42fcc16c907d"
     },
     {
-      "path": "skills/find-skills/agents/openai.yaml",
-      "sha256": "631f8d4a70888314f07148e60d7d80fedf3f8a699f15ffcd7712fedc45215780"
+      "path": "skills/ontolink-skills/references/record-contract.md",
+      "sha256": "290c0a7fcdfb93721a338f874fb1ee6c45c5efec6d9a09eff75c628c024c95c1"
     },
     {
-      "path": "skills/find-skills/assets/icon.svg",
-      "sha256": "0cdb7990dea3ad89ead04743eeac2dc58c119fb0b8b4a01499a21237f155bc1a"
+      "path": "skills/ontolink-skills/references/uncertainty.md",
+      "sha256": "72ea0c67c0b0ea21d26022d090170ba1e52c1e73e222ec7c6e69d41036eeab0b"
     },
     {
-      "path": "skills/full-stack/SKILL.md",
-      "sha256": "bde270cf1b4ab80de9c1c3922df11c898597796345a626a769d47704053040d4"
+      "path": "skills/ontolink-skills/scripts/context_compiler.py",
+      "sha256": "c0bdca7c981852c3dad194613c8845d3e5a8c6b20cff2552c8f0a092135b81b2"
     },
     {
-      "path": "skills/full-stack/agents/openai.yaml",
-      "sha256": "c73e39d322356f18128b2af28cda35b4df408431f085e8e32008b83eb3e7578e"
+      "path": "skills/ontolink-skills/scripts/mediator.py",
+      "sha256": "5b4820e2cab01ce3c317ae4c28b62b561febe8931070a2bcdb4194ac4f9fdb20"
     },
     {
-      "path": "skills/full-stack/assets/icon.svg",
-      "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d"
+      "path": "skills/ontolink-skills/scripts/project_indexer.py",
+      "sha256": "286ea202dbca842ea0a0469da65eee7e5b27962951806ff577ad228c72ffa1e0"
     },
     {
-      "path": "skills/full-stack/references/integration-contract.md",
-      "sha256": "2abce06a83ca3c0e80b42185b02aa916b41d753369f422c6140935f1696e5fa6"
+      "path": "skills/ontolink-skills/scripts/project_intelligence.py",
+      "sha256": "c58d0ea3deed5ad6b0e7f03ed37bee11dd3d54a3af1de5d43322d7747612fdc1"
     },
     {
-      "path": "skills/full-stack/references/skill-map.md",
-      "sha256": "c89c67698aca9a0fecdb43bab5502a7a446fa9f76e42797d7c2add2995f62ad1"
+      "path": "skills/ontolink-skills/scripts/project_setup.py",
+      "sha256": "b75af7f3939bf3cd0b913fe75290636058ae5270574d08ae911da4b51bddd281"
     },
     {
-      "path": "skills/mahoer/MOHAWER_UI_V2_MERGE.md",
-      "sha256": "b62be1b2c337b365aea8c915a01dc5e9e728196051ae1705fba4b1a48ca418a7"
+      "path": "skills/ontolink-skills/scripts/rdf_store.py",
+      "sha256": "d85b6558d7a6f1a088ba91765aa82e5f3f1eaf65dcf19c35f9254cacaff81214"
     },
     {
-      "path": "skills/mahoer/SKILL.md",
-      "sha256": "4e078161c899ad7f2042f7ad45aa7953c4d9d9f8489516c2d692848bd008fac9"
+      "path": "skills/ontolink-skills/scripts/retrieval.py",
+      "sha256": "a0517736e50ffeb902826c2b1ab6464bfd94e642707f7d83836e85fc630f223a"
     },
     {
-      "path": "skills/mahoer/agents/openai.yaml",
-      "sha256": "ae614f80f38b207c6aad41228e8f3d0ccfd57907a027a95ec2280ec814c06b6d"
+      "path": "skills/ontolink-skills/skills/ontolink-architecture/SKILL.md",
+      "sha256": "30670eb9ec53b5abce809fc6ebe4ea33c60999514b04a21bb2bb9ac233de6b6a"
     },
     {
-      "path": "skills/mahoer/assets/icon.svg",
-      "sha256": "d80a4c3e0fd2efa7af88433a53b25a92c78a644175c6669dd78fee50fb53acf6"
+      "path": "skills/ontolink-skills/skills/ontolink-architecture/agents/openai.yaml",
+      "sha256": "befe2127b1f7da1acb1c9102d3b9ad4718d85efc49b942d4462f0d1aed653419"
     },
     {
-      "path": "skills/nexus-full-stack/SKILL.md",
-      "sha256": "86f1a3478c0edde34d27a789d8568d3c4ebc73c081e4c79366e5e416c8a8ce1a"
+      "path": "skills/ontolink-skills/skills/ontolink-architecture/references/phase-contract.md",
+      "sha256": "ef8dfd514f3de89abf493d65337e03b28e896d09c110c81bcd825f6a9d03fce7"
     },
     {
-      "path": "skills/nexus-full-stack/agents/openai.yaml",
-      "sha256": "252b816e79a4a25440bd2a69008a612c2f2fca7fb27028ac344975df971685fc"
+      "path": "skills/ontolink-skills/skills/ontolink-delivery/SKILL.md",
+      "sha256": "05f447ed32907a96282bcf42d8d158882379ca4900dc0a43c0bddf419e2a2b29"
     },
     {
-      "path": "skills/nexus-full-stack/assets/example-task.json",
-      "sha256": "bface7d44fcdf69b430467d7922da01bb188390a93803829d033048fc82d7122"
+      "path": "skills/ontolink-skills/skills/ontolink-delivery/agents/openai.yaml",
+      "sha256": "9fbfc575bd3fb434509e79bb7df21da87d7b14e85887e0d6cae7e8ffa12d2e57"
     },
     {
-      "path": "skills/nexus-full-stack/assets/graph.json",
-      "sha256": "2fb94ce6eb84198f3c27ba771d6a50ff2dbbf0647c1b254aa18815aa877d9f17"
+      "path": "skills/ontolink-skills/skills/ontolink-delivery/references/phase-contract.md",
+      "sha256": "2f24d3589c91fd049b8d20e8b662a6a3f5af9d805b7ec628cf4074a6971eec3d"
     },
     {
-      "path": "skills/nexus-full-stack/assets/icon.svg",
-      "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d"
+      "path": "skills/ontolink-skills/skills/ontolink-discovery/SKILL.md",
+      "sha256": "ba0d137d2c18665b7f28c2b947e4050ac7716060cb1a6f254390061eac52c2a9"
     },
     {
-      "path": "skills/nexus-full-stack/assets/nexus.owl",
-      "sha256": "ccacc6500a8b9af993931dc37f4949b6e7c6a4297344f61af490710064dbd0a6"
+      "path": "skills/ontolink-skills/skills/ontolink-discovery/agents/openai.yaml",
+      "sha256": "c0b5aa4abbaa7daacc2093d344ce45779e35d93eb168deb328149e9f6207f613"
     },
     {
-      "path": "skills/nexus-full-stack/assets/nexus.ttl",
-      "sha256": "ae0cfb6307e7e28659e422c3b45a0a5bdce31d894ade0c4962dfdafb3b2eeb11"
+      "path": "skills/ontolink-skills/skills/ontolink-discovery/references/phase-contract.md",
+      "sha256": "02bcca41268ba4b2af9f3c64eb2a60ba0168d4fdeac934c211fc052bce40b9fd"
     },
     {
-      "path": "skills/nexus-full-stack/assets/queries.rq",
-      "sha256": "61817776b5fa4d3e3c09f642b18fa29aa4644d740528489d84c7e9ef7e0974e0"
+      "path": "skills/ontolink-skills/skills/ontolink-implementation/SKILL.md",
+      "sha256": "f73c3b68b1e4f322eb864f68ba69114f8b7dee462778ad1216a132bfc1aeb9ca"
     },
     {
-      "path": "skills/nexus-full-stack/assets/shapes.ttl",
-      "sha256": "0a5b6f756ed68c6447f6fecc56b04cbd6559d4c1416ae350f65990902ae22757"
+      "path": "skills/ontolink-skills/skills/ontolink-implementation/agents/openai.yaml",
+      "sha256": "64d73e34fc5e65ba2d14f211b23e510c3778d798581b15955ac25af0ffc79288"
     },
     {
-      "path": "skills/nexus-full-stack/assets/task.schema.json",
-      "sha256": "1a4a19970b8ea867faddbfbfcb537955894d6d74d32468ab8568ece026ecd2f4"
+      "path": "skills/ontolink-skills/skills/ontolink-implementation/references/phase-contract.md",
+      "sha256": "fa80c86d271724b58e7a7510bf49ce1ace4c2e7e0eda27eb463989b2d20e7efa"
     },
     {
-      "path": "skills/nexus-full-stack/references/adapters/full-stack.md",
-      "sha256": "13e7c71fd7527e24d9ac1803cf92cba2e8fa9fe601338451ad36ab44d104a0d7"
+      "path": "skills/ontolink-skills/skills/ontolink-monitoring/SKILL.md",
+      "sha256": "5afa0e79a0bcb41ba1869fd77a683724ccc752a2eaf23f10d251294449c9bb7f"
     },
     {
-      "path": "skills/nexus-full-stack/references/adapters/template-architecture.md",
-      "sha256": "b454a95f822ce1fb2f74e957a00337a47e8a1c8f3f1b456c4f844b10fa04c961"
+      "path": "skills/ontolink-skills/skills/ontolink-monitoring/agents/openai.yaml",
+      "sha256": "d3eed1937ad8edb1de34e578bfbf68a39804db040e5c0c09e1cad3148c766f09"
     },
     {
-      "path": "skills/nexus-full-stack/references/adapters/template-backend.md",
-      "sha256": "fd9f59c1ab9876f4abfd824ebb687cca468440369d4686d33a8ca76995596ab5"
+      "path": "skills/ontolink-skills/skills/ontolink-monitoring/references/phase-contract.md",
+      "sha256": "b3eb6f4b645a20541f91cf67bdd03dbdae71b7b92ddc69b23d03ad7251ab35a1"
     },
     {
-      "path": "skills/nexus-full-stack/references/adapters/template-frontend.md",
-      "sha256": "451aafea107437491bdd9cabfd1f69366f5a79e643256a84d39181926207ae8f"
+      "path": "skills/ontolink-skills/skills/ontolink-planning/SKILL.md",
+      "sha256": "f609fc673b94b7e2114bc68e7536b400598baff93e1b88cbb147ea1a1ebe008d"
     },
     {
-      "path": "skills/nexus-full-stack/references/adapters/template-verification.md",
-      "sha256": "0ed42af7a61a2cd7891e74b38a90229dfc45a645a8eff5aabce7a1626306847c"
+      "path": "skills/ontolink-skills/skills/ontolink-planning/agents/openai.yaml",
+      "sha256": "c37856690b86d03e2ff39223db01ba5a1397bbdf210278b99b9ffc8bddd26e4e"
     },
     {
-      "path": "skills/nexus-full-stack/references/execution-contract.md",
-      "sha256": "c9b10e1033733731df1c3c05436adf316ddd3239ce08779af919a125ca259c44"
+      "path": "skills/ontolink-skills/skills/ontolink-planning/references/phase-contract.md",
+      "sha256": "137f083275cdd65a997f617e0628cf9a499d2cfa03c22427644a908300e78b39"
     },
     {
-      "path": "skills/nexus-full-stack/references/ontology-semantics.md",
-      "sha256": "464b61e79437c82283d92880c4910060271c9e396794a117499b02c5b80ee105"
+      "path": "skills/ontolink-skills/skills/ontolink-verification/SKILL.md",
+      "sha256": "e205fdfb8ff7ac691b9f64ade8f741b1bce2bc3bdb315e5f4599a1b2a9ffc250"
     },
     {
-      "path": "skills/nexus-full-stack/references/sources.json",
-      "sha256": "198c5a08dca15ee95c073b7a05a2bd8df52cb51d6f49d6bc5664619fe2a1057f"
+      "path": "skills/ontolink-skills/skills/ontolink-verification/agents/openai.yaml",
+      "sha256": "934a0c87bfc8334e5b145894d59d3528cbaf4aca47ea6a276971cf64d3760eb4"
     },
     {
-      "path": "skills/nexus-full-stack/references/state-and-budget.md",
-      "sha256": "e6a18445ab6f56065ae199fdbc1bece7600584b8270bc15026cde3927a6406a5"
+      "path": "skills/ontolink-skills/skills/ontolink-verification/references/phase-contract.md",
+      "sha256": "29c6cee31f7f995e57fb77b7ece1adc232d29d9bdda2fefd4e0fef850e9b4431"
     },
     {
-      "path": "skills/nexus-full-stack/references/upstream/LICENSE",
-      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7"
+      "path": "skills/software-engineering/SKILL.md",
+      "sha256": "1ef6dd5f5de21f0e702ec646c092b1cd3364c95791f8164c565f83b770e4a2c0"
     },
     {
-      "path": "skills/nexus-full-stack/references/upstream/docs/agents.md",
-      "sha256": "fb5cc80f87845a27c9223f99dd418ffdbcd31a272f23d3bf09d66ba1402b61e3"
+      "path": "skills/software-engineering/agents/openai.yaml",
+      "sha256": "32aab574646c05a047ef7a8ba4c8734d5ad289a8368ebb9e3487a64f2fef4bb9"
     },
     {
-      "path": "skills/nexus-full-stack/references/upstream/personas/code-reviewer.md",
-      "sha256": "2d02acb9db1c37521d676587d2e0afb713c8983de957a78efdfa82d27e5fc3da"
+      "path": "skills/software-engineering/assets/engineering-index.json",
+      "sha256": "c17b7727776aa7fecbe4a39fd7346889be270b11fb5cbb5c8a4df426b2ac63af"
     },
     {
-      "path": "skills/nexus-full-stack/references/upstream/personas/security-auditor.md",
-      "sha256": "66a3f68f1c691b600ddb44e88afb138e239d0572df37be84e1f9a427c887dd0a"
+      "path": "skills/software-engineering/assets/engineering.owl",
+      "sha256": "bd16231820985ea31f336f1748a41bfa4bc2733c979a6d15ec6ab6509f283bbe"
     },
     {
-      "path": "skills/nexus-full-stack/references/upstream/personas/test-engineer.md",
-      "sha256": "c4acde91d6307d88515387344a129a2d0679134e587596c3517d73faffcd5aa6"
+      "path": "skills/software-engineering/assets/engineering.ttl",
+      "sha256": "7ae28ac89daf4a0cc2d5680364093a33f4bb0871559dd37b7c8dbc203b05c994"
     },
     {
-      "path": "skills/nexus-full-stack/references/upstream/personas/web-performance-auditor.md",
-      "sha256": "ba83e342913bdbbca775d9dbb3bc793af67620c12b614dfd0f4dd4d27b58d34b"
+      "path": "skills/software-engineering/assets/example-task.json",
+      "sha256": "6abad38d2248d133352b5dd66ca35eb99673d2746c599aa1dd34f964dadbea6b"
     },
     {
-      "path": "skills/nexus-full-stack/references/upstream/references/accessibility-checklist.md",
-      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac"
+      "path": "skills/software-engineering/assets/queries.rq",
+      "sha256": "3987c4fdc46d45562b6d12c5e2860d8f2bd11046d090a5f20a2f056d32648e8d"
     },
     {
-      "path": "skills/nexus-full-stack/references/upstream/references/definition-of-done.md",
-      "sha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee"
+      "path": "skills/software-engineering/assets/shapes.ttl",
+      "sha256": "599eb545b1c57f799e12557f9b5d5ee9a08794e84c303a1ea66f3016f5878899"
     },
     {
-      "path": "skills/nexus-full-stack/references/upstream/references/observability-checklist.md",
-      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8"
+      "path": "skills/software-engineering/assets/task.schema.json",
+      "sha256": "bdf67cd954efbb0bf5d839065b242be2a53782a9a7514ca198824650d17469f8"
     },
     {
-      "path": "skills/nexus-full-stack/references/upstream/references/orchestration-patterns.md",
-      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/references/performance-checklist.md",
-      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/references/security-checklist.md",
-      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/references/testing-patterns.md",
-      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/api-and-interface-design/workflow.md",
-      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/browser-testing-with-devtools/workflow.md",
-      "sha256": "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/ci-cd-and-automation/workflow.md",
-      "sha256": "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/code-review-and-quality/workflow.md",
-      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/code-simplification/workflow.md",
-      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/constraint-driven-development/references/floor-guard.md",
-      "sha256": "59715dc6c3c6c36ec9177f9ced65c379e80a4539b36115456666bfabc43a6a9c"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/constraint-driven-development/workflow.md",
-      "sha256": "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/context-engineering/workflow.md",
-      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/debugging-and-error-recovery/workflow.md",
-      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/deprecation-and-migration/workflow.md",
-      "sha256": "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/documentation-and-adrs/workflow.md",
-      "sha256": "b60d503925bbaacee7fd63935db70b9ced5b2514ff5a56a672130e01b9690bc5"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/doubt-driven-development/workflow.md",
-      "sha256": "6fa1fcd8420c28daf7e53c5b08b0f20b907911efd2a6d9bce0b9740da20a4008"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/frontend-ui-engineering/workflow.md",
-      "sha256": "29a3e53d57c0a128831a20730ae874a8c4fda40c001fcdc15f8e9ad4b5f72f1b"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/git-workflow-and-versioning/workflow.md",
-      "sha256": "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/idea-refine/examples.md",
-      "sha256": "563204bfbf2f80a444151695205af4cb759e722b3d1e5460e08f278a69c89ba1"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/idea-refine/frameworks.md",
-      "sha256": "161ebc18fdf2d996bc62a87a2d747cf1bf53548354f8925de25c732c27f00309"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/idea-refine/refinement-criteria.md",
-      "sha256": "1ca2973a4d01b5cb37ab7ddb2eff77fa4e792634a33d0ce44961c068fc88d51a"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/idea-refine/scripts/idea-refine.sh",
-      "sha256": "f02a52408a4218047c032d221483abfbb48d11f090bb4915965c7419bf2e0e47"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/idea-refine/workflow.md",
-      "sha256": "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/incremental-implementation/workflow.md",
-      "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/interview-me/workflow.md",
-      "sha256": "ace4b675999bb504593d572e0f73f3d7e803ad6fddf318445598c82c11939db2"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/observability-and-instrumentation/workflow.md",
-      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/performance-optimization/references/optimization-patterns.md",
-      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/performance-optimization/workflow.md",
-      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/planning-and-task-breakdown/workflow.md",
-      "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/security-and-hardening/references/hardening-patterns.md",
-      "sha256": "2e1b93a502b4cdb0258404441f3aab029b0cce4003fbbcc61af9a2de18bab9ab"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/security-and-hardening/workflow.md",
-      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/shipping-and-launch/workflow.md",
-      "sha256": "726f3e546369db289160b8d42195590f00b6432887e17bf19070dcc9a347fe39"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/source-driven-development/workflow.md",
-      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/spec-driven-development/workflow.md",
-      "sha256": "44adc475a58a8193d2d41abcbbcdca5522d252114e4faf40ca41b90e2922d2c3"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/test-driven-development/workflow.md",
-      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca"
-    },
-    {
-      "path": "skills/nexus-full-stack/references/upstream/skills/using-agent-skills/workflow.md",
-      "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3"
-    },
-    {
-      "path": "skills/nexus-full-stack/scripts/benchmark.py",
-      "sha256": "902fc0581377317130823d4f452434df08c1596b89e3742760bcff3fed6e3055"
-    },
-    {
-      "path": "skills/nexus-full-stack/scripts/compile_graph.py",
-      "sha256": "f2c755513b2f5f37213beeafd905c15d0729ec0bfb0e819ad1826f431984e33b"
-    },
-    {
-      "path": "skills/nexus-full-stack/scripts/owl_reader.py",
-      "sha256": "4777d42285b98cbce3c18fcebd82003e36707e12584a56765c30dcac63556e1d"
-    },
-    {
-      "path": "skills/nexus-full-stack/scripts/requirements-maintenance.txt",
-      "sha256": "6133fba5d16256a4bed2a543bcb6fb08caf2e0be857b9a67ba33eed7e2ed3b16"
-    },
-    {
-      "path": "skills/nexus-full-stack/scripts/route.py",
-      "sha256": "6c03bc5236b05ff295e76a86806fae6666963fd48374f4532a14be47181db505"
-    },
-    {
-      "path": "skills/nexus-full-stack/scripts/test_router.py",
-      "sha256": "0ef97c910e5ce3da2e101bdf85ade2c1fe5b8def46eab5717b39506e7f0a929e"
-    },
-    {
-      "path": "skills/nexus-full-stack/scripts/validate.py",
-      "sha256": "fd70ba2800956e6701e6acb9b4f6e3c93bbc70579300ab2d67ef8e2d472abefd"
-    },
-    {
-      "path": "skills/professional-interface-builder/SKILL.md",
-      "sha256": "e5a8f4c5294bd8b845b4f7fbd4b77c4cd1ecb6c584ca0a622acb3eca5ed5b1b5"
-    },
-    {
-      "path": "skills/professional-interface-builder/agents/openai.yaml",
-      "sha256": "065987fec65058a819b371b711178002d423d8c6a4ca770c4e6c4a5c07d2618c"
-    },
-    {
-      "path": "skills/professional-interface-builder/references/design-system.md",
-      "sha256": "f33997d92008fc0ad73c32a41e1b67a8bb70d0365dee6fc87a162aac40ae01f1"
-    },
-    {
-      "path": "skills/professional-interface-builder/references/product-integration.md",
-      "sha256": "9b136e31e37498f009a05a665562f8e8fbf89daaf308bbb7a0f94491a1c4a730"
-    },
-    {
-      "path": "skills/professional-interface-builder/references/qa-and-evidence.md",
-      "sha256": "90f564c9a2c24993c4a87bf485e4d6be33e93cf5c38b62cffcc36bbdc67b5b20"
-    },
-    {
-      "path": "skills/professional-interface-builder/scripts/project_audit.py",
-      "sha256": "e5c0fe0d14b7e0027b42b01312241ebbc6f62c682f79a50e38f3833867c9fea1"
-    },
-    {
-      "path": "skills/project-creator/SKILL.md",
-      "sha256": "45f9cfd66d43e4e18c5f20a25e0f58cde3e016f0f1d3395c45d225dcde91bba9"
-    },
-    {
-      "path": "skills/project-creator/agents/openai.yaml",
-      "sha256": "103ea54f44d0e81aec3eafa4153835e3f7a90a7701020e1036276e68e9186fcb"
-    },
-    {
-      "path": "skills/project-creator/assets/icon.svg",
-      "sha256": "e9301497fa98ef56aaca7ede0857b9a18dc06c34040f0679c609a6bf49b1d38b"
-    },
-    {
-      "path": "skills/project-creator/assets/project-brief.md",
-      "sha256": "fe73f2d3cb75a380eef5ce6b26712f00a486eb248b760d6b4b2d305a415a2f09"
-    },
-    {
-      "path": "skills/project-creator/assets/project-register.json",
-      "sha256": "054ad1407ff780279afcfa769f5287c9a0625ad64be832977d436dde5c232737"
-    },
-    {
-      "path": "skills/project-creator/assets/task-assignment.md",
-      "sha256": "0866b6d35475d756677907a5322bd6520ee9e40b447155ce8eee6d443988ac2b"
-    },
-    {
-      "path": "skills/project-creator/references/creation-workflow.md",
-      "sha256": "dd8ccbcee47a4afa7500286c762030e748a94ebee40014ede9b6e48880a4bb49"
-    },
-    {
-      "path": "skills/project-creator/references/repository-workflow.md",
-      "sha256": "d331322e3d164861d40508eb699ba79e51b0fe5e9b7e9d616148cd1ff92ed77c"
-    },
-    {
-      "path": "skills/project-creator/references/task-coordination.md",
-      "sha256": "1846cb997623d3897752b65d1717be155c5574ef136ecd7713f59ad94044b024"
-    },
-    {
-      "path": "skills/project-creator/scripts/validate_register.py",
-      "sha256": "afbc0fc2a456eafdd36d2c4c093cd1bafa49b8d218277014595bc6ff00812442"
-    },
-    {
-      "path": "skills/template-architecture/SKILL.md",
-      "sha256": "63ac3887044c24239841fb1eaf6fc6cc1babbe74c39ec79919aec246f25282f5"
-    },
-    {
-      "path": "skills/template-architecture/agents/openai.yaml",
-      "sha256": "31e60d688af9dd752cf20e58be3cc73ae3df38469d48b4aa33bacdce92d06330"
-    },
-    {
-      "path": "skills/template-architecture/assets/blank-project/.env.example",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/.env.example",
       "sha256": "adb7dc8ee5d657a986732907edaa76550e0df3fe1a369499d65e2b439f4975fb"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/.gitattributes",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/.gitattributes",
       "sha256": "45a7cbb7d9942ba7ffce0b20bc8dbe2d1196533bc6e4bd245871d77fb1eedfdc"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/.github/workflows/ci.yml",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/.github/workflows/ci.yml",
       "sha256": "d1ae70de0bb79742321648b79822657c95bec93850e1e5c7d5b0b06be123bcc2"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/.gitignore",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/.gitignore",
       "sha256": "1384345ea40d51bad95dcfe96a6987c5a99cba68a4bf04369e8c57ec1f2504ed"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/AGENTS.md",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/AGENTS.md",
       "sha256": "3c74e3fe5795017e7e1f27e9126cebdf21c769903985d307fd35822fca5a33b5"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/Template.slnx",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/Template.slnx",
       "sha256": "c44b4a4cf9e6c6b9902aec5920875140763350d3bcd68d508055be4ca444c579"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/docs/architecture/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/docs/architecture/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/docs/deployment/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/docs/deployment/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/docs/development/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/docs/development/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/docs/security/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/docs/security/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/scripts/database-add-migration.ps1",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/scripts/database-add-migration.ps1",
       "sha256": "c09be6ceed61743e3def31196778dacffbb86d113458adcf4acdf92ec898536d"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/scripts/database-update.ps1",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/scripts/database-update.ps1",
       "sha256": "1429f4faf07033512cc598582c3af812deefbab84bc6c87d07ed3a73da7f3328"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/App.Server.csproj",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/App.Server.csproj",
       "sha256": "9594c212e6606f63067fbbd27ee4f77edb9e846b43eba76cc6605f71d9e71d4e"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/AI/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Application/AI/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/DTOs/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Application/DTOs/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/Interfaces/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Application/Interfaces/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/Mapping/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Application/Mapping/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/Services/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Application/Services/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/UseCases/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Application/UseCases/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Application/Validators/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Application/Validators/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/BackgroundJobs/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/BackgroundJobs/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/index.html",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/index.html",
       "sha256": "1c2c591ff19be30c9e04b84b503bdc79e164d294717ee84f0796461c8b2eb5d9"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/package.json",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/package.json",
       "sha256": "0237fc9cea1d1ab1003cdc6b5c1e5cd2e9c9f30c526719ec6268aee385f1097f"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/public/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/public/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/api/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/api/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/app/App.tsx",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/app/App.tsx",
       "sha256": "0390539acb56fb16f318be922c2a673616d35eb3e8303ebb30002d761007eb82"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/app/styles.css",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/app/styles.css",
       "sha256": "e9971c0359c9dc5606e4813a899bd8bb335b2c43522660f917652c517bda4c0f"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/auth/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/auth/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/components/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/components/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/features/ai/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/features/ai/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/hooks/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/hooks/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/layouts/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/layouts/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/main.tsx",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/main.tsx",
       "sha256": "1eefd2379195bc6288ccefb83628bb20dfecbfd1bcf7de6e5f61287e918aa37f"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/pages/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/pages/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/routes/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/routes/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/services/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/services/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/stores/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/stores/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/types/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/types/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/src/utils/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/src/utils/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/tsconfig.json",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/tsconfig.json",
       "sha256": "b53252836a0f9c7c705d1a5f5c3322cbb349e6bd478c677a2b88df98b4733179"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/ClientApp/vite.config.ts",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/ClientApp/vite.config.ts",
       "sha256": "428f301eb4b1fc7e3c0fed27f8d049fc0eaecd670f35abec14e479461042c8a2"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/App.razor",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Components/App.razor",
       "sha256": "c2e4d1b44a651f998b959e8ae500c52fb3f5c26ecc545dce8aab9d19fd4ebc2c"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/Layout/MainLayout.razor",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Components/Layout/MainLayout.razor",
       "sha256": "10a740c4dcf86ba784888e032994db9c3fb7c25fda6d57d2594514a1b6148db1"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/Pages/BlazorHome.razor",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Components/Pages/BlazorHome.razor",
       "sha256": "8f6bd2bfc5a4819840945ca32e54ee0a46a52789e956b89818c58842d997f276"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/Routes.razor",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Components/Routes.razor",
       "sha256": "fdb1aeaadc954fed7ab88908a22a2206cf7e6cbdcc158433d010dddfcca2bf9e"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/Shared/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Components/Shared/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Components/_Imports.razor",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Components/_Imports.razor",
       "sha256": "4d96e10abd29fea668b4b6258e02e9eb91e7deb8b136696c2f8625b0d09b4484"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Controllers/SystemController.cs",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Controllers/SystemController.cs",
       "sha256": "91786886d732b81529db32bfe92402e295ac2194b7eba526fce74454162253f0"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Domain/Common/Entity.cs",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Domain/Common/Entity.cs",
       "sha256": "cf552023e56210289956fe38d99b6184b1a0eaa86a9cb559f3074d71d9e49f60"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Domain/Entities/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Domain/Entities/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Domain/Enums/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Domain/Enums/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Domain/Events/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Domain/Events/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Domain/Exceptions/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Domain/Exceptions/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Extensions/ServiceCollectionExtensions.cs",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Extensions/ServiceCollectionExtensions.cs",
       "sha256": "a754fb3dec9e03f12551349647a6c719e22057ac8ce1a71a4d7018ce0e00821f"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Extensions/WebApplicationExtensions.cs",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Extensions/WebApplicationExtensions.cs",
       "sha256": "3059ba4ba65ab0308a7872d98c49214ed3780e05a59b615f2d8035c64ae34ed7"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/HealthChecks/SqlServerHealthCheck.cs",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/HealthChecks/SqlServerHealthCheck.cs",
       "sha256": "8be03cdffd760f60f5563b4e568aa52b421a22cdb5206140d896036960fc6181"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/AI/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Infrastructure/AI/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Authentication/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Infrastructure/Authentication/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Authorization/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Infrastructure/Authorization/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Data/AppDbContext.cs",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Infrastructure/Data/AppDbContext.cs",
       "sha256": "09a609b150c2dd806304b3da9d41fbda835c7297e0911fd1778c7baebcd65522"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Data/AppDbContextFactory.cs",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Infrastructure/Data/AppDbContextFactory.cs",
       "sha256": "01b4e45eed71a112fba301c23f9d8682de7c782a59622d79a5e815e899bff166"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Data/Configurations/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Infrastructure/Data/Configurations/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Data/DatabaseInitializer.cs",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Infrastructure/Data/DatabaseInitializer.cs",
       "sha256": "f98fbdf30a7ed3cd3f71c84ec4270f8a46c942f6be5d62c51585b8079fa04eca"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Data/Migrations/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Infrastructure/Data/Migrations/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/ExternalServices/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Infrastructure/ExternalServices/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Notifications/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Infrastructure/Notifications/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Infrastructure/Persistence/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Infrastructure/Persistence/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Middleware/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Middleware/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Program.cs",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Program.cs",
       "sha256": "c3993ce27c61fc414269d4208038ab5f30b0c611eec7c9393c14eefceb42b33f"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Properties/launchSettings.json",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Properties/launchSettings.json",
       "sha256": "888f2564426ec7a4fd06f5daa36b4d0ace14969b4455084d3b8150b18b6850db"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/Security/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/Security/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/appsettings.Development.json",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/appsettings.Development.json",
       "sha256": "aa84de725af0353b9cdad346873987b7ad66ec8aa09134ad8a384cb5a0501c73"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/appsettings.Production.json",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/appsettings.Production.json",
       "sha256": "d141386dc61d25a09fcc6e5f5d41ba25b4bebe500457796c1d6f3c52fbd57ff5"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/appsettings.json",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/appsettings.json",
       "sha256": "8dd0e2c22ed7df4d24e0af5330b6a9efc9ffa463a96c833a417cad57064dee58"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/src/App.Server/wwwroot/.gitkeep",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/src/App.Server/wwwroot/.gitkeep",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/tests/App.Server.IntegrationTests/App.Server.IntegrationTests.csproj",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/tests/App.Server.IntegrationTests/App.Server.IntegrationTests.csproj",
       "sha256": "0ba82b2da4b44df00299b5f4075a9fa738f265c003f566595ba99b3599db2b29"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/tests/App.Server.IntegrationTests/HostTests.cs",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/tests/App.Server.IntegrationTests/HostTests.cs",
       "sha256": "b534a8e5bf33324a1db2444f3612222bacc01df09e1afb81fe3fc763e9bc72bf"
     },
     {
-      "path": "skills/template-architecture/assets/blank-project/tests/App.Server.UnitTests/App.Server.UnitTests.csproj",
+      "path": "skills/software-engineering/assets/templates/aspnet-react/tests/App.Server.UnitTests/App.Server.UnitTests.csproj",
       "sha256": "9519e17eae3bf3bb739762506f9cbf8efadab7ae7310f020a682d9fd3979abcd"
     },
     {
-      "path": "skills/template-architecture/assets/icon.svg",
-      "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d"
+      "path": "skills/software-engineering/references/architecture.md",
+      "sha256": "d8b04745e26f347acfc63c4576a92920600abc3eb4149a6a14b8b770fb7a3fe5"
     },
     {
-      "path": "skills/template-architecture/references/architecture.md",
+      "path": "skills/software-engineering/references/aspnet-profile.md",
+      "sha256": "11ec8217c22054db13fc2c59283b3f3bcb487b0c5791820dfbad5dac2416dbab"
+    },
+    {
+      "path": "skills/software-engineering/references/backend.md",
+      "sha256": "ecb87346ae5d3c2860d4c5e791fc929a2ce1cbbaed67e9bccc78885b4e73e0eb"
+    },
+    {
+      "path": "skills/software-engineering/references/data.md",
+      "sha256": "67e43b75d730d4f4c68b2fbbfd5f9a3d1f8ce1bdec03166c3b54ccd71237d073"
+    },
+    {
+      "path": "skills/software-engineering/references/delivery.md",
+      "sha256": "2977525941ea77e987de17e2a482ac8ba1c45c524ff0f78036e6bdb04231a87b"
+    },
+    {
+      "path": "skills/software-engineering/references/design-system.md",
+      "sha256": "f33997d92008fc0ad73c32a41e1b67a8bb70d0365dee6fc87a162aac40ae01f1"
+    },
+    {
+      "path": "skills/software-engineering/references/frontend.md",
+      "sha256": "38eb1f4e2185fa53741658a8f21ef188956aa98dd65c331759da330abef16e1e"
+    },
+    {
+      "path": "skills/software-engineering/references/ontology-semantics.md",
+      "sha256": "6f3a447b9418634ed8bbeb8b6638585d5acace4f85e92528f8d77ebf55cb7002"
+    },
+    {
+      "path": "skills/software-engineering/references/operations.md",
+      "sha256": "4511b0ee1205c1f11c8de675ea454d7b9b200c0dca3e99489b0173a5c568f1e4"
+    },
+    {
+      "path": "skills/software-engineering/references/product-integration.md",
+      "sha256": "9b136e31e37498f009a05a665562f8e8fbf89daaf308bbb7a0f94491a1c4a730"
+    },
+    {
+      "path": "skills/software-engineering/references/profiles/aspnet-architecture-architecture.md",
       "sha256": "1b429a8afc6d4cba455ef6adb662929d76ec0c0bfb1c1fcf386cd50bf8dc98f4"
     },
     {
-      "path": "skills/template-architecture/references/delivery.md",
-      "sha256": "78758ec4820f0029e928d33d5b24f17f92b339f89b0c8e78a98909586eaf62d0"
-    },
-    {
-      "path": "skills/template-architecture/references/source-audit.md",
+      "path": "skills/software-engineering/references/profiles/aspnet-architecture-source-audit.md",
       "sha256": "54c1977386b130f7553abec873173dd1a4f79cf312d645eae066afb4198e7e3f"
     },
     {
-      "path": "skills/template-architecture/references/source-manifest.json",
-      "sha256": "c9db8d00cacf63980bf16616f20b1fdaf75e85eead4c882452317d848dc64fc2"
-    },
-    {
-      "path": "skills/template-architecture/scripts/scaffold.py",
-      "sha256": "ab85a07f35b9c4428b02f4857fa003935bb107223b9d3b3f14cb6a2e06abb4e2"
-    },
-    {
-      "path": "skills/template-backend/SKILL.md",
-      "sha256": "91466d080de10f9ca252bc25e295e259e22264ca5b6d3d948ea23914b9f448c0"
-    },
-    {
-      "path": "skills/template-backend/agents/openai.yaml",
-      "sha256": "d2aa40cc1f6c82a43849cfa9ce151f293f7f058dd87b924763e938b7c8096873"
-    },
-    {
-      "path": "skills/template-backend/assets/icon.svg",
-      "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d"
-    },
-    {
-      "path": "skills/template-backend/references/backend-contracts.md",
+      "path": "skills/software-engineering/references/profiles/aspnet-backend-backend-contracts.md",
       "sha256": "a43aa28d8595ea354e42aac93a04237920bb07f8c47cd7ee800d0213b9a09220"
     },
     {
-      "path": "skills/template-frontend/SKILL.md",
-      "sha256": "8c20516abe091ecfe2651ab91c98c426aaf5735154b15c466bd467cb45916b6f"
-    },
-    {
-      "path": "skills/template-frontend/agents/openai.yaml",
-      "sha256": "6ca64c34373125ae5ff348cf1f514d8de64f8af91648e917920a41b08ed15b06"
-    },
-    {
-      "path": "skills/template-frontend/assets/icon.svg",
-      "sha256": "8936b24f674a1250d999e2c2b5901374fb4240426f32bd1ae340c352a90d617d"
-    },
-    {
-      "path": "skills/template-frontend/references/frontend-contracts.md",
+      "path": "skills/software-engineering/references/profiles/aspnet-frontend-frontend-contracts.md",
       "sha256": "fcc32afac00364ae490442c8f4cda7cd317a77b86b0427e69e34d73b3910e01f"
     },
     {
-      "path": "skills/template-verification/SKILL.md",
-      "sha256": "2e8b10528ed596d14f1d3e98d14f27f2747cf71212d344c4c48d77528986cc94"
-    },
-    {
-      "path": "skills/template-verification/agents/openai.yaml",
-      "sha256": "b52727854bed10de39c62c94fdfe74c4451ccbc93049cba98ac89fd3ddacd030"
-    },
-    {
-      "path": "skills/template-verification/assets/icon.svg",
-      "sha256": "e9301497fa98ef56aaca7ede0857b9a18dc06c34040f0679c609a6bf49b1d38b"
-    },
-    {
-      "path": "skills/template-verification/references/verification.md",
+      "path": "skills/software-engineering/references/profiles/aspnet-verification-verification.md",
       "sha256": "b28925fdbbc469a6ed2ae9beb85170d013092a3aa9cf2d9befc39ccf4788124d"
+    },
+    {
+      "path": "skills/software-engineering/references/profiles/source-manifest.json",
+      "sha256": "c9db8d00cacf63980bf16616f20b1fdaf75e85eead4c882452317d848dc64fc2"
+    },
+    {
+      "path": "skills/software-engineering/references/qa-and-evidence.md",
+      "sha256": "90f564c9a2c24993c4a87bf485e4d6be33e93cf5c38b62cffcc36bbdc67b5b20"
+    },
+    {
+      "path": "skills/software-engineering/references/requirements.md",
+      "sha256": "59de40a5f57215ab8eb69320aa7f0ea312837c2e977ec8b1917d8a5a03a4f8bc"
+    },
+    {
+      "path": "skills/software-engineering/references/security.md",
+      "sha256": "745dfab00e639cd28052fe61d7ffda3899fa4381ff3a07047a140ed61bcd4f2a"
+    },
+    {
+      "path": "skills/software-engineering/references/sources.json",
+      "sha256": "4dccaf6c25431372593dd5696d01fe63dce7b0a48f3a92764ca0107b23be54b4"
+    },
+    {
+      "path": "skills/software-engineering/references/state-and-budget.md",
+      "sha256": "2d7f25cd2f1b8641828e3cf42c9372b40242bcae366a7898145110cbd51c5a7d"
+    },
+    {
+      "path": "skills/software-engineering/references/task-assignment.md",
+      "sha256": "82c0b9a592c820e8ff25b0bd961718dd16a0eb4038b693ba2d6d63f0a41ee31c"
+    },
+    {
+      "path": "skills/software-engineering/references/testing.md",
+      "sha256": "f693e27dadaa573eb777fced126eaf2a26fd766496a84fd372c2ddea642e1bf0"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/LICENSE",
+      "sha256": "6f202f8bd568cd730dbb2b0d1f8e243bc74c2fa1f64dbce9b2c7ea08bd5c9fd7"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/docs/agents.md",
+      "sha256": "fb5cc80f87845a27c9223f99dd418ffdbcd31a272f23d3bf09d66ba1402b61e3"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/personas/code-reviewer.md",
+      "sha256": "2d02acb9db1c37521d676587d2e0afb713c8983de957a78efdfa82d27e5fc3da"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/personas/security-auditor.md",
+      "sha256": "66a3f68f1c691b600ddb44e88afb138e239d0572df37be84e1f9a427c887dd0a"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/personas/test-engineer.md",
+      "sha256": "c4acde91d6307d88515387344a129a2d0679134e587596c3517d73faffcd5aa6"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/personas/web-performance-auditor.md",
+      "sha256": "ba83e342913bdbbca775d9dbb3bc793af67620c12b614dfd0f4dd4d27b58d34b"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/references/accessibility-checklist.md",
+      "sha256": "61c759d94d52296231f5f310b92b401f56c44e4430dc3cc95ebac5d7b1d5ffac"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/references/definition-of-done.md",
+      "sha256": "d1c75d2ae65d2c7a9cd01f93fa8de63e00e75f2fe5d08be224d576157054dcee"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/references/observability-checklist.md",
+      "sha256": "25fcd0e854596a5ab6f11b002050d245bf78f5ae0fcbd1df699b89451ae0e1e8"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/references/orchestration-patterns.md",
+      "sha256": "61e543d86f19f86b83074f8c1c769455c7085a2c72dd47b1da21a8c63785be4a"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/references/performance-checklist.md",
+      "sha256": "40f564d1e62341e277c01ba42c42d95264b9ef3b8e5a23249dc6e121a7e70067"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/references/security-checklist.md",
+      "sha256": "37774056502fe8970dcd2fd27dca5fa31f2a55232649fc3056c89c3af7d62755"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/references/testing-patterns.md",
+      "sha256": "f0bf05acd0edcadc27297ad5b74f104c8103ccfedba1a05cd6d6ae4af8364c56"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/api-and-interface-design/workflow.md",
+      "sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/browser-testing-with-devtools/workflow.md",
+      "sha256": "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/ci-cd-and-automation/workflow.md",
+      "sha256": "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/code-review-and-quality/workflow.md",
+      "sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/code-simplification/workflow.md",
+      "sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/constraint-driven-development/references/floor-guard.md",
+      "sha256": "59715dc6c3c6c36ec9177f9ced65c379e80a4539b36115456666bfabc43a6a9c"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/constraint-driven-development/workflow.md",
+      "sha256": "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/context-engineering/workflow.md",
+      "sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/debugging-and-error-recovery/workflow.md",
+      "sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/deprecation-and-migration/workflow.md",
+      "sha256": "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/documentation-and-adrs/workflow.md",
+      "sha256": "b60d503925bbaacee7fd63935db70b9ced5b2514ff5a56a672130e01b9690bc5"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/doubt-driven-development/workflow.md",
+      "sha256": "6fa1fcd8420c28daf7e53c5b08b0f20b907911efd2a6d9bce0b9740da20a4008"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/frontend-ui-engineering/workflow.md",
+      "sha256": "29a3e53d57c0a128831a20730ae874a8c4fda40c001fcdc15f8e9ad4b5f72f1b"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/git-workflow-and-versioning/workflow.md",
+      "sha256": "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/idea-refine/examples.md",
+      "sha256": "563204bfbf2f80a444151695205af4cb759e722b3d1e5460e08f278a69c89ba1"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/idea-refine/frameworks.md",
+      "sha256": "161ebc18fdf2d996bc62a87a2d747cf1bf53548354f8925de25c732c27f00309"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/idea-refine/refinement-criteria.md",
+      "sha256": "1ca2973a4d01b5cb37ab7ddb2eff77fa4e792634a33d0ce44961c068fc88d51a"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/idea-refine/scripts/idea-refine.sh",
+      "sha256": "f02a52408a4218047c032d221483abfbb48d11f090bb4915965c7419bf2e0e47"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/idea-refine/workflow.md",
+      "sha256": "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/incremental-implementation/workflow.md",
+      "sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/interview-me/workflow.md",
+      "sha256": "ace4b675999bb504593d572e0f73f3d7e803ad6fddf318445598c82c11939db2"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/observability-and-instrumentation/workflow.md",
+      "sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/performance-optimization/references/optimization-patterns.md",
+      "sha256": "fbf724076ffb8ac1a28e1a2773c0b550f5361090024b2dd32e5a682c69b7945f"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/performance-optimization/workflow.md",
+      "sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/planning-and-task-breakdown/workflow.md",
+      "sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/security-and-hardening/references/hardening-patterns.md",
+      "sha256": "2e1b93a502b4cdb0258404441f3aab029b0cce4003fbbcc61af9a2de18bab9ab"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/security-and-hardening/workflow.md",
+      "sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/shipping-and-launch/workflow.md",
+      "sha256": "726f3e546369db289160b8d42195590f00b6432887e17bf19070dcc9a347fe39"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/source-driven-development/workflow.md",
+      "sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/spec-driven-development/workflow.md",
+      "sha256": "44adc475a58a8193d2d41abcbbcdca5522d252114e4faf40ca41b90e2922d2c3"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/test-driven-development/workflow.md",
+      "sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca"
+    },
+    {
+      "path": "skills/software-engineering/references/upstream/skills/using-agent-skills/workflow.md",
+      "sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3"
+    },
+    {
+      "path": "skills/software-engineering/scripts/compile_graph.py",
+      "sha256": "78b0ffb10c20a21bbd49b6c0aa2d4916d86c6440b11d083c85aebbfc67f9ca04"
+    },
+    {
+      "path": "skills/software-engineering/scripts/owl_reader.py",
+      "sha256": "9d24fcc0989158a28263179ff4495af2e027747bd0b30b7564dce221ae051569"
+    },
+    {
+      "path": "skills/software-engineering/scripts/project_audit.py",
+      "sha256": "e5c0fe0d14b7e0027b42b01312241ebbc6f62c682f79a50e38f3833867c9fea1"
+    },
+    {
+      "path": "skills/software-engineering/scripts/requirements-maintenance.txt",
+      "sha256": "1b924ff99027d0a5309ee58f5d23a8e6b864eabaeb170efffbf4f27588b1c68c"
+    },
+    {
+      "path": "skills/software-engineering/scripts/route.py",
+      "sha256": "52862b3dcf5118bcef4be5e4ef340d06fb2bb6b8f9faf7e3098b8b7cc87a121f"
+    },
+    {
+      "path": "skills/software-engineering/scripts/scaffold.py",
+      "sha256": "7d6ebba20fef06f52d662e73ff11c87008069b247bcafd4b8bc55239e06a7090"
+    },
+    {
+      "path": "skills/software-engineering/scripts/validate.py",
+      "sha256": "13dc0647d69fe307b2257562ca9bbfdc6067df701f1be1b4ead37be80cae8880"
+    },
+    {
+      "path": "tests/test_integration.py",
+      "sha256": "acca6a0f481035179b202d1c9ef0e19b81620470b61efc53433590542f9fa73e"
+    },
+    {
+      "path": "tests/test_mediator.py",
+      "sha256": "e093674f2ec8e1c651fda0dcba088c08b7518218225b5178ab5161d6a1f4d703"
+    },
+    {
+      "path": "tests/test_project_intelligence.py",
+      "sha256": "fcacdb8805a725712d952372bb25a7cab8425fb7c07de0c9d0a985a098b4eac4"
+    },
+    {
+      "path": "tests/test_project_setup.py",
+      "sha256": "0e24ddb1c201de543e0c54716fab285a6ea7ce051b3835a1ce2b891e837ff8a6"
+    },
+    {
+      "path": "tests/test_router.py",
+      "sha256": "f30b0a75b7d59607b9ec21419771830d9f1283091c54e49411738a563510961f"
     }
   ]
 }

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OntoLink Coordinator"
+  short_description: "Evidence-gated software lifecycle and task coordination"
+  default_prompt: "Use $ontolink-skills to coordinate this software project through its current ontology-defined phase."

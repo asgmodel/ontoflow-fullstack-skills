@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/asgmodel/ontolink-skills",
+  "commit": "8f0dd5d9ecc9bcefde4a62e818d9804bb7937543",
+  "version": "1.3.0",
+  "layout": "One ontolink-skills package containing skills/<phase-name>/, .rule/, scripts/, references/ and assets/.",
+  "integration": {
+    "distribution_version": "2.0.0",
+    "changes": [
+      "Engineering candidates consolidated to software-engineering",
+      "Engineering phase mapping added to lifecycle OWL",
+      "Installer includes engineering sibling package",
+      "Core mediator and RDF state semantics retained"
+    ]
+  }
+}

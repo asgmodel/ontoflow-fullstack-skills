@@ -1,0 +1,4 @@
+interface:
+  display_name: "Software Engineering"
+  short_description: "Ontology-guided software engineering and verification"
+  default_prompt: "Use $software-engineering with OntoLink to implement and verify the current project task."
