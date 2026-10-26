@@ -1,0 +1,1424 @@
+@prefix nx: <urn:software-engineering:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+nx:Ontology a owl:Ontology ;
+    rdfs:comment "Software Engineering Full-Stack Engineering Ontology. Routing metadata supports selective workflow loading; it does not execute application development or certify correctness." ;
+    owl:versionInfo "2.0.0" .
+
+nx:Risk a owl:Class ;
+    rdfs:label "Risk" .
+
+nx:Task a owl:Class ;
+    rdfs:label "Task" .
+
+nx:activatesSkill a owl:ObjectProperty ;
+    rdfs:domain nx:RoutingRule ;
+    rdfs:range nx:Skill .
+
+nx:appliesInPhase a owl:ObjectProperty ;
+    rdfs:domain nx:Skill ;
+    rdfs:range nx:Phase .
+
+nx:budgetTokens a owl:DatatypeProperty .
+
+nx:code-simplification a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-review ;
+    nx:derivedFrom nx:addy ;
+    nx:id "code-simplification" ;
+    nx:implementsCapability nx:capability-code-simplification ;
+    nx:ownedBy nx:role-architect ;
+    nx:sourceHash "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d" ;
+    nx:summary "Reduce complexity while preserving proven behavior and error handling." ;
+    nx:workflowPath "references/upstream/skills/code-simplification/workflow.md" .
+
+nx:command a owl:DatatypeProperty .
+
+nx:conditional-auth-build a nx:RoutingRule ;
+    nx:activatesSkill nx:security-and-hardening ;
+    nx:forPhase nx:phase-build ;
+    nx:id "*" ;
+    nx:requiredTag "auth" .
+
+nx:conditional-auth-review a nx:RoutingRule ;
+    nx:activatesSkill nx:security-and-hardening ;
+    nx:forPhase nx:phase-review ;
+    nx:id "*" ;
+    nx:requiredTag "auth" .
+
+nx:conditional-backend-build a nx:RoutingRule ;
+    nx:activatesSkill nx:backend-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "*" ;
+    nx:requiredLayer "backend" .
+
+nx:conditional-contract-build a nx:RoutingRule ;
+    nx:activatesSkill nx:api-and-interface-design ;
+    nx:forPhase nx:phase-build ;
+    nx:id "*" ;
+    nx:requiredTag "contract" .
+
+nx:conditional-contract-plan a nx:RoutingRule ;
+    nx:activatesSkill nx:api-and-interface-design ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "*" ;
+    nx:requiredTag "contract" .
+
+nx:conditional-data-build a nx:RoutingRule ;
+    nx:activatesSkill nx:security-and-hardening ;
+    nx:forPhase nx:phase-build ;
+    nx:id "*" ;
+    nx:requiredTag "data" .
+
+nx:conditional-data-review a nx:RoutingRule ;
+    nx:activatesSkill nx:security-and-hardening ;
+    nx:forPhase nx:phase-review ;
+    nx:id "*" ;
+    nx:requiredTag "data" .
+
+nx:conditional-external-build a nx:RoutingRule ;
+    nx:activatesSkill nx:security-and-hardening ;
+    nx:forPhase nx:phase-build ;
+    nx:id "*" ;
+    nx:requiredTag "external" .
+
+nx:conditional-external-review a nx:RoutingRule ;
+    nx:activatesSkill nx:security-and-hardening ;
+    nx:forPhase nx:phase-review ;
+    nx:id "*" ;
+    nx:requiredTag "external" .
+
+nx:conditional-failure-build a nx:RoutingRule ;
+    nx:activatesSkill nx:debugging-and-error-recovery ;
+    nx:forPhase nx:phase-build ;
+    nx:id "*" ;
+    nx:requiredTag "failure" .
+
+nx:conditional-failure-verify a nx:RoutingRule ;
+    nx:activatesSkill nx:debugging-and-error-recovery ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "*" ;
+    nx:requiredTag "failure" .
+
+nx:conditional-framework-build a nx:RoutingRule ;
+    nx:activatesSkill nx:source-driven-development ;
+    nx:forPhase nx:phase-build ;
+    nx:id "*" ;
+    nx:requiredTag "framework" .
+
+nx:conditional-frontend-build a nx:RoutingRule ;
+    nx:activatesSkill nx:frontend-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "*" ;
+    nx:requiredLayer "frontend" .
+
+nx:conditional-frontend-verify a nx:RoutingRule ;
+    nx:activatesSkill nx:browser-testing-with-devtools ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "*" ;
+    nx:requiredLayer "frontend" .
+
+nx:conditional-performance-build a nx:RoutingRule ;
+    nx:activatesSkill nx:performance-optimization ;
+    nx:forPhase nx:phase-build ;
+    nx:id "*" ;
+    nx:requiredTag "performance" .
+
+nx:conditional-performance-verify a nx:RoutingRule ;
+    nx:activatesSkill nx:performance-optimization ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "*" ;
+    nx:requiredTag "performance" .
+
+nx:conditional-schema-build a nx:RoutingRule ;
+    nx:activatesSkill nx:deprecation-and-migration ;
+    nx:forPhase nx:phase-build ;
+    nx:id "*" ;
+    nx:requiredTag "schema" .
+
+nx:conditional-schema-plan a nx:RoutingRule ;
+    nx:activatesSkill nx:deprecation-and-migration ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "*" ;
+    nx:requiredTag "schema" .
+
+nx:conditional-uncertain-review a nx:RoutingRule ;
+    nx:activatesSkill nx:doubt-driven-development ;
+    nx:forPhase nx:phase-review ;
+    nx:id "*" ;
+    nx:requiredTag "uncertain" .
+
+nx:constrainedBy a owl:ObjectProperty ;
+    rdfs:domain nx:ProjectProfile ;
+    rdfs:range nx:Policy .
+
+nx:consumesArtifact a owl:ObjectProperty ;
+    rdfs:domain nx:Skill ;
+    rdfs:range nx:Artifact .
+
+nx:context-engineering a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-define,
+        nx:phase-plan,
+        nx:phase-review,
+        nx:phase-ship,
+        nx:phase-verify ;
+    nx:derivedFrom nx:addy ;
+    nx:id "context-engineering" ;
+    nx:implementsCapability nx:capability-context-engineering ;
+    nx:ownedBy nx:role-orchestrator ;
+    nx:sourceHash "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63" ;
+    nx:summary "Select current contracts and source, protect live constraints and persist restartable boundaries." ;
+    nx:workflowPath "references/upstream/skills/context-engineering/workflow.md" .
+
+nx:context-packet a nx:ContextPacket .
+
+nx:contextHash a owl:DatatypeProperty,
+        owl:FunctionalProperty .
+
+nx:decision a nx:Decision .
+
+nx:dependsOn a owl:ObjectProperty ;
+    rdfs:domain nx:Artifact ;
+    rdfs:range nx:Artifact .
+
+nx:derivedFrom a owl:ObjectProperty ;
+    rdfs:domain nx:Skill ;
+    rdfs:range nx:Source .
+
+nx:existing-stack a nx:ProjectProfile ;
+    nx:constrainedBy nx:policy-authorization,
+        nx:policy-budget-integrity,
+        nx:policy-evidence-honesty,
+        nx:policy-preserve-stack,
+        nx:policy-real-integration,
+        nx:policy-selective-context ;
+    nx:profileId "existing-stack" .
+
+nx:forPhase a owl:ObjectProperty ;
+    rdfs:domain nx:RoutingRule ;
+    rdfs:range nx:Phase .
+
+nx:gate-performance a nx:Gate ;
+    nx:id "performance" .
+
+nx:gate-security a nx:Gate ;
+    nx:id "security" .
+
+nx:git-workflow-and-versioning a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-ship ;
+    nx:derivedFrom nx:addy ;
+    nx:id "git-workflow-and-versioning" ;
+    nx:implementsCapability nx:capability-git-workflow-and-versioning ;
+    nx:ownedBy nx:role-orchestrator ;
+    nx:sourceHash "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea" ;
+    nx:summary "Keep authorized changes atomic, reviewed and free of secrets." ;
+    nx:workflowPath "references/upstream/skills/git-workflow-and-versioning/workflow.md" .
+
+nx:hasRoot a owl:ObjectProperty ;
+    rdfs:domain nx:Intent ;
+    rdfs:range nx:Skill .
+
+nx:id a owl:DatatypeProperty,
+        owl:FunctionalProperty .
+
+nx:idea-refine a nx:Skill ;
+    nx:appliesInPhase nx:phase-define ;
+    nx:derivedFrom nx:addy ;
+    nx:id "idea-refine" ;
+    nx:implementsCapability nx:capability-idea-refine ;
+    nx:ownedBy nx:role-architect ;
+    nx:sourceHash "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e" ;
+    nx:summary "Explore options and converge on a concrete problem and success criteria." ;
+    nx:workflowPath "references/upstream/skills/idea-refine/workflow.md" .
+
+nx:implementsCapability a owl:ObjectProperty ;
+    rdfs:domain nx:Skill ;
+    rdfs:range nx:Capability .
+
+nx:intent-backend-fix a nx:Intent ;
+    nx:hasRoot nx:backend-engineering,
+        nx:code-review-and-quality,
+        nx:test-driven-development ;
+    nx:id "backend-fix" .
+
+nx:intent-blank-scaffold a nx:Intent ;
+    nx:hasRoot nx:architecture-engineering,
+        nx:verification-engineering ;
+    nx:id "blank-scaffold" .
+
+nx:intent-bug-fix a nx:Intent ;
+    nx:hasRoot nx:code-review-and-quality,
+        nx:debugging-and-error-recovery,
+        nx:test-driven-development ;
+    nx:id "bug-fix" .
+
+nx:intent-feature a nx:Intent ;
+    nx:hasRoot nx:api-and-interface-design,
+        nx:code-review-and-quality,
+        nx:incremental-implementation,
+        nx:spec-driven-development,
+        nx:test-driven-development ;
+    nx:id "feature" .
+
+nx:intent-full-product a nx:Intent ;
+    nx:hasRoot nx:api-and-interface-design,
+        nx:architecture-engineering,
+        nx:backend-engineering,
+        nx:browser-testing-with-devtools,
+        nx:ci-cd-and-automation,
+        nx:code-review-and-quality,
+        nx:constraint-driven-development,
+        nx:documentation-and-adrs,
+        nx:frontend-engineering,
+        nx:incremental-implementation,
+        nx:observability-and-instrumentation,
+        nx:planning-and-task-breakdown,
+        nx:shipping-and-launch,
+        nx:spec-driven-development,
+        nx:verification-engineering ;
+    nx:id "full-product" .
+
+nx:intent-migration a nx:Intent ;
+    nx:hasRoot nx:backend-engineering,
+        nx:code-review-and-quality,
+        nx:deprecation-and-migration,
+        nx:verification-engineering ;
+    nx:id "migration" .
+
+nx:intent-performance a nx:Intent ;
+    nx:hasRoot nx:code-review-and-quality,
+        nx:performance-optimization ;
+    nx:id "performance" .
+
+nx:intent-release a nx:Intent ;
+    nx:hasRoot nx:ci-cd-and-automation,
+        nx:code-review-and-quality,
+        nx:documentation-and-adrs,
+        nx:shipping-and-launch,
+        nx:verification-engineering ;
+    nx:id "release" .
+
+nx:intent-review-only a nx:Intent ;
+    nx:hasRoot nx:code-review-and-quality ;
+    nx:id "review-only" .
+
+nx:intent-security-audit a nx:Intent ;
+    nx:hasRoot nx:code-review-and-quality,
+        nx:security-and-hardening ;
+    nx:id "security-audit" .
+
+nx:intent-ui-fix a nx:Intent ;
+    nx:hasRoot nx:browser-testing-with-devtools,
+        nx:code-review-and-quality,
+        nx:frontend-engineering ;
+    nx:id "ui-fix" .
+
+nx:interview-me a nx:Skill ;
+    nx:appliesInPhase nx:phase-define ;
+    nx:derivedFrom nx:addy ;
+    nx:id "interview-me" ;
+    nx:implementsCapability nx:capability-interview-me ;
+    nx:ownedBy nx:role-orchestrator ;
+    nx:sourceHash "ace4b675999bb504593d572e0f73f3d7e803ad6fddf318445598c82c11939db2" ;
+    nx:summary "Resolve materially missing requirements with a focused interview." ;
+    nx:workflowPath "references/upstream/skills/interview-me/workflow.md" .
+
+nx:invalidates a owl:ObjectProperty ;
+    rdfs:domain nx:Artifact ;
+    rdfs:range nx:Artifact .
+
+nx:lifecycle-build a nx:LifecycleMapping ;
+    nx:engineeringPhase nx:phase-build ;
+    nx:lifecyclePhase <urn:ontolink:build> .
+
+nx:lifecycle-deliver a nx:LifecycleMapping ;
+    nx:engineeringPhase nx:phase-ship ;
+    nx:lifecyclePhase <urn:ontolink:deliver> .
+
+nx:lifecycle-design a nx:LifecycleMapping ;
+    nx:engineeringPhase nx:phase-define ;
+    nx:lifecyclePhase <urn:ontolink:design> .
+
+nx:lifecycle-discover a nx:LifecycleMapping ;
+    nx:engineeringPhase nx:phase-define ;
+    nx:lifecyclePhase <urn:ontolink:discover> .
+
+nx:lifecycle-monitor a nx:LifecycleMapping ;
+    nx:engineeringPhase nx:phase-monitor ;
+    nx:lifecyclePhase <urn:ontolink:monitor> .
+
+nx:lifecycle-plan a nx:LifecycleMapping ;
+    nx:engineeringPhase nx:phase-plan ;
+    nx:lifecyclePhase <urn:ontolink:plan> .
+
+nx:lifecycle-verify a nx:LifecycleMapping ;
+    nx:engineeringPhase nx:phase-review,
+        nx:phase-verify ;
+    nx:lifecyclePhase <urn:ontolink:verify> .
+
+nx:needsEvidence a owl:ObjectProperty ;
+    rdfs:domain nx:Gate ;
+    rdfs:range nx:Evidence .
+
+nx:ownedBy a owl:ObjectProperty ;
+    rdfs:domain nx:Skill ;
+    rdfs:range nx:Role .
+
+nx:producesArtifact a owl:ObjectProperty ;
+    rdfs:domain nx:Skill ;
+    rdfs:range nx:Artifact .
+
+nx:profileId a owl:DatatypeProperty .
+
+nx:requiredLayer a owl:DatatypeProperty .
+
+nx:requiredTag a owl:DatatypeProperty .
+
+nx:requiresSkill a owl:ObjectProperty ;
+    rdfs:domain nx:Skill ;
+    rdfs:range nx:Skill .
+
+nx:result a owl:DatatypeProperty .
+
+nx:revision a owl:DatatypeProperty .
+
+nx:route-backend-fix-monitor-operations-engineering-base a nx:RoutingRule ;
+    nx:activatesSkill nx:operations-engineering ;
+    nx:forPhase nx:phase-monitor ;
+    nx:id "backend-fix" .
+
+nx:route-blank-scaffold-monitor-operations-engineering-base a nx:RoutingRule ;
+    nx:activatesSkill nx:operations-engineering ;
+    nx:forPhase nx:phase-monitor ;
+    nx:id "blank-scaffold" .
+
+nx:route-boundary-data-build-data-engineering-data a nx:RoutingRule ;
+    nx:activatesSkill nx:data-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "boundary-data" ;
+    nx:requiredLayer "data" .
+
+nx:route-boundary-data-plan-data-engineering-data a nx:RoutingRule ;
+    nx:activatesSkill nx:data-engineering ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "boundary-data" ;
+    nx:requiredLayer "data" .
+
+nx:route-boundary-data-verify-data-engineering-data a nx:RoutingRule ;
+    nx:activatesSkill nx:data-engineering ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "boundary-data" ;
+    nx:requiredLayer "data" .
+
+nx:route-boundary-security-build-security-engineering-auth a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "auth" .
+
+nx:route-boundary-security-build-security-engineering-data a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "data" .
+
+nx:route-boundary-security-build-security-engineering-external a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "external" .
+
+nx:route-boundary-security-define-security-engineering-auth a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-define ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "auth" .
+
+nx:route-boundary-security-define-security-engineering-data a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-define ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "data" .
+
+nx:route-boundary-security-define-security-engineering-external a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-define ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "external" .
+
+nx:route-boundary-security-plan-security-engineering-auth a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "auth" .
+
+nx:route-boundary-security-plan-security-engineering-data a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "data" .
+
+nx:route-boundary-security-plan-security-engineering-external a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "external" .
+
+nx:route-boundary-security-review-security-engineering-auth a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-review ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "auth" .
+
+nx:route-boundary-security-review-security-engineering-data a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-review ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "data" .
+
+nx:route-boundary-security-review-security-engineering-external a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-review ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "external" .
+
+nx:route-boundary-security-ship-security-engineering-auth a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-ship ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "auth" .
+
+nx:route-boundary-security-ship-security-engineering-data a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-ship ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "data" .
+
+nx:route-boundary-security-ship-security-engineering-external a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-ship ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "external" .
+
+nx:route-boundary-security-verify-security-engineering-auth a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "auth" .
+
+nx:route-boundary-security-verify-security-engineering-data a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "data" .
+
+nx:route-boundary-security-verify-security-engineering-external a nx:RoutingRule ;
+    nx:activatesSkill nx:security-engineering ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "boundary-security" ;
+    nx:requiredTag "external" .
+
+nx:route-bug-fix-monitor-operations-engineering-base a nx:RoutingRule ;
+    nx:activatesSkill nx:operations-engineering ;
+    nx:forPhase nx:phase-monitor ;
+    nx:id "bug-fix" .
+
+nx:route-feature-monitor-operations-engineering-base a nx:RoutingRule ;
+    nx:activatesSkill nx:operations-engineering ;
+    nx:forPhase nx:phase-monitor ;
+    nx:id "feature" .
+
+nx:route-full-product-monitor-operations-engineering-base a nx:RoutingRule ;
+    nx:activatesSkill nx:operations-engineering ;
+    nx:forPhase nx:phase-monitor ;
+    nx:id "full-product" .
+
+nx:route-migration-monitor-operations-engineering-base a nx:RoutingRule ;
+    nx:activatesSkill nx:operations-engineering ;
+    nx:forPhase nx:phase-monitor ;
+    nx:id "migration" .
+
+nx:route-performance-monitor-operations-engineering-base a nx:RoutingRule ;
+    nx:activatesSkill nx:operations-engineering ;
+    nx:forPhase nx:phase-monitor ;
+    nx:id "performance" .
+
+nx:route-release-monitor-operations-engineering-base a nx:RoutingRule ;
+    nx:activatesSkill nx:operations-engineering ;
+    nx:forPhase nx:phase-monitor ;
+    nx:id "release" .
+
+nx:route-review-only-monitor-operations-engineering-base a nx:RoutingRule ;
+    nx:activatesSkill nx:operations-engineering ;
+    nx:forPhase nx:phase-monitor ;
+    nx:id "review-only" .
+
+nx:route-security-audit-monitor-operations-engineering-base a nx:RoutingRule ;
+    nx:activatesSkill nx:operations-engineering ;
+    nx:forPhase nx:phase-monitor ;
+    nx:id "security-audit" .
+
+nx:route-ui-fix-monitor-operations-engineering-base a nx:RoutingRule ;
+    nx:activatesSkill nx:operations-engineering ;
+    nx:forPhase nx:phase-monitor ;
+    nx:id "ui-fix" .
+
+nx:rule-backend-fix-build-backend-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:backend-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "backend-fix" .
+
+nx:rule-backend-fix-review-code-review-and-quality a nx:RoutingRule ;
+    nx:activatesSkill nx:code-review-and-quality ;
+    nx:forPhase nx:phase-review ;
+    nx:id "backend-fix" .
+
+nx:rule-backend-fix-verify-test-driven-development a nx:RoutingRule ;
+    nx:activatesSkill nx:test-driven-development ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "backend-fix" .
+
+nx:rule-blank-scaffold-build-architecture-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:architecture-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "blank-scaffold" .
+
+nx:rule-blank-scaffold-plan-architecture-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:architecture-engineering ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "blank-scaffold" .
+
+nx:rule-blank-scaffold-verify-verification-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:verification-engineering ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "blank-scaffold" .
+
+nx:rule-bug-fix-build-debugging-and-error-recovery a nx:RoutingRule ;
+    nx:activatesSkill nx:debugging-and-error-recovery ;
+    nx:forPhase nx:phase-build ;
+    nx:id "bug-fix" .
+
+nx:rule-bug-fix-review-code-review-and-quality a nx:RoutingRule ;
+    nx:activatesSkill nx:code-review-and-quality ;
+    nx:forPhase nx:phase-review ;
+    nx:id "bug-fix" .
+
+nx:rule-bug-fix-verify-test-driven-development a nx:RoutingRule ;
+    nx:activatesSkill nx:test-driven-development ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "bug-fix" .
+
+nx:rule-feature-build-incremental-implementation a nx:RoutingRule ;
+    nx:activatesSkill nx:incremental-implementation ;
+    nx:forPhase nx:phase-build ;
+    nx:id "feature" .
+
+nx:rule-feature-define-spec-driven-development a nx:RoutingRule ;
+    nx:activatesSkill nx:spec-driven-development ;
+    nx:forPhase nx:phase-define ;
+    nx:id "feature" .
+
+nx:rule-feature-plan-api-and-interface-design a nx:RoutingRule ;
+    nx:activatesSkill nx:api-and-interface-design ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "feature" .
+
+nx:rule-feature-review-code-review-and-quality a nx:RoutingRule ;
+    nx:activatesSkill nx:code-review-and-quality ;
+    nx:forPhase nx:phase-review ;
+    nx:id "feature" .
+
+nx:rule-feature-verify-test-driven-development a nx:RoutingRule ;
+    nx:activatesSkill nx:test-driven-development ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "feature" .
+
+nx:rule-full-product-build-backend-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:backend-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "full-product" .
+
+nx:rule-full-product-build-frontend-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:frontend-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "full-product" .
+
+nx:rule-full-product-build-incremental-implementation a nx:RoutingRule ;
+    nx:activatesSkill nx:incremental-implementation ;
+    nx:forPhase nx:phase-build ;
+    nx:id "full-product" .
+
+nx:rule-full-product-build-observability-and-instrumentation a nx:RoutingRule ;
+    nx:activatesSkill nx:observability-and-instrumentation ;
+    nx:forPhase nx:phase-build ;
+    nx:id "full-product" .
+
+nx:rule-full-product-define-constraint-driven-development a nx:RoutingRule ;
+    nx:activatesSkill nx:constraint-driven-development ;
+    nx:forPhase nx:phase-define ;
+    nx:id "full-product" .
+
+nx:rule-full-product-define-full-stack-integration a nx:RoutingRule ;
+    nx:activatesSkill nx:architecture-engineering ;
+    nx:forPhase nx:phase-define ;
+    nx:id "full-product" .
+
+nx:rule-full-product-define-spec-driven-development a nx:RoutingRule ;
+    nx:activatesSkill nx:spec-driven-development ;
+    nx:forPhase nx:phase-define ;
+    nx:id "full-product" .
+
+nx:rule-full-product-plan-api-and-interface-design a nx:RoutingRule ;
+    nx:activatesSkill nx:api-and-interface-design ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "full-product" .
+
+nx:rule-full-product-plan-architecture-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:architecture-engineering ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "full-product" .
+
+nx:rule-full-product-plan-planning-and-task-breakdown a nx:RoutingRule ;
+    nx:activatesSkill nx:planning-and-task-breakdown ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "full-product" .
+
+nx:rule-full-product-review-code-review-and-quality a nx:RoutingRule ;
+    nx:activatesSkill nx:code-review-and-quality ;
+    nx:forPhase nx:phase-review ;
+    nx:id "full-product" .
+
+nx:rule-full-product-ship-ci-cd-and-automation a nx:RoutingRule ;
+    nx:activatesSkill nx:ci-cd-and-automation ;
+    nx:forPhase nx:phase-ship ;
+    nx:id "full-product" .
+
+nx:rule-full-product-ship-documentation-and-adrs a nx:RoutingRule ;
+    nx:activatesSkill nx:documentation-and-adrs ;
+    nx:forPhase nx:phase-ship ;
+    nx:id "full-product" .
+
+nx:rule-full-product-ship-shipping-and-launch a nx:RoutingRule ;
+    nx:activatesSkill nx:shipping-and-launch ;
+    nx:forPhase nx:phase-ship ;
+    nx:id "full-product" .
+
+nx:rule-full-product-verify-browser-testing-with-devtools a nx:RoutingRule ;
+    nx:activatesSkill nx:browser-testing-with-devtools ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "full-product" .
+
+nx:rule-full-product-verify-verification-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:verification-engineering ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "full-product" .
+
+nx:rule-migration-build-backend-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:backend-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "migration" .
+
+nx:rule-migration-build-deprecation-and-migration a nx:RoutingRule ;
+    nx:activatesSkill nx:deprecation-and-migration ;
+    nx:forPhase nx:phase-build ;
+    nx:id "migration" .
+
+nx:rule-migration-plan-deprecation-and-migration a nx:RoutingRule ;
+    nx:activatesSkill nx:deprecation-and-migration ;
+    nx:forPhase nx:phase-plan ;
+    nx:id "migration" .
+
+nx:rule-migration-review-code-review-and-quality a nx:RoutingRule ;
+    nx:activatesSkill nx:code-review-and-quality ;
+    nx:forPhase nx:phase-review ;
+    nx:id "migration" .
+
+nx:rule-migration-verify-verification-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:verification-engineering ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "migration" .
+
+nx:rule-performance-build-performance-optimization a nx:RoutingRule ;
+    nx:activatesSkill nx:performance-optimization ;
+    nx:forPhase nx:phase-build ;
+    nx:id "performance" .
+
+nx:rule-performance-review-code-review-and-quality a nx:RoutingRule ;
+    nx:activatesSkill nx:code-review-and-quality ;
+    nx:forPhase nx:phase-review ;
+    nx:id "performance" .
+
+nx:rule-performance-verify-performance-optimization a nx:RoutingRule ;
+    nx:activatesSkill nx:performance-optimization ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "performance" .
+
+nx:rule-release-review-code-review-and-quality a nx:RoutingRule ;
+    nx:activatesSkill nx:code-review-and-quality ;
+    nx:forPhase nx:phase-review ;
+    nx:id "release" .
+
+nx:rule-release-ship-ci-cd-and-automation a nx:RoutingRule ;
+    nx:activatesSkill nx:ci-cd-and-automation ;
+    nx:forPhase nx:phase-ship ;
+    nx:id "release" .
+
+nx:rule-release-ship-documentation-and-adrs a nx:RoutingRule ;
+    nx:activatesSkill nx:documentation-and-adrs ;
+    nx:forPhase nx:phase-ship ;
+    nx:id "release" .
+
+nx:rule-release-ship-shipping-and-launch a nx:RoutingRule ;
+    nx:activatesSkill nx:shipping-and-launch ;
+    nx:forPhase nx:phase-ship ;
+    nx:id "release" .
+
+nx:rule-release-verify-verification-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:verification-engineering ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "release" .
+
+nx:rule-review-only-review-code-review-and-quality a nx:RoutingRule ;
+    nx:activatesSkill nx:code-review-and-quality ;
+    nx:forPhase nx:phase-review ;
+    nx:id "review-only" .
+
+nx:rule-security-audit-review-code-review-and-quality a nx:RoutingRule ;
+    nx:activatesSkill nx:code-review-and-quality ;
+    nx:forPhase nx:phase-review ;
+    nx:id "security-audit" .
+
+nx:rule-security-audit-review-security-and-hardening a nx:RoutingRule ;
+    nx:activatesSkill nx:security-and-hardening ;
+    nx:forPhase nx:phase-review ;
+    nx:id "security-audit" .
+
+nx:rule-ui-fix-build-frontend-engineering a nx:RoutingRule ;
+    nx:activatesSkill nx:frontend-engineering ;
+    nx:forPhase nx:phase-build ;
+    nx:id "ui-fix" .
+
+nx:rule-ui-fix-review-code-review-and-quality a nx:RoutingRule ;
+    nx:activatesSkill nx:code-review-and-quality ;
+    nx:forPhase nx:phase-review ;
+    nx:id "ui-fix" .
+
+nx:rule-ui-fix-verify-browser-testing-with-devtools a nx:RoutingRule ;
+    nx:activatesSkill nx:browser-testing-with-devtools ;
+    nx:forPhase nx:phase-verify ;
+    nx:id "ui-fix" .
+
+nx:sourceHash a owl:DatatypeProperty,
+        owl:FunctionalProperty .
+
+nx:sourcePath a owl:DatatypeProperty .
+
+nx:summary a owl:DatatypeProperty .
+
+nx:template-single-host a nx:ProjectProfile ;
+    nx:constrainedBy nx:policy-authorization,
+        nx:policy-budget-integrity,
+        nx:policy-evidence-honesty,
+        nx:policy-preserve-stack,
+        nx:policy-real-integration,
+        nx:policy-selective-context ;
+    nx:profileId "template-single-host" .
+
+nx:testedRevision a owl:DatatypeProperty .
+
+nx:using-agent-skills a nx:Skill ;
+    nx:appliesInPhase nx:phase-define ;
+    nx:derivedFrom nx:addy ;
+    nx:id "using-agent-skills" ;
+    nx:implementsCapability nx:capability-using-agent-skills ;
+    nx:ownedBy nx:role-orchestrator ;
+    nx:sourceHash "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3" ;
+    nx:summary "Discover applicable workflows; enforce scope, assumptions and verification." ;
+    nx:workflowPath "references/upstream/skills/using-agent-skills/workflow.md" .
+
+nx:verifiedBy a owl:ObjectProperty ;
+    rdfs:domain nx:Artifact ;
+    rdfs:range nx:Gate .
+
+nx:workflowPath a owl:DatatypeProperty,
+        owl:FunctionalProperty .
+
+nx:APIContract a owl:Class ;
+    rdfs:label "APIContract" ;
+    rdfs:subClassOf nx:Artifact .
+
+nx:ContextPacket a owl:Class ;
+    rdfs:label "ContextPacket" .
+
+nx:DataSchema a owl:Class ;
+    rdfs:label "DataSchema" ;
+    rdfs:subClassOf nx:Artifact .
+
+nx:Decision a owl:Class ;
+    rdfs:label "Decision" .
+
+nx:DeploymentBundle a owl:Class ;
+    rdfs:label "DeploymentBundle" ;
+    rdfs:subClassOf nx:Artifact .
+
+nx:Evidence a owl:Class ;
+    rdfs:label "Evidence" .
+
+nx:TestSuite a owl:Class ;
+    rdfs:label "TestSuite" ;
+    rdfs:subClassOf nx:Artifact .
+
+nx:UIComponent a owl:Class ;
+    rdfs:label "UIComponent" ;
+    rdfs:subClassOf nx:Artifact .
+
+nx:architecture a nx:Artifact .
+
+nx:capability-api-and-interface-design a nx:Capability .
+
+nx:capability-architecture-engineering a nx:Capability .
+
+nx:capability-backend-engineering a nx:Capability .
+
+nx:capability-browser-testing-with-devtools a nx:Capability .
+
+nx:capability-ci-cd-and-automation a nx:Capability .
+
+nx:capability-code-review-and-quality a nx:Capability .
+
+nx:capability-code-simplification a nx:Capability .
+
+nx:capability-constraint-driven-development a nx:Capability .
+
+nx:capability-context-engineering a nx:Capability .
+
+nx:capability-debugging-and-error-recovery a nx:Capability .
+
+nx:capability-deprecation-and-migration a nx:Capability .
+
+nx:capability-documentation-and-adrs a nx:Capability .
+
+nx:capability-doubt-driven-development a nx:Capability .
+
+nx:capability-frontend-engineering a nx:Capability .
+
+nx:capability-frontend-ui-engineering a nx:Capability .
+
+nx:capability-git-workflow-and-versioning a nx:Capability .
+
+nx:capability-idea-refine a nx:Capability .
+
+nx:capability-incremental-implementation a nx:Capability .
+
+nx:capability-interview-me a nx:Capability .
+
+nx:capability-observability-and-instrumentation a nx:Capability .
+
+nx:capability-performance-optimization a nx:Capability .
+
+nx:capability-planning-and-task-breakdown a nx:Capability .
+
+nx:capability-security-and-hardening a nx:Capability .
+
+nx:capability-shipping-and-launch a nx:Capability .
+
+nx:capability-source-driven-development a nx:Capability .
+
+nx:capability-spec-driven-development a nx:Capability .
+
+nx:capability-test-driven-development a nx:Capability .
+
+nx:capability-using-agent-skills a nx:Capability .
+
+nx:capability-verification-engineering a nx:Capability .
+
+nx:delivery-engineering a nx:Skill ;
+    nx:appliesInPhase nx:phase-ship ;
+    nx:derivedFrom nx:personal ;
+    nx:id "delivery-engineering" ;
+    nx:ownedBy nx:role-release-engineer ;
+    nx:sourceHash "2977525941ea77e987de17e2a482ac8ba1c45c524ff0f78036e6bdb04231a87b" ;
+    nx:summary "Package accepted outcomes with real checks and authorized release recovery." ;
+    nx:workflowPath "references/delivery.md" .
+
+nx:doubt-driven-development a nx:Skill ;
+    nx:appliesInPhase nx:phase-review ;
+    nx:derivedFrom nx:addy ;
+    nx:id "doubt-driven-development" ;
+    nx:implementsCapability nx:capability-doubt-driven-development ;
+    nx:ownedBy nx:role-verification-engineer ;
+    nx:sourceHash "6fa1fcd8420c28daf7e53c5b08b0f20b907911efd2a6d9bce0b9740da20a4008" ;
+    nx:summary "Challenge nontrivial claims using artifact and contract with a bounded stop condition." ;
+    nx:workflowPath "references/upstream/skills/doubt-driven-development/workflow.md" .
+
+nx:frontend-ui-engineering a nx:Skill ;
+    nx:appliesInPhase nx:phase-build ;
+    nx:derivedFrom nx:addy ;
+    nx:id "frontend-ui-engineering" ;
+    nx:implementsCapability nx:capability-frontend-ui-engineering ;
+    nx:ownedBy nx:role-frontend-engineer ;
+    nx:sourceHash "29a3e53d57c0a128831a20730ae874a8c4fda40c001fcdc15f8e9ad4b5f72f1b" ;
+    nx:summary "Build accessible, responsive, polished UI with complete interaction states." ;
+    nx:workflowPath "references/upstream/skills/frontend-ui-engineering/workflow.md" .
+
+nx:gate-authorization a nx:Gate ;
+    nx:id "authorization" .
+
+nx:gate-browser a nx:Gate ;
+    nx:id "browser" .
+
+nx:gate-contract a nx:Gate ;
+    nx:id "contract" .
+
+nx:gate-publish a nx:Gate ;
+    nx:id "publish" .
+
+nx:gate-release a nx:Gate ;
+    nx:id "release" .
+
+nx:gate-sql-migration a nx:Gate ;
+    nx:id "sql-migration" .
+
+nx:plan a nx:Artifact .
+
+nx:release-plan a nx:Artifact ;
+    nx:verifiedBy nx:gate-release .
+
+nx:requirements a nx:Artifact .
+
+nx:requirements-engineering a nx:Skill ;
+    nx:appliesInPhase nx:phase-define ;
+    nx:derivedFrom nx:personal ;
+    nx:id "requirements-engineering" ;
+    nx:ownedBy nx:role-architect ;
+    nx:sourceHash "59de40a5f57215ab8eb69320aa7f0ea312837c2e977ec8b1917d8a5a03a4f8bc" ;
+    nx:summary "Establish scoped requirements and checkable acceptance criteria." ;
+    nx:workflowPath "references/requirements.md" .
+
+nx:source-driven-development a nx:Skill ;
+    nx:appliesInPhase nx:phase-build ;
+    nx:derivedFrom nx:addy ;
+    nx:id "source-driven-development" ;
+    nx:implementsCapability nx:capability-source-driven-development ;
+    nx:ownedBy nx:role-architect ;
+    nx:sourceHash "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9" ;
+    nx:summary "Verify version-specific framework choices against primary documentation." ;
+    nx:workflowPath "references/upstream/skills/source-driven-development/workflow.md" .
+
+nx:task-assignment a nx:Skill ;
+    nx:appliesInPhase nx:phase-plan ;
+    nx:derivedFrom nx:personal ;
+    nx:id "task-assignment" ;
+    nx:ownedBy nx:role-orchestrator ;
+    nx:sourceHash "82c0b9a592c820e8ff25b0bd961718dd16a0eb4038b693ba2d6d63f0a41ee31c" ;
+    nx:summary "Assign owned outcomes and write sets with explicit dependencies." ;
+    nx:workflowPath "references/task-assignment.md" .
+
+nx:constraint-driven-development a nx:Skill ;
+    nx:appliesInPhase nx:phase-define,
+        nx:phase-plan ;
+    nx:derivedFrom nx:addy ;
+    nx:id "constraint-driven-development" ;
+    nx:implementsCapability nx:capability-constraint-driven-development ;
+    nx:ownedBy nx:role-verification-engineer ;
+    nx:sourceHash "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10" ;
+    nx:summary "Define measurable project quality constraints and enforceable gates." ;
+    nx:workflowPath "references/upstream/skills/constraint-driven-development/workflow.md" .
+
+nx:gate-behavior a nx:Gate ;
+    nx:id "behavior" .
+
+nx:gate-build a nx:Gate ;
+    nx:id "build" .
+
+nx:observability-and-instrumentation a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-verify ;
+    nx:derivedFrom nx:addy ;
+    nx:id "observability-and-instrumentation" ;
+    nx:implementsCapability nx:capability-observability-and-instrumentation ;
+    nx:ownedBy nx:role-backend-engineer ;
+    nx:sourceHash "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87" ;
+    nx:summary "Write structured logs, bounded metrics and tracing alongside operational features." ;
+    nx:workflowPath "references/upstream/skills/observability-and-instrumentation/workflow.md" .
+
+nx:planning-and-task-breakdown a nx:Skill ;
+    nx:appliesInPhase nx:phase-plan ;
+    nx:derivedFrom nx:addy ;
+    nx:id "planning-and-task-breakdown" ;
+    nx:implementsCapability nx:capability-planning-and-task-breakdown ;
+    nx:ownedBy nx:role-orchestrator ;
+    nx:producesArtifact nx:plan ;
+    nx:requiresSkill nx:task-assignment ;
+    nx:sourceHash "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7" ;
+    nx:summary "Order small vertical tasks with dependencies and verification steps." ;
+    nx:workflowPath "references/upstream/skills/planning-and-task-breakdown/workflow.md" .
+
+nx:policy-authorization a nx:Policy ;
+    nx:summary "Carry session authorization forward; request only missing consequential authorization." .
+
+nx:policy-budget-integrity a nx:Policy ;
+    nx:summary "Never omit a mandatory workflow or security gate to fit a token target." .
+
+nx:policy-evidence-honesty a nx:Policy ;
+    nx:summary "Source, build, runtime, database and release are distinct claims." .
+
+nx:policy-preserve-stack a nx:Policy ;
+    nx:summary "Existing project architecture wins over default profile." .
+
+nx:policy-real-integration a nx:Policy ;
+    nx:summary "Business data and sessions require real server integration." .
+
+nx:policy-selective-context a nx:Policy ;
+    nx:summary "Load current phase workflows and boundary contracts only." .
+
+nx:role-frontend-engineer a nx:Role .
+
+nx:role-security-engineer a nx:Role .
+
+nx:ProjectProfile a owl:Class ;
+    rdfs:label "ProjectProfile" .
+
+nx:Source a owl:Class ;
+    rdfs:label "Source" .
+
+nx:data-engineering a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-plan,
+        nx:phase-verify ;
+    nx:derivedFrom nx:personal ;
+    nx:id "data-engineering" ;
+    nx:ownedBy nx:role-backend-engineer ;
+    nx:sourceHash "67e43b75d730d4f4c68b2fbbfd5f9a3d1f8ce1bdec03166c3b54ccd71237d073" ;
+    nx:summary "Define persistence, transactions, concurrency and safe native migrations." ;
+    nx:workflowPath "references/data.md" .
+
+nx:data-schema a nx:DataSchema ;
+    nx:invalidates nx:backend,
+        nx:tests ;
+    nx:verifiedBy nx:gate-sql-migration .
+
+nx:publish-bundle a nx:DeploymentBundle ;
+    nx:dependsOn nx:backend,
+        nx:ui ;
+    nx:verifiedBy nx:gate-publish .
+
+nx:tests a nx:TestSuite ;
+    nx:dependsOn nx:api-contract,
+        nx:data-schema ;
+    nx:verifiedBy nx:gate-behavior .
+
+nx:ui a nx:UIComponent ;
+    nx:dependsOn nx:api-contract ;
+    nx:invalidates nx:publish-bundle ;
+    nx:verifiedBy nx:gate-browser,
+        nx:gate-build .
+
+nx:backend a nx:Artifact ;
+    nx:dependsOn nx:api-contract,
+        nx:data-schema ;
+    nx:invalidates nx:publish-bundle ;
+    nx:verifiedBy nx:gate-authorization,
+        nx:gate-behavior,
+        nx:gate-build .
+
+nx:ci-cd-and-automation a nx:Skill ;
+    nx:appliesInPhase nx:phase-ship ;
+    nx:derivedFrom nx:addy ;
+    nx:id "ci-cd-and-automation" ;
+    nx:implementsCapability nx:capability-ci-cd-and-automation ;
+    nx:ownedBy nx:role-release-engineer ;
+    nx:sourceHash "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0" ;
+    nx:summary "Automate actual quality gates, reproducible builds and rollback mechanisms." ;
+    nx:workflowPath "references/upstream/skills/ci-cd-and-automation/workflow.md" .
+
+nx:debugging-and-error-recovery a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-verify ;
+    nx:derivedFrom nx:addy ;
+    nx:id "debugging-and-error-recovery" ;
+    nx:implementsCapability nx:capability-debugging-and-error-recovery ;
+    nx:ownedBy nx:role-verification-engineer ;
+    nx:sourceHash "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220" ;
+    nx:summary "Reproduce, localize, reduce, repair and guard the root cause." ;
+    nx:workflowPath "references/upstream/skills/debugging-and-error-recovery/workflow.md" .
+
+nx:documentation-and-adrs a nx:Skill ;
+    nx:appliesInPhase nx:phase-plan,
+        nx:phase-ship ;
+    nx:derivedFrom nx:addy ;
+    nx:id "documentation-and-adrs" ;
+    nx:implementsCapability nx:capability-documentation-and-adrs ;
+    nx:ownedBy nx:role-architect ;
+    nx:sourceHash "b60d503925bbaacee7fd63935db70b9ced5b2514ff5a56a672130e01b9690bc5" ;
+    nx:summary "Preserve significant decisions, contracts and operational trade-offs." ;
+    nx:workflowPath "references/upstream/skills/documentation-and-adrs/workflow.md" .
+
+nx:incremental-implementation a nx:Skill ;
+    nx:appliesInPhase nx:phase-build ;
+    nx:derivedFrom nx:addy ;
+    nx:id "incremental-implementation" ;
+    nx:implementsCapability nx:capability-incremental-implementation ;
+    nx:ownedBy nx:role-orchestrator ;
+    nx:sourceHash "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b" ;
+    nx:summary "Deliver one working vertical slice before expanding." ;
+    nx:workflowPath "references/upstream/skills/incremental-implementation/workflow.md" .
+
+nx:role-backend-engineer a nx:Role .
+
+nx:role-release-engineer a nx:Role .
+
+nx:shipping-and-launch a nx:Skill ;
+    nx:appliesInPhase nx:phase-ship ;
+    nx:derivedFrom nx:addy ;
+    nx:id "shipping-and-launch" ;
+    nx:implementsCapability nx:capability-shipping-and-launch ;
+    nx:ownedBy nx:role-release-engineer ;
+    nx:producesArtifact nx:release-plan ;
+    nx:requiresSkill nx:delivery-engineering ;
+    nx:sourceHash "726f3e546369db289160b8d42195590f00b6432887e17bf19070dcc9a347fe39" ;
+    nx:summary "Prepare staged rollout, operational evidence, monitoring and rollback." ;
+    nx:workflowPath "references/upstream/skills/shipping-and-launch/workflow.md" .
+
+nx:spec-driven-development a nx:Skill ;
+    nx:appliesInPhase nx:phase-define ;
+    nx:derivedFrom nx:addy ;
+    nx:id "spec-driven-development" ;
+    nx:implementsCapability nx:capability-spec-driven-development ;
+    nx:ownedBy nx:role-architect ;
+    nx:producesArtifact nx:requirements ;
+    nx:requiresSkill nx:requirements-engineering ;
+    nx:sourceHash "c4b97ce3d7f24be0e67fd612c7595f65504872e3a9f8d338d098b2363fdb66ef" ;
+    nx:summary "Record requirements, boundaries and testable acceptance criteria." ;
+    nx:workflowPath "references/upstream/skills/spec-driven-development/workflow.md" .
+
+nx:browser-testing-with-devtools a nx:Skill ;
+    nx:appliesInPhase nx:phase-verify ;
+    nx:derivedFrom nx:addy ;
+    nx:id "browser-testing-with-devtools" ;
+    nx:implementsCapability nx:capability-browser-testing-with-devtools ;
+    nx:ownedBy nx:role-verification-engineer ;
+    nx:sourceHash "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9" ;
+    nx:summary "Inspect actual browser rendering, requests, console and accessibility." ;
+    nx:workflowPath "references/upstream/skills/browser-testing-with-devtools/workflow.md" .
+
+nx:deprecation-and-migration a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-plan,
+        nx:phase-ship ;
+    nx:derivedFrom nx:addy ;
+    nx:id "deprecation-and-migration" ;
+    nx:implementsCapability nx:capability-deprecation-and-migration ;
+    nx:ownedBy nx:role-backend-engineer ;
+    nx:sourceHash "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142" ;
+    nx:summary "Migrate consumers safely and use additive expand/backfill/contract data changes." ;
+    nx:workflowPath "references/upstream/skills/deprecation-and-migration/workflow.md" .
+
+nx:frontend-engineering a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-verify ;
+    nx:consumesArtifact nx:api-contract ;
+    nx:derivedFrom nx:personal ;
+    nx:id "frontend-engineering" ;
+    nx:implementsCapability nx:capability-frontend-engineering ;
+    nx:ownedBy nx:role-frontend-engineer ;
+    nx:producesArtifact nx:ui ;
+    nx:requiresSkill nx:frontend-ui-engineering ;
+    nx:sourceHash "38eb1f4e2185fa53741658a8f21ef188956aa98dd65c331759da330abef16e1e" ;
+    nx:summary "Implement accessible responsive routes, states and real API consumers." ;
+    nx:workflowPath "references/frontend.md" .
+
+nx:performance-optimization a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-verify ;
+    nx:derivedFrom nx:addy ;
+    nx:id "performance-optimization" ;
+    nx:implementsCapability nx:capability-performance-optimization ;
+    nx:ownedBy nx:role-verification-engineer ;
+    nx:sourceHash "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c" ;
+    nx:summary "Measure the actual bottleneck, optimize and re-measure under matched conditions." ;
+    nx:workflowPath "references/upstream/skills/performance-optimization/workflow.md" .
+
+nx:architecture-engineering a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-define,
+        nx:phase-plan ;
+    nx:derivedFrom nx:personal ;
+    nx:id "architecture-engineering" ;
+    nx:implementsCapability nx:capability-architecture-engineering ;
+    nx:ownedBy nx:role-architect ;
+    nx:producesArtifact nx:architecture ;
+    nx:sourceHash "d8b04745e26f347acfc63c4576a92920600abc3eb4149a6a14b8b770fb7a3fe5" ;
+    nx:summary "Define native architecture, contracts and complete acceptance slices." ;
+    nx:workflowPath "references/architecture.md" .
+
+nx:test-driven-development a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-verify ;
+    nx:consumesArtifact nx:api-contract ;
+    nx:derivedFrom nx:addy ;
+    nx:id "test-driven-development" ;
+    nx:implementsCapability nx:capability-test-driven-development ;
+    nx:ownedBy nx:role-verification-engineer ;
+    nx:producesArtifact nx:tests ;
+    nx:sourceHash "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca" ;
+    nx:summary "Use meaningful behavioral and regression tests; do not repeat unchanged successful runs." ;
+    nx:workflowPath "references/upstream/skills/test-driven-development/workflow.md" .
+
+nx:LifecycleMapping a owl:Class .
+
+nx:Policy a owl:Class ;
+    rdfs:label "Policy" .
+
+nx:api-and-interface-design a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-plan ;
+    nx:derivedFrom nx:addy ;
+    nx:id "api-and-interface-design" ;
+    nx:implementsCapability nx:capability-api-and-interface-design ;
+    nx:ownedBy nx:role-architect ;
+    nx:producesArtifact nx:api-contract ;
+    nx:sourceHash "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192" ;
+    nx:summary "Define typed stable contracts, error semantics, boundaries and retry/idempotency behavior." ;
+    nx:workflowPath "references/upstream/skills/api-and-interface-design/workflow.md" .
+
+nx:backend-engineering a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-verify ;
+    nx:consumesArtifact nx:api-contract ;
+    nx:derivedFrom nx:personal ;
+    nx:id "backend-engineering" ;
+    nx:implementsCapability nx:capability-backend-engineering ;
+    nx:ownedBy nx:role-backend-engineer ;
+    nx:producesArtifact nx:api-contract,
+        nx:backend,
+        nx:data-schema ;
+    nx:requiresSkill nx:api-and-interface-design ;
+    nx:sourceHash "ecb87346ae5d3c2860d4c5e791fc929a2ce1cbbaed67e9bccc78885b4e73e0eb" ;
+    nx:summary "Implement use cases, real APIs and server authorization in the native stack." ;
+    nx:workflowPath "references/backend.md" .
+
+nx:role-orchestrator a nx:Role .
+
+nx:Role a owl:Class ;
+    rdfs:label "Role" .
+
+nx:role-architect a nx:Role .
+
+nx:role-verification-engineer a nx:Role .
+
+nx:security-and-hardening a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-review ;
+    nx:derivedFrom nx:addy ;
+    nx:id "security-and-hardening" ;
+    nx:implementsCapability nx:capability-security-and-hardening ;
+    nx:ownedBy nx:role-security-engineer ;
+    nx:sourceHash "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858" ;
+    nx:summary "Validate trust boundaries, server authorization, secrets, dependencies and sensitive data." ;
+    nx:workflowPath "references/upstream/skills/security-and-hardening/workflow.md" .
+
+nx:verification-engineering a nx:Skill ;
+    nx:appliesInPhase nx:phase-review,
+        nx:phase-ship,
+        nx:phase-verify ;
+    nx:consumesArtifact nx:api-contract ;
+    nx:derivedFrom nx:personal ;
+    nx:id "verification-engineering" ;
+    nx:implementsCapability nx:capability-verification-engineering ;
+    nx:ownedBy nx:role-verification-engineer ;
+    nx:producesArtifact nx:publish-bundle ;
+    nx:sourceHash "f693e27dadaa573eb777fced126eaf2a26fd766496a84fd372c2ddea642e1bf0" ;
+    nx:summary "Run acceptance-based checks and preserve current evidence provenance." ;
+    nx:workflowPath "references/testing.md" .
+
+nx:Phase a owl:Class ;
+    rdfs:label "Phase" .
+
+nx:api-contract a nx:APIContract ;
+    nx:invalidates nx:backend,
+        nx:tests,
+        nx:ui ;
+    nx:verifiedBy nx:gate-contract .
+
+nx:personal a nx:Source ;
+    nx:sourcePath "Active user skill catalog: full-stack-integration and template-*" .
+
+nx:operations-engineering a nx:Skill ;
+    nx:appliesInPhase nx:phase-monitor ;
+    nx:derivedFrom nx:personal ;
+    nx:id "operations-engineering" ;
+    nx:ownedBy nx:role-release-engineer ;
+    nx:sourceHash "4511b0ee1205c1f11c8de675ea454d7b9b200c0dca3e99489b0173a5c568f1e4" ;
+    nx:summary "Inspect current operational signals, blockers and evidence freshness." ;
+    nx:workflowPath "references/operations.md" .
+
+nx:Gate a owl:Class ;
+    rdfs:label "Gate" .
+
+nx:Intent a owl:Class ;
+    rdfs:label "Intent" .
+
+nx:phase-monitor a nx:Phase ;
+    rdfs:label "monitor" .
+
+nx:Artifact a owl:Class ;
+    rdfs:label "Artifact" .
+
+nx:phase-define a nx:Phase ;
+    nx:id "define" .
+
+nx:security-engineering a nx:Skill ;
+    nx:appliesInPhase nx:phase-build,
+        nx:phase-define,
+        nx:phase-plan,
+        nx:phase-review,
+        nx:phase-ship,
+        nx:phase-verify ;
+    nx:derivedFrom nx:personal ;
+    nx:id "security-engineering" ;
+    nx:ownedBy nx:role-security-engineer ;
+    nx:sourceHash "745dfab00e639cd28052fe61d7ffda3899fa4381ff3a07047a140ed61bcd4f2a" ;
+    nx:summary "Apply feature-specific identity, isolation and trust-boundary checks." ;
+    nx:workflowPath "references/security.md" .
+
+nx:phase-ship a nx:Phase ;
+    nx:id "ship" .
+
+nx:code-review-and-quality a nx:Skill ;
+    nx:appliesInPhase nx:phase-review ;
+    nx:derivedFrom nx:addy ;
+    nx:id "code-review-and-quality" ;
+    nx:implementsCapability nx:capability-code-review-and-quality ;
+    nx:ownedBy nx:role-verification-engineer ;
+    nx:sourceHash "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e" ;
+    nx:summary "Review correctness, clarity, architecture, security and performance." ;
+    nx:workflowPath "references/upstream/skills/code-review-and-quality/workflow.md" .
+
+nx:phase-plan a nx:Phase ;
+    nx:id "plan" .
+
+nx:addy a nx:Source ;
+    nx:revision "1be8e34187e34647bb83adc3a1323b26ae6f6abe" ;
+    nx:sourcePath "https://github.com/addyosmani/agent-skills" .
+
+nx:phase-review a nx:Phase ;
+    nx:id "review" .
+
+nx:phase-verify a nx:Phase ;
+    nx:id "verify" .
+
+nx:Capability a owl:Class ;
+    rdfs:label "Capability" .
+
+nx:Skill a owl:Class ;
+    rdfs:label "Skill" .
+
+nx:phase-build a nx:Phase ;
+    nx:id "build" .
+
+nx:RoutingRule a owl:Class ;
+    rdfs:label "RoutingRule" .

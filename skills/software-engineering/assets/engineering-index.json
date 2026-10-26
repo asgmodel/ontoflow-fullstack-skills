@@ -1,0 +1,890 @@
+{
+  "version": "2.0.0",
+  "ontology_sha256": "1c9c0c5e3f8ea4b18a344733ccb18e097b17604c5230e96d9eb4a8acff81fa0c",
+  "skills": {
+    "api-and-interface-design": {
+      "id": "api-and-interface-design",
+      "summary": "Define typed stable contracts, error semantics, boundaries and retry/idempotency behavior.",
+      "workflow": "references/upstream/skills/api-and-interface-design/workflow.md",
+      "workflow_sha256": "e83d34f52ff12dd8a7c5134cd7e8140ea4541ec65e204f8a1e4cd366e30c4192",
+      "role": "architect",
+      "requires": [],
+      "phases": [
+        "build",
+        "plan"
+      ]
+    },
+    "architecture-engineering": {
+      "id": "architecture-engineering",
+      "summary": "Define native architecture, contracts and complete acceptance slices.",
+      "workflow": "references/architecture.md",
+      "workflow_sha256": "d8b04745e26f347acfc63c4576a92920600abc3eb4149a6a14b8b770fb7a3fe5",
+      "role": "architect",
+      "requires": [],
+      "phases": [
+        "build",
+        "define",
+        "plan"
+      ]
+    },
+    "backend-engineering": {
+      "id": "backend-engineering",
+      "summary": "Implement use cases, real APIs and server authorization in the native stack.",
+      "workflow": "references/backend.md",
+      "workflow_sha256": "ecb87346ae5d3c2860d4c5e791fc929a2ce1cbbaed67e9bccc78885b4e73e0eb",
+      "role": "backend-engineer",
+      "requires": [
+        "api-and-interface-design"
+      ],
+      "phases": [
+        "build",
+        "verify"
+      ]
+    },
+    "browser-testing-with-devtools": {
+      "id": "browser-testing-with-devtools",
+      "summary": "Inspect actual browser rendering, requests, console and accessibility.",
+      "workflow": "references/upstream/skills/browser-testing-with-devtools/workflow.md",
+      "workflow_sha256": "4e3aacd6a380cd25bc6c2d67fdd1c926a9b22535b8a62109ecd33cefd909e3d9",
+      "role": "verification-engineer",
+      "requires": [],
+      "phases": [
+        "verify"
+      ]
+    },
+    "ci-cd-and-automation": {
+      "id": "ci-cd-and-automation",
+      "summary": "Automate actual quality gates, reproducible builds and rollback mechanisms.",
+      "workflow": "references/upstream/skills/ci-cd-and-automation/workflow.md",
+      "workflow_sha256": "a6ed8ed56456b01ff8314c44eefc69897d9905ae4e06bb2b7036286efb79b5f0",
+      "role": "release-engineer",
+      "requires": [],
+      "phases": [
+        "ship"
+      ]
+    },
+    "code-review-and-quality": {
+      "id": "code-review-and-quality",
+      "summary": "Review correctness, clarity, architecture, security and performance.",
+      "workflow": "references/upstream/skills/code-review-and-quality/workflow.md",
+      "workflow_sha256": "2db1e850379f255fd3091ef278cde24cd6c7d2ba23e360cc52ea522c40d4396e",
+      "role": "verification-engineer",
+      "requires": [],
+      "phases": [
+        "review"
+      ]
+    },
+    "code-simplification": {
+      "id": "code-simplification",
+      "summary": "Reduce complexity while preserving proven behavior and error handling.",
+      "workflow": "references/upstream/skills/code-simplification/workflow.md",
+      "workflow_sha256": "f0c5ed754057eb0c1e027e2587f59de816651feb5e837242296c43ea21cf621d",
+      "role": "architect",
+      "requires": [],
+      "phases": [
+        "build",
+        "review"
+      ]
+    },
+    "constraint-driven-development": {
+      "id": "constraint-driven-development",
+      "summary": "Define measurable project quality constraints and enforceable gates.",
+      "workflow": "references/upstream/skills/constraint-driven-development/workflow.md",
+      "workflow_sha256": "06479d4305f286d23cfb99f5dc85695896785269664e1f6a8d800e3b71e70c10",
+      "role": "verification-engineer",
+      "requires": [],
+      "phases": [
+        "define",
+        "plan"
+      ]
+    },
+    "context-engineering": {
+      "id": "context-engineering",
+      "summary": "Select current contracts and source, protect live constraints and persist restartable boundaries.",
+      "workflow": "references/upstream/skills/context-engineering/workflow.md",
+      "workflow_sha256": "8b736cb9e55b82b265ab6ff78349c0e826e8a6df550deddf665b7fb3ff858b63",
+      "role": "orchestrator",
+      "requires": [],
+      "phases": [
+        "build",
+        "define",
+        "plan",
+        "review",
+        "ship",
+        "verify"
+      ]
+    },
+    "data-engineering": {
+      "id": "data-engineering",
+      "summary": "Define persistence, transactions, concurrency and safe native migrations.",
+      "workflow": "references/data.md",
+      "workflow_sha256": "67e43b75d730d4f4c68b2fbbfd5f9a3d1f8ce1bdec03166c3b54ccd71237d073",
+      "role": "backend-engineer",
+      "requires": [],
+      "phases": [
+        "build",
+        "plan",
+        "verify"
+      ]
+    },
+    "debugging-and-error-recovery": {
+      "id": "debugging-and-error-recovery",
+      "summary": "Reproduce, localize, reduce, repair and guard the root cause.",
+      "workflow": "references/upstream/skills/debugging-and-error-recovery/workflow.md",
+      "workflow_sha256": "21f3960f5d7ae2cc95c40896545004dbbcbbd752ea65fc2d53962554d4174220",
+      "role": "verification-engineer",
+      "requires": [],
+      "phases": [
+        "build",
+        "verify"
+      ]
+    },
+    "delivery-engineering": {
+      "id": "delivery-engineering",
+      "summary": "Package accepted outcomes with real checks and authorized release recovery.",
+      "workflow": "references/delivery.md",
+      "workflow_sha256": "2977525941ea77e987de17e2a482ac8ba1c45c524ff0f78036e6bdb04231a87b",
+      "role": "release-engineer",
+      "requires": [],
+      "phases": [
+        "ship"
+      ]
+    },
+    "deprecation-and-migration": {
+      "id": "deprecation-and-migration",
+      "summary": "Migrate consumers safely and use additive expand/backfill/contract data changes.",
+      "workflow": "references/upstream/skills/deprecation-and-migration/workflow.md",
+      "workflow_sha256": "6a624f942e09c69863a4219b9bd5d56975026b67b0c70bc83385ffd2120b6142",
+      "role": "backend-engineer",
+      "requires": [],
+      "phases": [
+        "build",
+        "plan",
+        "ship"
+      ]
+    },
+    "documentation-and-adrs": {
+      "id": "documentation-and-adrs",
+      "summary": "Preserve significant decisions, contracts and operational trade-offs.",
+      "workflow": "references/upstream/skills/documentation-and-adrs/workflow.md",
+      "workflow_sha256": "b60d503925bbaacee7fd63935db70b9ced5b2514ff5a56a672130e01b9690bc5",
+      "role": "architect",
+      "requires": [],
+      "phases": [
+        "plan",
+        "ship"
+      ]
+    },
+    "doubt-driven-development": {
+      "id": "doubt-driven-development",
+      "summary": "Challenge nontrivial claims using artifact and contract with a bounded stop condition.",
+      "workflow": "references/upstream/skills/doubt-driven-development/workflow.md",
+      "workflow_sha256": "6fa1fcd8420c28daf7e53c5b08b0f20b907911efd2a6d9bce0b9740da20a4008",
+      "role": "verification-engineer",
+      "requires": [],
+      "phases": [
+        "review"
+      ]
+    },
+    "frontend-engineering": {
+      "id": "frontend-engineering",
+      "summary": "Implement accessible responsive routes, states and real API consumers.",
+      "workflow": "references/frontend.md",
+      "workflow_sha256": "38eb1f4e2185fa53741658a8f21ef188956aa98dd65c331759da330abef16e1e",
+      "role": "frontend-engineer",
+      "requires": [
+        "frontend-ui-engineering"
+      ],
+      "phases": [
+        "build",
+        "verify"
+      ]
+    },
+    "frontend-ui-engineering": {
+      "id": "frontend-ui-engineering",
+      "summary": "Build accessible, responsive, polished UI with complete interaction states.",
+      "workflow": "references/upstream/skills/frontend-ui-engineering/workflow.md",
+      "workflow_sha256": "29a3e53d57c0a128831a20730ae874a8c4fda40c001fcdc15f8e9ad4b5f72f1b",
+      "role": "frontend-engineer",
+      "requires": [],
+      "phases": [
+        "build"
+      ]
+    },
+    "git-workflow-and-versioning": {
+      "id": "git-workflow-and-versioning",
+      "summary": "Keep authorized changes atomic, reviewed and free of secrets.",
+      "workflow": "references/upstream/skills/git-workflow-and-versioning/workflow.md",
+      "workflow_sha256": "b7465d187935c52546d39fdc7bd6ac36d94eda25a9500ef8c18b767d2eb116ea",
+      "role": "orchestrator",
+      "requires": [],
+      "phases": [
+        "build",
+        "ship"
+      ]
+    },
+    "idea-refine": {
+      "id": "idea-refine",
+      "summary": "Explore options and converge on a concrete problem and success criteria.",
+      "workflow": "references/upstream/skills/idea-refine/workflow.md",
+      "workflow_sha256": "79e773058963adc7646b0115b4f8a4afc974c5ff95843e4ef1cafff3cb51899e",
+      "role": "architect",
+      "requires": [],
+      "phases": [
+        "define"
+      ]
+    },
+    "incremental-implementation": {
+      "id": "incremental-implementation",
+      "summary": "Deliver one working vertical slice before expanding.",
+      "workflow": "references/upstream/skills/incremental-implementation/workflow.md",
+      "workflow_sha256": "df66536610071727feae1ca95f3c391c248ad828041750ccd3699cce763aa00b",
+      "role": "orchestrator",
+      "requires": [],
+      "phases": [
+        "build"
+      ]
+    },
+    "interview-me": {
+      "id": "interview-me",
+      "summary": "Resolve materially missing requirements with a focused interview.",
+      "workflow": "references/upstream/skills/interview-me/workflow.md",
+      "workflow_sha256": "ace4b675999bb504593d572e0f73f3d7e803ad6fddf318445598c82c11939db2",
+      "role": "orchestrator",
+      "requires": [],
+      "phases": [
+        "define"
+      ]
+    },
+    "observability-and-instrumentation": {
+      "id": "observability-and-instrumentation",
+      "summary": "Write structured logs, bounded metrics and tracing alongside operational features.",
+      "workflow": "references/upstream/skills/observability-and-instrumentation/workflow.md",
+      "workflow_sha256": "e7fcb0820306d46268de9594d676ad98e35040858926c412b7000faa52a61f87",
+      "role": "backend-engineer",
+      "requires": [],
+      "phases": [
+        "build",
+        "verify"
+      ]
+    },
+    "operations-engineering": {
+      "id": "operations-engineering",
+      "summary": "Inspect current operational signals, blockers and evidence freshness.",
+      "workflow": "references/operations.md",
+      "workflow_sha256": "4511b0ee1205c1f11c8de675ea454d7b9b200c0dca3e99489b0173a5c568f1e4",
+      "role": "release-engineer",
+      "requires": [],
+      "phases": [
+        "monitor"
+      ]
+    },
+    "performance-optimization": {
+      "id": "performance-optimization",
+      "summary": "Measure the actual bottleneck, optimize and re-measure under matched conditions.",
+      "workflow": "references/upstream/skills/performance-optimization/workflow.md",
+      "workflow_sha256": "665a83a7218d6aebd02ca329a7b2422cf28f7c55cb56f870c05e12047770245c",
+      "role": "verification-engineer",
+      "requires": [],
+      "phases": [
+        "build",
+        "verify"
+      ]
+    },
+    "planning-and-task-breakdown": {
+      "id": "planning-and-task-breakdown",
+      "summary": "Order small vertical tasks with dependencies and verification steps.",
+      "workflow": "references/upstream/skills/planning-and-task-breakdown/workflow.md",
+      "workflow_sha256": "ed0f90cc5951ddd4bcab7f871f64efec93a49af9279ef93bc470da77ad8da3f7",
+      "role": "orchestrator",
+      "requires": [
+        "task-assignment"
+      ],
+      "phases": [
+        "plan"
+      ]
+    },
+    "requirements-engineering": {
+      "id": "requirements-engineering",
+      "summary": "Establish scoped requirements and checkable acceptance criteria.",
+      "workflow": "references/requirements.md",
+      "workflow_sha256": "59de40a5f57215ab8eb69320aa7f0ea312837c2e977ec8b1917d8a5a03a4f8bc",
+      "role": "architect",
+      "requires": [],
+      "phases": [
+        "define"
+      ]
+    },
+    "security-and-hardening": {
+      "id": "security-and-hardening",
+      "summary": "Validate trust boundaries, server authorization, secrets, dependencies and sensitive data.",
+      "workflow": "references/upstream/skills/security-and-hardening/workflow.md",
+      "workflow_sha256": "2e3fc60eed5aba97fe416f3f3c9317fdb014a682925ec70a733c3ff99e4b9858",
+      "role": "security-engineer",
+      "requires": [],
+      "phases": [
+        "build",
+        "review"
+      ]
+    },
+    "security-engineering": {
+      "id": "security-engineering",
+      "summary": "Apply feature-specific identity, isolation and trust-boundary checks.",
+      "workflow": "references/security.md",
+      "workflow_sha256": "745dfab00e639cd28052fe61d7ffda3899fa4381ff3a07047a140ed61bcd4f2a",
+      "role": "security-engineer",
+      "requires": [],
+      "phases": [
+        "build",
+        "define",
+        "plan",
+        "review",
+        "ship",
+        "verify"
+      ]
+    },
+    "shipping-and-launch": {
+      "id": "shipping-and-launch",
+      "summary": "Prepare staged rollout, operational evidence, monitoring and rollback.",
+      "workflow": "references/upstream/skills/shipping-and-launch/workflow.md",
+      "workflow_sha256": "726f3e546369db289160b8d42195590f00b6432887e17bf19070dcc9a347fe39",
+      "role": "release-engineer",
+      "requires": [
+        "delivery-engineering"
+      ],
+      "phases": [
+        "ship"
+      ]
+    },
+    "source-driven-development": {
+      "id": "source-driven-development",
+      "summary": "Verify version-specific framework choices against primary documentation.",
+      "workflow": "references/upstream/skills/source-driven-development/workflow.md",
+      "workflow_sha256": "c59faf851377f0eeda45306398d16eb96d77ab1c2fd3e1a7fb58e9a0af33c1e9",
+      "role": "architect",
+      "requires": [],
+      "phases": [
+        "build"
+      ]
+    },
+    "spec-driven-development": {
+      "id": "spec-driven-development",
+      "summary": "Record requirements, boundaries and testable acceptance criteria.",
+      "workflow": "references/upstream/skills/spec-driven-development/workflow.md",
+      "workflow_sha256": "44adc475a58a8193d2d41abcbbcdca5522d252114e4faf40ca41b90e2922d2c3",
+      "role": "architect",
+      "requires": [
+        "requirements-engineering"
+      ],
+      "phases": [
+        "define"
+      ]
+    },
+    "task-assignment": {
+      "id": "task-assignment",
+      "summary": "Assign owned outcomes and write sets with explicit dependencies.",
+      "workflow": "references/task-assignment.md",
+      "workflow_sha256": "82c0b9a592c820e8ff25b0bd961718dd16a0eb4038b693ba2d6d63f0a41ee31c",
+      "role": "orchestrator",
+      "requires": [],
+      "phases": [
+        "plan"
+      ]
+    },
+    "test-driven-development": {
+      "id": "test-driven-development",
+      "summary": "Use meaningful behavioral and regression tests; do not repeat unchanged successful runs.",
+      "workflow": "references/upstream/skills/test-driven-development/workflow.md",
+      "workflow_sha256": "7c0c6ac057c19d7f8be65d9f49c3a638703b868f4625c78b70da5439d5d74fca",
+      "role": "verification-engineer",
+      "requires": [],
+      "phases": [
+        "build",
+        "verify"
+      ]
+    },
+    "using-agent-skills": {
+      "id": "using-agent-skills",
+      "summary": "Discover applicable workflows; enforce scope, assumptions and verification.",
+      "workflow": "references/upstream/skills/using-agent-skills/workflow.md",
+      "workflow_sha256": "30787ef2c77bf1a4729fffed0f6523ba6fcbe81bdc436b36371b78c21394d3c3",
+      "role": "orchestrator",
+      "requires": [],
+      "phases": [
+        "define"
+      ]
+    },
+    "verification-engineering": {
+      "id": "verification-engineering",
+      "summary": "Run acceptance-based checks and preserve current evidence provenance.",
+      "workflow": "references/testing.md",
+      "workflow_sha256": "f693e27dadaa573eb777fced126eaf2a26fd766496a84fd372c2ddea642e1bf0",
+      "role": "verification-engineer",
+      "requires": [],
+      "phases": [
+        "review",
+        "ship",
+        "verify"
+      ]
+    }
+  },
+  "recipes": {
+    "backend-fix": {
+      "monitor": [
+        "operations-engineering"
+      ],
+      "build": [
+        "backend-engineering"
+      ],
+      "review": [
+        "code-review-and-quality"
+      ],
+      "verify": [
+        "test-driven-development"
+      ]
+    },
+    "blank-scaffold": {
+      "monitor": [
+        "operations-engineering"
+      ],
+      "build": [
+        "architecture-engineering"
+      ],
+      "plan": [
+        "architecture-engineering"
+      ],
+      "verify": [
+        "verification-engineering"
+      ]
+    },
+    "bug-fix": {
+      "monitor": [
+        "operations-engineering"
+      ],
+      "build": [
+        "debugging-and-error-recovery"
+      ],
+      "review": [
+        "code-review-and-quality"
+      ],
+      "verify": [
+        "test-driven-development"
+      ]
+    },
+    "feature": {
+      "monitor": [
+        "operations-engineering"
+      ],
+      "build": [
+        "incremental-implementation"
+      ],
+      "define": [
+        "spec-driven-development"
+      ],
+      "plan": [
+        "api-and-interface-design"
+      ],
+      "review": [
+        "code-review-and-quality"
+      ],
+      "verify": [
+        "test-driven-development"
+      ]
+    },
+    "full-product": {
+      "monitor": [
+        "operations-engineering"
+      ],
+      "build": [
+        "backend-engineering",
+        "frontend-engineering",
+        "incremental-implementation",
+        "observability-and-instrumentation"
+      ],
+      "define": [
+        "architecture-engineering",
+        "constraint-driven-development",
+        "spec-driven-development"
+      ],
+      "plan": [
+        "api-and-interface-design",
+        "architecture-engineering",
+        "planning-and-task-breakdown"
+      ],
+      "review": [
+        "code-review-and-quality"
+      ],
+      "ship": [
+        "ci-cd-and-automation",
+        "documentation-and-adrs",
+        "shipping-and-launch"
+      ],
+      "verify": [
+        "browser-testing-with-devtools",
+        "verification-engineering"
+      ]
+    },
+    "migration": {
+      "monitor": [
+        "operations-engineering"
+      ],
+      "build": [
+        "backend-engineering",
+        "deprecation-and-migration"
+      ],
+      "plan": [
+        "deprecation-and-migration"
+      ],
+      "review": [
+        "code-review-and-quality"
+      ],
+      "verify": [
+        "verification-engineering"
+      ]
+    },
+    "performance": {
+      "monitor": [
+        "operations-engineering"
+      ],
+      "build": [
+        "performance-optimization"
+      ],
+      "review": [
+        "code-review-and-quality"
+      ],
+      "verify": [
+        "performance-optimization"
+      ]
+    },
+    "release": {
+      "monitor": [
+        "operations-engineering"
+      ],
+      "review": [
+        "code-review-and-quality"
+      ],
+      "ship": [
+        "ci-cd-and-automation",
+        "documentation-and-adrs",
+        "shipping-and-launch"
+      ],
+      "verify": [
+        "verification-engineering"
+      ]
+    },
+    "review-only": {
+      "monitor": [
+        "operations-engineering"
+      ],
+      "review": [
+        "code-review-and-quality"
+      ]
+    },
+    "security-audit": {
+      "monitor": [
+        "operations-engineering"
+      ],
+      "review": [
+        "code-review-and-quality",
+        "security-and-hardening"
+      ]
+    },
+    "ui-fix": {
+      "monitor": [
+        "operations-engineering"
+      ],
+      "build": [
+        "frontend-engineering"
+      ],
+      "review": [
+        "code-review-and-quality"
+      ],
+      "verify": [
+        "browser-testing-with-devtools"
+      ]
+    }
+  },
+  "conditional_rules": [
+    {
+      "tag": "contract",
+      "layer": null,
+      "phase": "build",
+      "skill": "api-and-interface-design"
+    },
+    {
+      "tag": null,
+      "layer": "backend",
+      "phase": "build",
+      "skill": "backend-engineering"
+    },
+    {
+      "tag": null,
+      "layer": "data",
+      "phase": "build",
+      "skill": "data-engineering"
+    },
+    {
+      "tag": "failure",
+      "layer": null,
+      "phase": "build",
+      "skill": "debugging-and-error-recovery"
+    },
+    {
+      "tag": "schema",
+      "layer": null,
+      "phase": "build",
+      "skill": "deprecation-and-migration"
+    },
+    {
+      "tag": null,
+      "layer": "frontend",
+      "phase": "build",
+      "skill": "frontend-engineering"
+    },
+    {
+      "tag": "performance",
+      "layer": null,
+      "phase": "build",
+      "skill": "performance-optimization"
+    },
+    {
+      "tag": "auth",
+      "layer": null,
+      "phase": "build",
+      "skill": "security-and-hardening"
+    },
+    {
+      "tag": "data",
+      "layer": null,
+      "phase": "build",
+      "skill": "security-and-hardening"
+    },
+    {
+      "tag": "external",
+      "layer": null,
+      "phase": "build",
+      "skill": "security-and-hardening"
+    },
+    {
+      "tag": "auth",
+      "layer": null,
+      "phase": "build",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "data",
+      "layer": null,
+      "phase": "build",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "external",
+      "layer": null,
+      "phase": "build",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "framework",
+      "layer": null,
+      "phase": "build",
+      "skill": "source-driven-development"
+    },
+    {
+      "tag": "auth",
+      "layer": null,
+      "phase": "define",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "data",
+      "layer": null,
+      "phase": "define",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "external",
+      "layer": null,
+      "phase": "define",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "contract",
+      "layer": null,
+      "phase": "plan",
+      "skill": "api-and-interface-design"
+    },
+    {
+      "tag": null,
+      "layer": "data",
+      "phase": "plan",
+      "skill": "data-engineering"
+    },
+    {
+      "tag": "schema",
+      "layer": null,
+      "phase": "plan",
+      "skill": "deprecation-and-migration"
+    },
+    {
+      "tag": "auth",
+      "layer": null,
+      "phase": "plan",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "data",
+      "layer": null,
+      "phase": "plan",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "external",
+      "layer": null,
+      "phase": "plan",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "uncertain",
+      "layer": null,
+      "phase": "review",
+      "skill": "doubt-driven-development"
+    },
+    {
+      "tag": "auth",
+      "layer": null,
+      "phase": "review",
+      "skill": "security-and-hardening"
+    },
+    {
+      "tag": "data",
+      "layer": null,
+      "phase": "review",
+      "skill": "security-and-hardening"
+    },
+    {
+      "tag": "external",
+      "layer": null,
+      "phase": "review",
+      "skill": "security-and-hardening"
+    },
+    {
+      "tag": "auth",
+      "layer": null,
+      "phase": "review",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "data",
+      "layer": null,
+      "phase": "review",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "external",
+      "layer": null,
+      "phase": "review",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "auth",
+      "layer": null,
+      "phase": "ship",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "data",
+      "layer": null,
+      "phase": "ship",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "external",
+      "layer": null,
+      "phase": "ship",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": null,
+      "layer": "frontend",
+      "phase": "verify",
+      "skill": "browser-testing-with-devtools"
+    },
+    {
+      "tag": null,
+      "layer": "data",
+      "phase": "verify",
+      "skill": "data-engineering"
+    },
+    {
+      "tag": "failure",
+      "layer": null,
+      "phase": "verify",
+      "skill": "debugging-and-error-recovery"
+    },
+    {
+      "tag": "performance",
+      "layer": null,
+      "phase": "verify",
+      "skill": "performance-optimization"
+    },
+    {
+      "tag": "auth",
+      "layer": null,
+      "phase": "verify",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "data",
+      "layer": null,
+      "phase": "verify",
+      "skill": "security-engineering"
+    },
+    {
+      "tag": "external",
+      "layer": null,
+      "phase": "verify",
+      "skill": "security-engineering"
+    }
+  ],
+  "invalidates": {
+    "api-contract": [
+      "backend",
+      "tests",
+      "ui"
+    ],
+    "backend": [
+      "publish-bundle"
+    ],
+    "data-schema": [
+      "backend",
+      "tests"
+    ],
+    "ui": [
+      "publish-bundle"
+    ]
+  },
+  "lifecycle_mapping": {
+    "urn:ontolink:build": [
+      "build"
+    ],
+    "urn:ontolink:deliver": [
+      "ship"
+    ],
+    "urn:ontolink:design": [
+      "define"
+    ],
+    "urn:ontolink:discover": [
+      "define"
+    ],
+    "urn:ontolink:monitor": [
+      "monitor"
+    ],
+    "urn:ontolink:plan": [
+      "plan"
+    ],
+    "urn:ontolink:verify": [
+      "review",
+      "verify"
+    ]
+  }
+}

@@ -1,67 +1,25 @@
 {
-  "schema_version": 1,
-  "name": "OntoFlow FullStack Skills",
-  "entrypoint": "skills/nexus-full-stack/SKILL.md",
-  "skills": [
+  "schema_version": 3,
+  "version": "2.1.0",
+  "name": "Full Stack Engineering",
+  "entrypoint": "skills/software-engineering/SKILL.md",
+  "packages": [
     {
-      "name": "autotaska",
-      "entry": "skills/autotaska/SKILL.md",
-      "status": "available"
-    },
-    {
-      "name": "chatgpt-task-creator",
-      "entry": "skills/chatgpt-task-creator/SKILL.md",
-      "status": "available"
-    },
-    {
-      "name": "find-skills",
-      "entry": "skills/find-skills/SKILL.md",
-      "status": "available"
-    },
-    {
-      "name": "full-stack",
-      "entry": "skills/full-stack/SKILL.md",
-      "status": "available"
-    },
-    {
-      "name": "mahoer",
-      "entry": "skills/mahoer/SKILL.md",
-      "status": "experimental"
-    },
-    {
-      "name": "nexus-full-stack",
-      "entry": "skills/nexus-full-stack/SKILL.md",
-      "status": "available"
-    },
-    {
-      "name": "professional-interface-builder",
-      "entry": "skills/professional-interface-builder/SKILL.md",
-      "status": "available"
-    },
-    {
-      "name": "project-creator",
-      "entry": "skills/project-creator/SKILL.md",
-      "status": "available"
-    },
-    {
-      "name": "template-architecture",
-      "entry": "skills/template-architecture/SKILL.md",
-      "status": "available"
-    },
-    {
-      "name": "template-backend",
-      "entry": "skills/template-backend/SKILL.md",
-      "status": "available"
-    },
-    {
-      "name": "template-frontend",
-      "entry": "skills/template-frontend/SKILL.md",
-      "status": "available"
-    },
-    {
-      "name": "template-verification",
-      "entry": "skills/template-verification/SKILL.md",
-      "status": "available"
+      "name": "software-engineering",
+      "path": "skills/software-engineering",
+      "role": "full-stack-engineering"
     }
-  ]
+  ],
+  "external_dependencies": [
+    {
+      "name": "ontolink-skills",
+      "source": "https://github.com/asgmodel/ontolink-skills",
+      "skill": "ontolink-skills",
+      "loader": "skills/ontolink-skills/README.md",
+      "bundled": false,
+      "refresh": "Refresh only this external dependency at each new project session before phase work; resolve and read the current installed instructions."
+    }
+  ],
+  "canonical_project_state": "knowledge.owl",
+  "engineering_ontology": "skills/software-engineering/assets/engineering.owl"
 }

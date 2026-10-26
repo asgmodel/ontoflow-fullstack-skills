@@ -1,4 +1,0 @@
-interface:
-  display_name: "Professional Interface Builder"
-  short_description: "Build polished, responsive product interfaces"
-  default_prompt: "Use $professional-interface-builder to design and integrate this product interface end to end."

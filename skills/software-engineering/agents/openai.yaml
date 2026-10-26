@@ -1,0 +1,4 @@
+interface:
+  display_name: "Full Stack Engineering"
+  short_description: "Full-stack engineering with external OntoLink coordination"
+  default_prompt: "Use $software-engineering with the current external ontolink-skills to implement and verify this project."
